@@ -68,7 +68,7 @@
         nav a { color: var(--ink); text-decoration: none; font-weight: 600; }
         nav a:hover, nav a.active { color: var(--coral); }
 
-        /* Banner (extra bottom space so the statement can overlap it) */
+        /* Banner */
         .page-banner {
             background: var(--teal);
             color: #fff;
@@ -82,7 +82,7 @@
         }
         .page-banner p { max-width: 640px; margin: 0 auto; font-size: 1.15rem; }
 
-        /* 12-column grid used by the grid-breaking sections */
+        /* 12-column grid */
         .grid-12 {
             display: grid;
             grid-template-columns: repeat(12, 1fr);
@@ -125,7 +125,7 @@
             margin-bottom: 6px;
         }
 
-        /* Video section: video breaks out to the right, text card overlaps it */
+        /* Video breaks out to the right */
         .video-section {
             margin-top: 140px;
             align-items: center;
@@ -179,8 +179,58 @@
         }
         .video-text p { margin: 0; }
 
+        /* Photo breaks out to the left */
+        .photo-break {
+            margin-top: 180px;
+            align-items: center;
+        }
+        .photo-main {
+            grid-column: 1 / 9;
+            grid-row: 1;
+            position: relative;
+            margin-left: -80px;
+            isolation: isolate;
+        }
+        .photo-main img {
+            display: block;
+            width: 100%;
+            height: 460px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+        .photo-main::after {
+            content: "";
+            position: absolute;
+            right: -28px;
+            bottom: -28px;
+            width: 45%;
+            height: 55%;
+            background: var(--coral);
+            border-radius: 12px;
+            z-index: -1;
+        }
+        .photo-caption {
+            grid-column: 8 / 13;
+            grid-row: 1;
+            position: relative;
+            z-index: 2;
+            background: var(--card);
+            border-top: 6px solid var(--gold);
+            border-radius: 12px;
+            padding: 36px;
+            box-shadow: var(--shadow);
+        }
+        .photo-caption h2 {
+            font-family: var(--font-display);
+            color: var(--teal);
+            font-size: 1.9rem;
+            margin: 0 0 12px;
+        }
+        .photo-caption p { color: var(--ink-soft); margin: 0; }
+
         /* Staggered value cards */
-        .values { margin-top: 180px; padding-bottom: 96px; }
+        .values { margin-top: 140px; padding-bottom: 96px; }
         .section-title {
             font-family: var(--font-display);
             color: var(--teal);
@@ -205,7 +255,7 @@
         .card h3 { font-family: var(--font-display); color: var(--teal); margin-top: 0; }
         .card p { color: var(--ink-soft); margin-bottom: 0; }
 
-        /* Slanted full-width quote band */
+        /* Slanted quote band */
         .quote-band {
             background: var(--coral);
             color: #fff;
@@ -265,16 +315,23 @@
             .statement,
             .statement-tag,
             .video-frame,
-            .video-text {
+            .video-text,
+            .photo-main,
+            .photo-caption {
                 grid-column: 1 / -1;
                 grid-row: auto;
                 transform: none;
+                margin-left: 0;
                 margin-right: 0;
             }
             .statement { padding: 28px; }
-            .video-section { margin-top: 64px; }
+            .video-section,
+            .photo-break { margin-top: 64px; }
             .video-frame::before { top: -14px; left: -14px; }
             .video-text { margin-top: -24px; }
+            .photo-main img { height: 280px; }
+            .photo-main::after { right: -14px; bottom: -14px; }
+            .photo-caption { margin: -40px 16px 0; }
             .values { margin-top: 64px; padding-bottom: 0; }
             .cards { grid-template-columns: 1fr; }
             .card:nth-child(2),
@@ -326,7 +383,7 @@
         </div>
     </section>
 
-    <!-- Video breaking out of the grid -->
+    <!-- Video breaking out to the right -->
     <section class="container">
         <div class="grid-12 video-section">
             <div class="video-frame">
@@ -343,6 +400,19 @@
             <div class="video-text">
                 <h2>See the Difference</h2>
                 <p>A sensory room gives students a place to reset, so they can return to class calm, focused, and ready to learn.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo breaking out to the left -->
+    <section class="container">
+        <div class="grid-12 photo-break">
+            <div class="photo-main">
+                <img src="{{ asset('images/mission-photo.jpg') }}" alt="Students in a calm sensory room">
+            </div>
+            <div class="photo-caption">
+                <h2>A Calm Place to Learn</h2>
+                <p>Soft lighting, gentle textures, and quiet space give students room to breathe, so they can return to class ready to learn.</p>
             </div>
         </div>
     </section>
@@ -366,7 +436,7 @@
         </div>
     </section>
 
-    <!-- Slanted full-width quote -->
+    <!-- Slanted quote band -->
     <section class="quote-band">
         <blockquote>
             "Every child deserves a place where they feel understood."
