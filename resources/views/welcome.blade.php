@@ -277,7 +277,7 @@
     </div>
 
     <header>
-        <img src="https://mgarner6-lucfq.wordpress.com/wp-content/uploads/2026/08/logo.png" alt="Make-A-Way Foundation Logo">
+        <img src= alt="Make-A-Way Foundation Logo">
     </header>
 
     <input type="checkbox" id="nav-toggle" class="nav-toggle-checkbox">
