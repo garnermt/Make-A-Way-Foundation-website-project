@@ -4,180 +4,234 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Make A Way Foundation</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg: #faf6ee;
-            --card: #ffffff;
-            --ink: #23241f;
-            --ink-soft: #4d4f47;
-            --teal: #1f5c5c;
-            --teal-deep: #123b3b;
-            --gold: #e2a33d;
-            --coral: #d9613f;
-            --line: #e3ddcd;
-            --font-display: "Fraunces", Georgia, serif;
-            --font-body: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        }
-
-        * { box-sizing: border-box; }
-
         body {
             margin: 0;
-            background: var(--bg);
-            color: var(--ink);
-            font-family: var(--font-body);
+            background-color: #faf6ee;
+            color: #23241f;
+            font-family: "Public Sans", Arial, sans-serif;
             line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: "Fraunces", Georgia, serif;
         }
 
         /* Top bar */
         .topbar {
-            background: var(--teal-deep);
-            color: #fff;
+            background-color: #123b3b;
+            color: white;
             display: flex;
             justify-content: space-between;
-            padding: 10px 24px;
-            font-weight: 600;
+            padding: 10px 20px;
+            font-weight: bold;
         }
-        .topbar a { color: #fff; text-decoration: none; margin-left: 20px; }
+
+        .topbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
 
         /* Logo */
         .logo-bar {
-            background: var(--card);
+            background-color: white;
             text-align: center;
-            padding: 20px 16px 4px;
+            padding: 20px;
         }
+
         .logo {
             height: 300px;
-            width: auto;
         }
 
         /* Menu */
         nav {
-            background: var(--card);
-            border-bottom: 1px solid var(--line);
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 28px;
+            background-color: white;
+            border-bottom: 1px solid #e3ddcd;
+            text-align: center;
             padding: 16px;
         }
-        nav a { color: var(--ink); text-decoration: none; font-weight: 600; }
-        nav a:hover, nav a.active { color: var(--coral); }
 
-        /* Full-screen photo banner */
-        .fullscreen-hero {
+        nav a {
+            color: #23241f;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 14px;
+        }
+
+        nav a:hover {
+            color: #d9613f;
+        }
+
+        nav a.active {
+            color: #d9613f;
+        }
+
+        /* Big photo banner */
+        .hero {
             position: relative;
-            height: 100vh;
-            min-height: 500px;
+            height: 600px;
             background-size: cover;
             background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #fff;
         }
-        .fullscreen-hero::before {
-            content: "";
+
+        /* Dark tint on top of the photo so the text is easy to read */
+        .overlay {
             position: absolute;
-            inset: 0;
-            background: linear-gradient(rgba(18, 59, 59, 0.55), rgba(18, 59, 59, 0.75));
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(18, 59, 59, 0.65);
         }
-        .hero-content {
+
+        .hero-text {
             position: relative;
-            max-width: 720px;
-            padding: 24px;
+            color: white;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+            padding-top: 180px;
         }
-        .hero-content h1 {
-            font-family: var(--font-display);
-            font-size: clamp(2.2rem, 6vw, 4rem);
+
+        .hero-text h1 {
+            font-size: 3.5rem;
             margin: 0 0 16px;
-            line-height: 1.15;
         }
-        .hero-content p {
-            font-size: clamp(1.05rem, 2.5vw, 1.35rem);
+
+        .hero-text p {
+            font-size: 1.3rem;
             margin: 0 0 28px;
         }
 
         /* Buttons */
         .btn {
             display: inline-block;
-            background: var(--coral);
-            color: #fff;
+            background-color: #d9613f;
+            color: white;
             padding: 14px 28px;
             border-radius: 6px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: bold;
             margin: 6px;
         }
-        .btn:hover { background: var(--gold); color: var(--ink); }
-        .btn-outline {
-            background: transparent;
-            border: 2px solid #fff;
-        }
-        .btn-outline:hover { background: #fff; color: var(--teal-deep); }
 
-        /* Content below the banner */
-        main { max-width: 1000px; margin: 0 auto; padding: 64px 24px; }
+        .btn:hover {
+            background-color: #e2a33d;
+            color: #23241f;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+        }
+
+        /* Main section */
+        .main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
 
         .section-title {
-            font-family: var(--font-display);
-            color: var(--teal);
             text-align: center;
+            color: #1f5c5c;
             font-size: 2.2rem;
             margin: 0 0 12px;
         }
+
         .section-intro {
             text-align: center;
-            color: var(--ink-soft);
-            max-width: 640px;
-            margin: 0 auto 40px;
+            color: #4d4f47;
+            margin: 0 0 40px;
         }
 
+        /* Three cards side by side */
         .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            display: flex;
             gap: 20px;
         }
+
         .card {
-            background: var(--card);
-            border: 1px solid var(--line);
-            border-top: 5px solid var(--gold);
+            flex: 1;
+            background-color: white;
+            border-top: 5px solid #e2a33d;
             border-radius: 8px;
             padding: 28px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
-        .card h3 { font-family: var(--font-display); color: var(--teal); margin-top: 0; }
-        .card p { color: var(--ink-soft); }
-        .card a { color: var(--coral); font-weight: 600; text-decoration: none; }
 
+        .card h3 {
+            color: #1f5c5c;
+            margin-top: 0;
+        }
+
+        .card p {
+            color: #4d4f47;
+        }
+
+        .card a {
+            color: #d9613f;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* Footer */
         footer {
-            background: var(--teal-deep);
-            color: #fff;
+            background-color: #123b3b;
+            color: white;
             text-align: center;
-            padding: 24px;
+            padding: 20px;
+        }
+
+        /* Phones */
+        @media (max-width: 800px) {
+            .logo {
+                height: 160px;
+            }
+
+            .hero {
+                height: 500px;
+            }
+
+            .hero-text {
+                padding-top: 120px;
+            }
+
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-text p {
+                font-size: 1.1rem;
+            }
+
+            .cards {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- Top bar with phone number and social links -->
     <div class="topbar">
         <span>📞 256-434-1768</span>
         <span>
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
+            <a href="https://www.facebook.com/foundationmakeaway" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://www.instagram.com/makeaway.foundation/" target="_blank" rel="noopener">Instagram</a>
         </span>
     </div>
 
+    <!-- Logo -->
     <div class="logo-bar">
-       <div class="logo-bar">
-    <a href="/">
-        <img src="{{ asset('images/logo.png') }}" alt="Make A Way Foundation logo" class="logo">
-    </a>
-</div>
+        <a href="/">
+            <img src="{{ asset('images/logo.png') }}" alt="Make A Way Foundation logo" class="logo">
+        </a>
+    </div>
 
+    <!-- Menu -->
     <nav>
         <a href="/" class="active">Home</a>
         <a href="/mission">Mission</a>
@@ -186,16 +240,19 @@
         <a href="/get-involved">Get Involved</a>
     </nav>
 
-    <section class="fullscreen-hero" style="background-image: url('{{ asset('images/hero.jpg') }}');">
-        <div class="hero-content">
+    <!-- Big photo banner -->
+    <div class="hero" style="background-image: url('{{ asset('images/hero.jpg') }}');">
+        <div class="overlay"></div>
+        <div class="hero-text">
             <h1>Making a Way for Every Student</h1>
             <p>Sensory rooms that help students with autism and sensory needs learn, feel safe, and thrive.</p>
             <a href="/get-involved" class="btn">Get Involved</a>
             <a href="/mission" class="btn btn-outline">Our Mission</a>
         </div>
-    </section>
+    </div>
 
-    <main>
+    <!-- How we help -->
+    <div class="main">
         <h2 class="section-title">How We Help</h2>
         <p class="section-intro">
             What started with one sensory room has grown to serve students in seven schools.
@@ -207,19 +264,22 @@
                 <p>Creating calm, supportive spaces where every student can learn and grow.</p>
                 <a href="/mission">Learn more →</a>
             </div>
+
             <div class="card">
                 <h3>Our History</h3>
                 <p>From one family's experience to a 501(c)(3) serving schools across our community.</p>
                 <a href="/history">Read our story →</a>
             </div>
+
             <div class="card">
                 <h3>Get Involved</h3>
                 <p>Volunteer, donate, or partner with us to bring sensory rooms to more schools.</p>
                 <a href="/get-involved">Join us →</a>
             </div>
         </div>
-    </main>
+    </div>
 
+    <!-- Footer -->
     <footer>
         © {{ date('Y') }} Make A Way Foundation · 501(c)(3) Nonprofit
     </footer>

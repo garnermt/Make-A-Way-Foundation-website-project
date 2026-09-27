@@ -4,358 +4,327 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Mission | Make A Way Foundation</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg: #faf6ee;
-            --card: #ffffff;
-            --ink: #23241f;
-            --ink-soft: #4d4f47;
-            --teal: #1f5c5c;
-            --teal-deep: #123b3b;
-            --gold: #e2a33d;
-            --coral: #d9613f;
-            --line: #e3ddcd;
-            --shadow: 0 20px 40px rgba(18, 59, 59, 0.15);
-            --font-display: "Fraunces", Georgia, serif;
-            --font-body: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        }
-
-        * { box-sizing: border-box; }
-
         body {
             margin: 0;
-            background: var(--bg);
-            color: var(--ink);
-            font-family: var(--font-body);
+            background-color: #faf6ee;
+            color: #23241f;
+            font-family: "Public Sans", Arial, sans-serif;
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+        h1, h2, h3 {
+            font-family: "Fraunces", Georgia, serif;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
         /* Top bar */
         .topbar {
-            background: var(--teal-deep);
-            color: #fff;
+            background-color: #123b3b;
+            color: white;
             display: flex;
             justify-content: space-between;
-            padding: 10px 24px;
-            font-weight: 600;
+            padding: 10px 20px;
+            font-weight: bold;
         }
-        .topbar a { color: #fff; text-decoration: none; margin-left: 20px; }
+
+        .topbar a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
 
         /* Logo */
         .logo-bar {
-            background: var(--card);
+            background-color: white;
             text-align: center;
-            padding: 20px 16px 4px;
+            padding: 20px;
         }
-        .logo { height: 300px; width: auto; max-width: 100%; }
+
+        .logo {
+            height: 300px;
+        }
 
         /* Menu */
         nav {
-            background: var(--card);
-            border-bottom: 1px solid var(--line);
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 28px;
+            background-color: white;
+            border-bottom: 1px solid #e3ddcd;
+            text-align: center;
             padding: 16px;
         }
-        nav a { color: var(--ink); text-decoration: none; font-weight: 600; }
-        nav a:hover, nav a.active { color: var(--coral); }
+
+        nav a {
+            color: #23241f;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 14px;
+        }
+
+        nav a:hover {
+            color: #d9613f;
+        }
+
+        nav a.active {
+            color: #d9613f;
+        }
 
         /* Banner */
-        .page-banner {
-            background: var(--teal);
-            color: #fff;
+        .banner {
+            background-color: #1f5c5c;
+            color: white;
             text-align: center;
-            padding: 80px 24px 160px;
-        }
-        .page-banner h1 {
-            font-family: var(--font-display);
-            font-size: clamp(2.4rem, 6vw, 4rem);
-            margin: 0 0 12px;
-        }
-        .page-banner p { max-width: 640px; margin: 0 auto; font-size: 1.15rem; }
-
-        /* 12-column grid */
-        .grid-12 {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 24px;
+            padding: 70px 20px;
         }
 
-        /* Statement overlaps the banner */
-        .statement-wrap {
-            margin-top: -110px;
-            position: relative;
-            z-index: 2;
+        .banner h1 {
+            font-size: 3rem;
+            margin: 0 0 10px;
         }
+
+        .banner p {
+            font-size: 1.15rem;
+            margin: 0;
+        }
+
+        /* Mission statement */
         .statement {
-            grid-column: 1 / 10;
-            background: var(--card);
-            border-left: 8px solid var(--gold);
-            border-radius: 12px;
-            padding: 40px;
-            box-shadow: var(--shadow);
-            font-family: var(--font-display);
-            font-size: clamp(1.25rem, 2.6vw, 1.7rem);
-            line-height: 1.45;
-        }
-        .statement-tag {
-            grid-column: 10 / 13;
-            align-self: end;
-            background: var(--gold);
-            color: var(--ink);
-            border-radius: 12px;
-            padding: 24px;
-            font-weight: 600;
-            transform: translateY(48px);
-            box-shadow: var(--shadow);
-        }
-        .statement-tag strong {
-            display: block;
-            font-family: var(--font-display);
-            font-size: 2.4rem;
-            line-height: 1;
-            margin-bottom: 6px;
-        }
-
-        /* Video breaks out to the right */
-        .video-section {
-            margin-top: 140px;
-            align-items: center;
-        }
-        .video-frame {
-            grid-column: 5 / 13;
-            grid-row: 1;
-            position: relative;
-            margin-right: -80px;
-        }
-        .video-frame::before {
-            content: "";
-            position: absolute;
-            top: -28px;
-            left: -28px;
-            width: 60%;
-            height: 70%;
-            background: var(--gold);
-            border-radius: 12px;
-        }
-        .video-embed {
-            position: relative;
-            aspect-ratio: 16 / 9;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            background: var(--teal-deep);
-        }
-        .video-embed iframe {
-            width: 100%;
-            height: 100%;
-            border: 0;
-            display: block;
-        }
-        .video-text {
-            grid-column: 1 / 6;
-            grid-row: 1;
-            position: relative;
-            z-index: 2;
-            background: var(--teal);
-            color: #fff;
-            border-radius: 12px;
+            background-color: white;
+            border-left: 8px solid #e2a33d;
+            border-radius: 10px;
             padding: 36px;
-            transform: translateY(90px);
-            box-shadow: var(--shadow);
+            margin-top: 50px;
+            font-family: "Fraunces", Georgia, serif;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
-        .video-text h2 {
-            font-family: var(--font-display);
-            font-size: 1.9rem;
-            margin: 0 0 12px;
-        }
-        .video-text p { margin: 0; }
 
-        /* Photo breaks out to the left */
-        .photo-break {
-            margin-top: 180px;
+        .schools-tag {
+            display: inline-block;
+            background-color: #e2a33d;
+            border-radius: 10px;
+            padding: 16px 24px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .schools-tag span {
+            font-family: "Fraunces", Georgia, serif;
+            font-size: 2rem;
+            margin-right: 8px;
+        }
+
+        /* Two columns side by side (used for video and photo) */
+        .two-columns {
+            display: flex;
+            gap: 30px;
             align-items: center;
+            margin-top: 60px;
         }
-        .photo-main {
-            grid-column: 1 / 9;
-            grid-row: 1;
-            position: relative;
-            margin-left: -80px;
-            isolation: isolate;
+
+        .column {
+            flex: 1;
         }
-        .photo-main img {
-            display: block;
+
+        /* Video */
+        .video iframe {
             width: 100%;
-            height: 460px;
+            height: 300px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        /* Photo */
+        .photo img {
+            width: 100%;
+            height: 350px;
             object-fit: cover;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
+            border-radius: 10px;
         }
-        .photo-main::after {
-            content: "";
-            position: absolute;
-            right: -28px;
-            bottom: -28px;
-            width: 45%;
-            height: 55%;
-            background: var(--coral);
-            border-radius: 12px;
-            z-index: -1;
-        }
-        .photo-caption {
-            grid-column: 8 / 13;
-            grid-row: 1;
-            position: relative;
-            z-index: 2;
-            background: var(--card);
-            border-top: 6px solid var(--gold);
-            border-radius: 12px;
-            padding: 36px;
-            box-shadow: var(--shadow);
-        }
-        .photo-caption h2 {
-            font-family: var(--font-display);
-            color: var(--teal);
-            font-size: 1.9rem;
-            margin: 0 0 12px;
-        }
-        .photo-caption p { color: var(--ink-soft); margin: 0; }
 
-        /* Staggered value cards */
-        .values { margin-top: 140px; padding-bottom: 96px; }
+        /* Text boxes next to the video and photo */
+        .text-box {
+            background-color: white;
+            border-top: 6px solid #e2a33d;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-box h2 {
+            color: #1f5c5c;
+            margin-top: 0;
+        }
+
+        .text-box-teal {
+            background-color: #1f5c5c;
+            color: white;
+            border-top: none;
+        }
+
+        .text-box-teal h2 {
+            color: white;
+        }
+
+        /* Section titles */
         .section-title {
-            font-family: var(--font-display);
-            color: var(--teal);
-            font-size: clamp(2rem, 4vw, 2.6rem);
-            margin: 0 0 40px;
-        }
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-        .card {
-            background: var(--card);
-            border: 1px solid var(--line);
-            border-top: 6px solid var(--gold);
-            border-radius: 12px;
-            padding: 28px;
-            box-shadow: var(--shadow);
-        }
-        .card:nth-child(2) { transform: translateY(48px); border-top-color: var(--coral); }
-        .card:nth-child(3) { transform: translateY(96px); border-top-color: var(--teal); }
-        .card h3 { font-family: var(--font-display); color: var(--teal); margin-top: 0; }
-        .card p { color: var(--ink-soft); margin-bottom: 0; }
-
-        /* Slanted quote band */
-        .quote-band {
-            background: var(--coral);
-            color: #fff;
             text-align: center;
-            padding: 110px 24px 150px;
-            margin-top: 80px;
-            clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+            color: #1f5c5c;
+            font-size: 2.2rem;
+            margin: 60px 0 30px;
         }
-        .quote-band blockquote {
-            font-family: var(--font-display);
-            font-size: clamp(1.6rem, 3.6vw, 2.5rem);
-            line-height: 1.3;
-            max-width: 820px;
+
+        /* Three cards side by side */
+        .cards {
+            display: flex;
+            gap: 20px;
+        }
+
+        .card {
+            flex: 1;
+            background-color: white;
+            border-top: 6px solid #e2a33d;
+            border-radius: 10px;
+            padding: 28px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .card h3 {
+            color: #1f5c5c;
+            margin-top: 0;
+        }
+
+        .card p {
+            color: #4d4f47;
+            margin-bottom: 0;
+        }
+
+        /* Quote */
+        .quote {
+            background-color: #d9613f;
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            margin-top: 60px;
+        }
+
+        .quote p {
+            font-family: "Fraunces", Georgia, serif;
+            font-size: 2rem;
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        /* Call to action overlaps the quote band */
+        /* Call to action */
         .cta {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
-            margin: -90px auto 0;
-            background: var(--teal-deep);
-            color: #fff;
+            background-color: #123b3b;
+            color: white;
             text-align: center;
-            border-radius: 16px;
-            padding: 48px 24px;
-            box-shadow: var(--shadow);
+            border-radius: 12px;
+            padding: 40px 20px;
+            margin: 60px 0;
         }
-        .cta h2 { font-family: var(--font-display); font-size: 2rem; margin: 0 0 12px; }
-        .cta p { max-width: 560px; margin: 0 auto 24px; }
 
+        .cta h2 {
+            font-size: 2rem;
+            margin: 0 0 10px;
+        }
+
+        /* Buttons */
         .btn {
             display: inline-block;
-            background: var(--coral);
-            color: #fff;
-            padding: 14px 28px;
+            background-color: #d9613f;
+            color: white;
+            padding: 12px 24px;
             border-radius: 6px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: bold;
             margin: 6px;
         }
-        .btn:hover { background: var(--gold); color: var(--ink); }
-        .btn-outline { background: transparent; border: 2px solid #fff; }
-        .btn-outline:hover { background: #fff; color: var(--teal-deep); }
 
-        footer {
-            background: var(--teal-deep);
-            color: #fff;
-            text-align: center;
-            padding: 24px;
-            margin-top: 80px;
+        .btn:hover {
+            background-color: #e2a33d;
+            color: #23241f;
         }
 
-        /* Phones and small screens: stack everything */
-        @media (max-width: 860px) {
-            .statement,
-            .statement-tag,
-            .video-frame,
-            .video-text,
-            .photo-main,
-            .photo-caption {
-                grid-column: 1 / -1;
-                grid-row: auto;
-                transform: none;
-                margin-left: 0;
-                margin-right: 0;
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #123b3b;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Phones */
+        @media (max-width: 800px) {
+            .logo {
+                height: 160px;
             }
-            .statement { padding: 28px; }
-            .video-section,
-            .photo-break { margin-top: 64px; }
-            .video-frame::before { top: -14px; left: -14px; }
-            .video-text { margin-top: -24px; }
-            .photo-main img { height: 280px; }
-            .photo-main::after { right: -14px; bottom: -14px; }
-            .photo-caption { margin: -40px 16px 0; }
-            .values { margin-top: 64px; padding-bottom: 0; }
-            .cards { grid-template-columns: 1fr; }
-            .card:nth-child(2),
-            .card:nth-child(3) { transform: none; }
-            .logo { height: 160px; }
+
+            .banner h1 {
+                font-size: 2.2rem;
+            }
+
+            .statement {
+                font-size: 1.2rem;
+                padding: 24px;
+            }
+
+            .two-columns {
+                flex-direction: column;
+            }
+
+            .column {
+                width: 100%;
+            }
+
+            .video iframe {
+                height: 220px;
+            }
+
+            .photo img {
+                height: 250px;
+            }
+
+            .cards {
+                flex-direction: column;
+            }
+
+            .quote p {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- Top bar with phone number and social links -->
     <div class="topbar">
         <span>📞 256-434-1768</span>
         <span>
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
+            <a href="https://www.facebook.com/foundationmakeaway" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://www.instagram.com/makeaway.foundation/" target="_blank" rel="noopener">Instagram</a>
         </span>
     </div>
 
+    <!-- Logo -->
     <div class="logo-bar">
         <a href="/">
             <img src="{{ asset('images/logo.png') }}" alt="Make A Way Foundation logo" class="logo">
         </a>
     </div>
 
+    <!-- Menu -->
     <nav>
         <a href="/">Home</a>
         <a href="/mission" class="active">Mission</a>
@@ -364,96 +333,93 @@
         <a href="/get-involved">Get Involved</a>
     </nav>
 
-    <section class="page-banner">
+    <!-- Banner -->
+    <div class="banner">
         <h1>Our Mission</h1>
         <p>Making a way for every student to learn, feel safe, and thrive.</p>
-    </section>
+    </div>
 
-    <!-- Statement overlapping the banner -->
-    <section class="container">
-        <div class="grid-12 statement-wrap">
-            <div class="statement">
-                Make A Way Foundation creates sensory rooms in local schools so students
-                with autism and sensory needs have a calm, supportive place to learn and grow.
-            </div>
-            <div class="statement-tag">
-                <strong>7</strong>
-                schools served with sensory rooms
-            </div>
+    <div class="container">
+
+        <!-- Mission statement -->
+        <div class="statement">
+            Make A Way Foundation creates sensory rooms in local schools so students
+            with autism and sensory needs have a calm, supportive place to learn and grow.
         </div>
-    </section>
 
-    <!-- Video breaking out to the right -->
-    <section class="container">
-        <div class="grid-12 video-section">
-            <div class="video-frame">
-                <div class="video-embed">
-                    <iframe
-                        src="https://www.youtube.com/embed/qDem6i7Xg6M"
-                        title="Make A Way Foundation video"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin"
-                        allowfullscreen>
-                    </iframe>
+        <div class="schools-tag">
+            <span>7</span> schools served with sensory rooms
+        </div>
+
+        <!-- Video on the left, text on the right -->
+        <div class="two-columns">
+            <div class="column video">
+                <iframe
+                    src="https://www.youtube.com/embed/qDem6i7Xg6M"
+                    title="Make A Way Foundation video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div class="column">
+                <div class="text-box text-box-teal">
+                    <h2>See the Difference</h2>
+                    <p>A sensory room gives students a place to reset, so they can return to class calm, focused, and ready to learn.</p>
                 </div>
             </div>
-            <div class="video-text">
-                <h2>See the Difference</h2>
-                <p>A sensory room gives students a place to reset, so they can return to class calm, focused, and ready to learn.</p>
-            </div>
         </div>
-    </section>
 
-    <!-- Photo breaking out to the left -->
-    <section class="container">
-        <div class="grid-12 photo-break">
-            <div class="photo-main">
+        <!-- Text on the left, photo on the right -->
+        <div class="two-columns">
+            <div class="column">
+                <div class="text-box">
+                    <h2>A Calm Place to Learn</h2>
+                    <p>Soft lighting, gentle textures, and quiet space give students room to breathe, so they can return to class ready to learn.</p>
+                </div>
+            </div>
+            <div class="column photo">
                 <img src="{{ asset('images/mission-photo.jpg') }}" alt="Students in a calm sensory room">
             </div>
-            <div class="photo-caption">
-                <h2>A Calm Place to Learn</h2>
-                <p>Soft lighting, gentle textures, and quiet space give students room to breathe, so they can return to class ready to learn.</p>
-            </div>
         </div>
-    </section>
 
-    <!-- Staggered value cards -->
-    <section class="container values">
+        <!-- What guides us -->
         <h2 class="section-title">What Guides Us</h2>
+
         <div class="cards">
             <div class="card">
                 <h3>Sensory-Friendly Spaces</h3>
                 <p>We design and furnish sensory rooms that help students regulate, refocus, and return to learning.</p>
             </div>
+
             <div class="card">
                 <h3>Community Partnership</h3>
                 <p>We work alongside schools, families, and local supporters to reach more students.</p>
             </div>
+
             <div class="card">
                 <h3>Inclusion for All</h3>
                 <p>Every child deserves a classroom experience where they feel understood and supported.</p>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Slanted quote band -->
-    <section class="quote-band">
-        <blockquote>
-            "Every child deserves a place where they feel understood."
-            — Make A Way Foundation
-        </blockquote>
-    </section>
+    <!-- Quote -->
+    <div class="quote">
+        <p>"Every child deserves a place where they feel understood." — Make A Way Foundation</p>
+    </div>
 
-    <!-- Call to action overlapping the quote band -->
-    <section class="container">
+    <!-- Call to action -->
+    <div class="container">
         <div class="cta">
             <h2>Help Us Make a Way</h2>
             <p>Your time, donations, and partnership bring sensory rooms to more students in our community.</p>
             <a href="/get-involved" class="btn">Get Involved</a>
             <a href="/history" class="btn btn-outline">Read Our Story</a>
         </div>
-    </section>
+    </div>
 
+    <!-- Footer -->
     <footer>
         © {{ date('Y') }} Make A Way Foundation · 501(c)(3) Nonprofit
     </footer>
