@@ -7,7 +7,7 @@
     <meta name="description" content="Make A Way Foundation supports children, teens, and adults with special needs and their families across North Alabama.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,600&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome: provides the Facebook and Instagram icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
     <style>
@@ -40,23 +40,20 @@
             outline-offset: 3px;
         }
 
-        /* ---------- Top bar ---------- */
+        /* ---------- Top bar: social icons ---------- */
         .topbar {
             background-color: #123b3b;
-            color: white;
             display: flex;
             justify-content: flex-end;
-            align-items: center;
             padding: 6px 20px;
         }
 
-        .topbar .social {
+        .social {
             display: flex;
             gap: 8px;
         }
 
-        /* Round icon buttons, big enough to tap on a phone */
-        .topbar .social a {
+        .social a {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -66,14 +63,13 @@
             color: white;
             font-size: 1.15rem;
             text-decoration: none;
-            transition: background-color 0.15s ease;
         }
 
-        .topbar .social a:hover {
+        .social a:hover {
             background-color: rgba(255, 255, 255, 0.18);
         }
 
-        /* ---------- Header: logo + menu (stays at the top while scrolling) ---------- */
+        /* ---------- Header: logo + menu (stays at the top) ---------- */
         .site-header {
             position: sticky;
             top: 0;
@@ -106,15 +102,13 @@
             text-decoration: none;
             font-weight: 700;
             padding: 10px 14px;
-            border-radius: 6px;
         }
 
         nav a:hover,
         nav a.active {
-            color: #d9613f;
+            color: #c4502f;
         }
 
-        /* Menu button only shows on phones */
         .menu-btn {
             display: none;
             background: none;
@@ -126,51 +120,54 @@
             cursor: pointer;
         }
 
-        /* ---------- Parallax sections ---------- */
-        /* The photo sits in .parallax-bg and moves slower than the page when you scroll */
+        /* ---------- Parallax sections ----------
+           The photo stays still while the page scrolls over it.
+           clip-path + position: fixed makes this work on iPhones too
+           (the usual background-attachment: fixed does not). */
         .parallax {
             position: relative;
-            overflow: hidden;
+            clip-path: inset(0);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
             text-align: center;
+            color: white;
             background-color: #123b3b; /* shows if a photo is missing */
         }
 
         .parallax-bg {
-            position: absolute;
+            position: fixed;
+            top: 0;
             left: 0;
-            right: 0;
-            top: -30%;
-            height: 160%;
+            width: 100%;
+            height: 100vh;
             background-size: cover;
             background-position: center;
-            will-change: transform;
+            z-index: -1;
         }
 
-        /* Dark tint on top of the photo so the text is easy to read */
+        /* Dark tint so the text is easy to read */
         .parallax::after {
             content: "";
             position: absolute;
             inset: 0;
-            background-color: rgba(18, 59, 59, 0.65);
+            background-color: rgba(18, 59, 59, 0.6);
+            z-index: 0;
         }
 
         .parallax-content {
             position: relative;
             z-index: 1;
             max-width: 720px;
-            padding: 60px 24px;
+            padding: 80px 24px;
         }
 
         .hero {
-            min-height: 88vh;
+            min-height: calc(100vh - 150px);
         }
 
         .band {
-            min-height: 60vh;
+            min-height: 65vh;
         }
 
         .hero h1 {
@@ -186,6 +183,25 @@
         .parallax p {
             font-size: clamp(1.1rem, 2.4vw, 1.3rem);
             margin: 0 0 28px;
+        }
+
+        /* Scripture quote */
+        blockquote {
+            margin: 0;
+        }
+
+        blockquote p {
+            font-family: "Fraunces", Georgia, serif;
+            font-style: italic;
+            font-size: clamp(1.5rem, 4vw, 2.3rem) !important;
+            line-height: 1.3;
+            margin: 0 0 18px !important;
+        }
+
+        blockquote cite {
+            font-style: normal;
+            font-weight: 700;
+            letter-spacing: 0.02em;
         }
 
         /* ---------- Buttons ---------- */
@@ -210,11 +226,16 @@
             border: 2px solid white;
         }
 
-        /* ---------- Plain content sections ---------- */
+        /* ---------- Plain content sections (scroll over the photos) ---------- */
         .main {
+            position: relative;
+            background-color: #faf6ee;
+            padding: 80px 20px;
+        }
+
+        .main-inner {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 70px 20px;
         }
 
         .section-title {
@@ -227,11 +248,10 @@
         .section-intro {
             text-align: center;
             color: #4d4f47;
-            max-width: 640px;
+            max-width: 660px;
             margin: 0 auto 40px;
         }
 
-        /* Cards */
         .cards {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -261,7 +281,6 @@
             text-decoration: none;
         }
 
-        /* Programs list */
         .programs {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -289,65 +308,86 @@
             margin-top: 36px;
         }
 
+        /* Contact section */
+        .contact {
+            background-color: white;
+            text-align: center;
+        }
+
+        .contact-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 16px 48px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .contact-list a {
+            color: #1f5c5c;
+            text-decoration: none;
+        }
+
+        .contact-list i {
+            color: #d9613f;
+            margin-right: 8px;
+        }
+
+        .contact .social {
+            justify-content: center;
+        }
+
+        .contact .social a {
+            background-color: #123b3b;
+            width: 48px;
+            height: 48px;
+            font-size: 1.3rem;
+        }
+
+        .contact .social a:hover {
+            background-color: #d9613f;
+        }
+
         /* ---------- Footer ---------- */
         footer {
+            position: relative;
             background-color: #123b3b;
             color: white;
-            padding: 40px 20px 24px;
+            padding: 30px 20px;
+            text-align: center;
         }
 
-        .footer-grid {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 30px;
-        }
-
-        footer h3 {
-            margin: 0 0 10px;
-            font-size: 1.15rem;
-        }
-
-        footer p {
-            margin: 0 0 6px;
-        }
-
-        footer a {
-            color: white;
-        }
-
-        footer ul {
+        .footer-nav {
             list-style: none;
-            margin: 0;
+            margin: 0 0 14px;
             padding: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 6px 22px;
         }
 
-        footer li {
-            margin-bottom: 6px;
+        .footer-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer-nav a:hover {
+            text-decoration: underline;
         }
 
         .copyright {
-            max-width: 1100px;
-            margin: 30px auto 0;
-            padding-top: 16px;
-            border-top: 1px solid rgba(255, 255, 255, 0.25);
+            margin: 0;
             font-size: 0.9rem;
-            text-align: center;
+            opacity: 0.85;
         }
 
         /* ---------- Tablets ---------- */
         @media (max-width: 900px) {
             .cards {
                 grid-template-columns: 1fr;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .footer-grid > div:first-child {
-                grid-column: 1 / -1;
             }
         }
 
@@ -369,7 +409,6 @@
                 display: block;
             }
 
-            /* Menu drops down under the header */
             nav ul {
                 display: none;
                 position: absolute;
@@ -393,11 +432,15 @@
             }
 
             .hero {
-                min-height: 75vh;
+                min-height: 80vh;
             }
 
             .band {
-                min-height: 50vh;
+                min-height: 55vh;
+            }
+
+            .parallax-content {
+                padding: 60px 20px;
             }
 
             .btn {
@@ -407,25 +450,17 @@
             }
 
             .main {
-                padding: 50px 18px;
+                padding: 56px 18px;
             }
 
             .programs {
                 grid-template-columns: 1fr;
             }
 
-            .footer-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-        }
-
-        /* Turn off the moving effect for people who prefer less motion */
-        @media (prefers-reduced-motion: reduce) {
-            .parallax-bg {
-                top: 0;
-                height: 100%;
-                transform: none !important;
+            .contact-list {
+                flex-direction: column;
+                gap: 12px;
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -463,7 +498,7 @@
 
     <main>
 
-        <!-- Parallax 1: Hero -->
+        <!-- Parallax 1: Hero (photo stays still while the page scrolls) -->
         <section class="parallax hero">
             <div class="parallax-bg" style="background-image: url('{{ asset('images/hero.jpg') }}');"></div>
             <div class="parallax-content">
@@ -474,77 +509,81 @@
             </div>
         </section>
 
-        <!-- Who we are -->
+        <!-- Our mission -->
         <section class="main">
-            <h2 class="section-title">Who We Are</h2>
-            <p class="section-intro">
-                Since 2019, Make A Way Foundation has worked with schools, churches, and families across North Alabama to give people with special needs more places to learn, play, and belong.
-            </p>
+            <div class="main-inner">
+                <h2 class="section-title">Our Mission</h2>
+                <p class="section-intro">
+                    Founded in 2019, Make A Way Foundation is a 501(c)(3) nonprofit. We work with school systems and churches across North Alabama to open doors for children, teens, and adults with special needs.
+                </p>
 
-            <div class="cards">
-                <div class="card">
-                    <h3>Our Mission</h3>
-                    <p>Providing resources and support for individuals with special needs in learning and recreational settings.</p>
-                    <a href="/mission">Learn more →</a>
-                </div>
-
-                <div class="card">
-                    <h3>Our History</h3>
-                    <p>From one family's experience to a 501(c)(3) nonprofit serving our whole community.</p>
-                    <a href="/history">Read our story →</a>
-                </div>
-
-                <div class="card">
-                    <h3>Get Involved</h3>
-                    <p>Volunteer, donate, or partner with us to reach more people and families.</p>
-                    <a href="/get-involved">Join us →</a>
+                <div class="cards">
+                    <div class="card">
+                        <h3>Our Mission</h3>
+                        <p>Providing resources for groups of two or more people with special needs in learning and recreational settings.</p>
+                        <a href="/mission">Learn more →</a>
+                    </div>
+                    <div class="card">
+                        <h3>Our History</h3>
+                        <p>From one family's experience to a nonprofit serving our whole community.</p>
+                        <a href="/history">Read our story →</a>
+                    </div>
+                    <div class="card">
+                        <h3>Get Involved</h3>
+                        <p>Volunteer, donate, or partner with us to reach more people and families.</p>
+                        <a href="/get-involved">Join us →</a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Parallax 2: Community statement -->
+        <!-- Parallax 2: Scripture -->
         <!-- Add a photo named community.jpg to public/images (shows teal until then) -->
         <section class="parallax band">
             <div class="parallax-bg" style="background-image: url('{{ asset('images/community.jpg') }}');"></div>
             <div class="parallax-content">
-                <h2>Every person deserves a place to belong.</h2>
-                <p>We partner with our community to make everyday experiences welcoming for people of all abilities.</p>
+                <blockquote>
+                    <p>"I will praise thee; for I am fearfully and wonderfully made: marvellous are thy works; and that my soul knoweth right well."</p>
+                    <cite>Psalm 139:14</cite>
+                </blockquote>
             </div>
         </section>
 
         <!-- What we do -->
         <section class="main">
-            <h2 class="section-title">What We Do</h2>
-            <p class="section-intro">Our programs support individuals with special needs at school, at home, and out in the community.</p>
+            <div class="main-inner">
+                <h2 class="section-title">What We Do</h2>
+                <p class="section-intro">Our programs support people with special needs at school, at home, and out in the community.</p>
 
-            <div class="programs">
-                <div class="program">
-                    <h3>Community events</h3>
-                    <p>Fall festivals, holiday celebrations, and Touch-a-Truck days designed so everyone can join in.</p>
+                <div class="programs">
+                    <div class="program">
+                        <h3>Community events</h3>
+                        <p>Fall festivals, holiday celebrations, and Touch-a-Truck days designed so everyone can join in.</p>
+                    </div>
+                    <div class="program">
+                        <h3>Support for families</h3>
+                        <p>Training, resources, and a community of people who understand what you're going through.</p>
+                    </div>
+                    <div class="program">
+                        <h3>Sensory-friendly haircuts</h3>
+                        <p>A calmer, more comfortable haircut experience at no cost to families.</p>
+                    </div>
+                    <div class="program">
+                        <h3>Calming spaces</h3>
+                        <p>Sensory rooms in local schools and churches where students can take a break and reset.</p>
+                    </div>
+                    <div class="program">
+                        <h3>Help for schools and teachers</h3>
+                        <p>Training and written resources for special education staff and our local library.</p>
+                    </div>
+                    <div class="program">
+                        <h3>Community partnerships</h3>
+                        <p>We work with churches, civic clubs, and the United Way to reach more people.</p>
+                    </div>
                 </div>
-                <div class="program">
-                    <h3>Support for families</h3>
-                    <p>Training, resources, and a community of people who understand what you're going through.</p>
-                </div>
-                <div class="program">
-                    <h3>Sensory-friendly haircuts</h3>
-                    <p>A calmer, more comfortable haircut experience at no cost to families.</p>
-                </div>
-                <div class="program">
-                    <h3>Calming spaces</h3>
-                    <p>Sensory rooms in local schools and churches where students can take a break and reset.</p>
-                </div>
-                <div class="program">
-                    <h3>Help for schools and teachers</h3>
-                    <p>Training and written resources for special education staff and our local library.</p>
-                </div>
-                <div class="program">
-                    <h3>Community partnerships</h3>
-                    <p>We work with churches, civic clubs, and the United Way to reach more people.</p>
-                </div>
+
+                <p class="center"><a href="/what-we-offer" class="btn">See Everything We Offer</a></p>
             </div>
-
-            <p class="center"><a href="/what-we-offer" class="btn">See Everything We Offer</a></p>
         </section>
 
         <!-- Parallax 3: Call to action -->
@@ -559,30 +598,39 @@
             </div>
         </section>
 
+        <!-- Contact -->
+        <section class="main contact">
+            <div class="main-inner">
+                <h2 class="section-title">We would love to hear from you.</h2>
+                <p class="section-intro">Questions, ideas, or want to partner with us? Reach out anytime.</p>
+
+                <div class="contact-list">
+                    <a href="tel:+12564341762"><i class="fa-solid fa-phone" aria-hidden="true"></i>256-434-1762</a>
+                    <a href="mailto:info@foundationmakeaway.org"><i class="fa-solid fa-envelope" aria-hidden="true"></i>info@foundationmakeaway.org</a>
+                </div>
+
+                <div class="social">
+                    <a href="https://www.facebook.com/foundationmakeaway" target="_blank" rel="noopener" aria-label="Make A Way Foundation on Facebook">
+                        <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://www.instagram.com/makeaway.foundation/" target="_blank" rel="noopener" aria-label="Make A Way Foundation on Instagram">
+                        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
     <footer>
-        <div class="footer-grid">
-            <div>
-                <h3>Make A Way Foundation</h3>
-                <p>A 501(c)(3) nonprofit supporting people with special needs and their families in North Alabama.</p>
-            </div>
-            <div>
-                <h3>Contact</h3>
-                <p><a href="tel:+12564341768">256-434-1768</a></p>
-                <p><a href="mailto:info@foundationmakeaway.org">info@foundationmakeaway.org</a></p>
-            </div>
-            <div>
-                <h3>Pages</h3>
-                <ul>
-                    <li><a href="/mission">Mission</a></li>
-                    <li><a href="/history">History</a></li>
-                    <li><a href="/what-we-offer">What We Offer</a></li>
-                    <li><a href="/get-involved">Get Involved</a></li>
-                </ul>
-            </div>
-        </div>
+        <ul class="footer-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/mission">Mission</a></li>
+            <li><a href="/history">History</a></li>
+            <li><a href="/what-we-offer">What We Offer</a></li>
+            <li><a href="/get-involved">Get Involved</a></li>
+        </ul>
         <p class="copyright">© {{ date('Y') }} Make A Way Foundation · 501(c)(3) Nonprofit</p>
     </footer>
 
@@ -595,34 +643,6 @@
             menuBtn.setAttribute('aria-expanded', isOpen);
             menuBtn.textContent = isOpen ? 'Close' : 'Menu';
         });
-
-        // Parallax: move each photo a little slower than the page.
-        // (Done with JavaScript because the CSS-only way doesn't work on iPhones.)
-        const layers = document.querySelectorAll('.parallax-bg');
-        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        let ticking = false;
-
-        function moveLayers() {
-            const screenMiddle = window.innerHeight / 2;
-            layers.forEach(function (layer) {
-                const box = layer.parentElement.getBoundingClientRect();
-                const sectionMiddle = box.top + box.height / 2;
-                const shift = (screenMiddle - sectionMiddle) * 0.2;
-                layer.style.transform = 'translate3d(0, ' + shift + 'px, 0)';
-            });
-            ticking = false;
-        }
-
-        if (!reduceMotion) {
-            window.addEventListener('scroll', function () {
-                if (!ticking) {
-                    requestAnimationFrame(moveLayers);
-                    ticking = true;
-                }
-            }, { passive: true });
-            window.addEventListener('resize', moveLayers);
-            moveLayers();
-        }
     </script>
 
 </body>
