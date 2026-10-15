@@ -4,216 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Make A Way Foundation</title>
-    <meta name="description" content="Make A Way Foundation supports children, teens, and adults with special needs and their families across North Alabama.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,600&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- Font Awesome: provides the Facebook and Instagram icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
-    <style>
-        * {
-            box-sizing: border-box;
-        }
 
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Public+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Icons (Facebook, Instagram, etc.) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        /* ===== General ===== */
         body {
             margin: 0;
-            background-color: #faf6ee;
-            color: #23241f;
             font-family: "Public Sans", Arial, sans-serif;
+            color: #23241f;
+            background-color: #faf6ee;
             line-height: 1.6;
-            font-size: 1.05rem;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
         }
 
         h1, h2, h3 {
             font-family: "Fraunces", Georgia, serif;
-            line-height: 1.15;
+            line-height: 1.2;
         }
 
-        a:focus-visible,
-        button:focus-visible {
-            outline: 3px solid #e2a33d;
-            outline-offset: 3px;
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        /* ---------- Top bar: social icons ---------- */
-        .topbar {
-            background-color: #123b3b;
-            display: flex;
-            justify-content: flex-end;
-            padding: 6px 20px;
+        .section {
+            padding: 70px 0;
         }
 
-        .social {
-            display: flex;
-            gap: 8px;
-        }
-
-        .social a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            color: white;
-            font-size: 1.15rem;
-            text-decoration: none;
-        }
-
-        .social a:hover {
-            background-color: rgba(255, 255, 255, 0.18);
-        }
-
-        /* ---------- Header: logo + menu (stays at the top) ---------- */
-        .site-header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background-color: white;
-            border-bottom: 1px solid #e3ddcd;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px 24px;
-        }
-
-        .logo {
-            height: 90px;
-            width: auto;
-            display: block;
-        }
-
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            gap: 4px;
-        }
-
-        nav a {
-            display: block;
-            color: #23241f;
-            text-decoration: none;
-            font-weight: 700;
-            padding: 10px 14px;
-        }
-
-        nav a:hover,
-        nav a.active {
-            color: #c4502f;
-        }
-
-        .menu-btn {
-            display: none;
-            background: none;
-            border: 2px solid #123b3b;
-            color: #123b3b;
-            font: 700 1rem "Public Sans", Arial, sans-serif;
-            padding: 8px 16px;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-
-        /* ---------- Parallax sections ----------
-           The photo stays still while the page scrolls over it.
-           clip-path + position: fixed makes this work on iPhones too
-           (the usual background-attachment: fixed does not). */
-        .parallax {
-            position: relative;
-            clip-path: inset(0);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .section-title {
             text-align: center;
-            color: white;
-            background-color: #123b3b; /* shows if a photo is missing */
+            color: #1f5c5c;
+            font-size: 40px;
+            margin-top: 0;
         }
 
-        .parallax-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background-size: cover;
-            background-position: center;
-            z-index: -1;
+        .section-intro {
+            text-align: center;
+            color: #4d4f47;
+            max-width: 600px;
+            margin: 0 auto 40px auto;
+            font-size: 18px;
         }
 
-        /* Dark tint so the text is easy to read */
-        .parallax::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-color: rgba(18, 59, 59, 0.6);
-            z-index: 0;
-        }
-
-        .parallax-content {
-            position: relative;
-            z-index: 1;
-            max-width: 720px;
-            padding: 80px 24px;
-        }
-
-        .hero {
-            min-height: calc(100vh - 150px);
-        }
-
-        .band {
-            min-height: 65vh;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.2rem, 6vw, 3.8rem);
-            margin: 0 0 16px;
-        }
-
-        .parallax h2 {
-            font-size: clamp(1.9rem, 5vw, 3rem);
-            margin: 0 0 14px;
-        }
-
-        .parallax p {
-            font-size: clamp(1.1rem, 2.4vw, 1.3rem);
-            margin: 0 0 28px;
-        }
-
-        /* Scripture quote */
-        blockquote {
-            margin: 0;
-        }
-
-        blockquote p {
-            font-family: "Fraunces", Georgia, serif;
-            font-style: italic;
-            font-size: clamp(1.5rem, 4vw, 2.3rem) !important;
-            line-height: 1.3;
-            margin: 0 0 18px !important;
-        }
-
-        blockquote cite {
-            font-style: normal;
-            font-weight: 700;
-            letter-spacing: 0.02em;
-        }
-
-        /* ---------- Buttons ---------- */
+        /* ===== Buttons ===== */
         .btn {
             display: inline-block;
             background-color: #d9613f;
             color: white;
             padding: 14px 28px;
-            border-radius: 6px;
+            border-radius: 30px;
             text-decoration: none;
-            font-weight: 700;
-            margin: 6px;
+            font-weight: bold;
+            margin: 5px;
         }
 
         .btn:hover {
@@ -226,241 +72,431 @@
             border: 2px solid white;
         }
 
-        /* ---------- Plain content sections (scroll over the photos) ---------- */
-        .main {
-            position: relative;
-            background-color: #faf6ee;
-            padding: 80px 20px;
+        /* ===== Top bar ===== */
+        .topbar {
+            background-color: #123b3b;
+            text-align: right;
+            padding: 8px 20px;
         }
 
-        .main-inner {
-            max-width: 1100px;
-            margin: 0 auto;
+        .topbar a {
+            color: white;
+            font-size: 20px;
+            margin-left: 15px;
         }
 
-        .section-title {
-            text-align: center;
+        /* ===== Header ===== */
+        .header {
+            background-color: white;
+            border-bottom: 1px solid #e3ddcd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            height: 80px;
+        }
+
+        .nav a {
+            color: #23241f;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+        .nav a:hover,
+        .nav a.active {
+            color: #d9613f;
+        }
+
+        .nav .donate {
+            background-color: #d9613f;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+        }
+
+        .menu-button {
+            display: none;
+            background-color: white;
+            border: 2px solid #123b3b;
+            padding: 8px 14px;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        /* ===== Hero ===== */
+        .hero {
+            background: linear-gradient(rgba(18, 59, 59, 0.75), rgba(18, 59, 59, 0.75)),
+                        url("{{ asset('images/home/hero.jpg') }}");
+            background-color: #1f5c5c;
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 150px 20px;
+        }
+
+        .hero h1 {
+            font-size: 54px;
+            max-width: 650px;
+            margin-top: 0;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 550px;
+            margin-bottom: 30px;
+        }
+
+        /* ===== Who We Are ===== */
+        .who {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .who img {
+            width: 50%;
+            border-radius: 20px;
+        }
+
+        .who h2 {
             color: #1f5c5c;
-            font-size: clamp(1.8rem, 4vw, 2.4rem);
-            margin: 0 0 12px;
+            font-size: 40px;
+            margin-top: 0;
         }
 
-        .section-intro {
-            text-align: center;
-            color: #4d4f47;
-            max-width: 660px;
-            margin: 0 auto 40px;
+        .who li {
+            margin-bottom: 10px;
+        }
+
+        .who .fa-check {
+            color: #1f5c5c;
+            margin-right: 8px;
+        }
+
+        .link {
+            color: #c4502f;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* ===== Impact ===== */
+        .impact {
+            background-color: white;
         }
 
         .cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            display: flex;
+            gap: 25px;
         }
 
         .card {
-            background-color: white;
-            border-top: 5px solid #e2a33d;
-            border-radius: 8px;
-            padding: 28px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            flex: 1;
+            background-color: #faf6ee;
+            border-radius: 20px;
+            overflow: hidden;
+            text-align: center;
+            padding-bottom: 25px;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card .icon {
+            font-size: 36px;
+            color: #d9613f;
+            margin-top: 15px;
         }
 
         .card h3 {
             color: #1f5c5c;
-            margin-top: 0;
+            font-size: 24px;
+            margin: 10px 0;
         }
 
         .card p {
-            color: #4d4f47;
-        }
-
-        .card a {
-            color: #c4502f;
-            font-weight: 700;
-            text-decoration: none;
-        }
-
-        .programs {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 0 40px;
-        }
-
-        .program {
-            padding: 20px 0;
-            border-top: 1px solid #e3ddcd;
-        }
-
-        .program h3 {
-            color: #1f5c5c;
-            margin: 0 0 6px;
-            font-size: 1.3rem;
-        }
-
-        .program p {
+            padding: 0 20px;
             margin: 0;
             color: #4d4f47;
         }
 
-        .center {
+        /* ===== How You Can Help (parallax) ===== */
+        .help {
+            background: linear-gradient(rgba(18, 59, 59, 0.8), rgba(18, 59, 59, 0.8)),
+                        url("{{ asset('images/home/help.jpg') }}");
+            background-color: #123b3b;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
             text-align: center;
-            margin-top: 36px;
+            padding: 120px 20px;
         }
 
-        /* Contact section */
-        .contact {
+        .help h2 {
+            font-size: 44px;
+            margin-top: 0;
+        }
+
+        .help p {
+            font-size: 19px;
+            max-width: 700px;
+            margin: 0 auto 15px auto;
+        }
+
+        /* ===== Testimonials ===== */
+        .testimonials {
+            background-color: #e2a33d;
+            text-align: center;
+        }
+
+        .slide {
+            display: none;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .slide p {
+            font-family: "Fraunces", Georgia, serif;
+            font-size: 30px;
+            margin-top: 0;
+        }
+
+        .slide .name {
+            font-family: "Public Sans", Arial, sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            color: #123b3b;
+        }
+
+        .arrow {
+            background-color: transparent;
+            border: 2px solid #123b3b;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+
+        .arrow:hover {
+            background-color: #123b3b;
+            color: white;
+        }
+
+        /* ===== Events ===== */
+        .events {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .event {
+            width: 300px;
             background-color: white;
-            text-align: center;
-        }
-
-        .contact-list {
+            border-radius: 15px;
+            padding: 20px;
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 16px 48px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 24px;
+            gap: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
         }
 
-        .contact-list a {
+        .season {
+            background-color: #1f5c5c;
+            color: white;
+            border-radius: 10px;
+            width: 90px;
+            min-width: 90px;
+            text-align: center;
+            padding: 12px 5px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .season i {
+            display: block;
+            font-size: 24px;
+            color: #e2a33d;
+            margin-bottom: 6px;
+        }
+
+        .event h3 {
             color: #1f5c5c;
-            text-decoration: none;
+            margin: 0 0 5px 0;
         }
 
-        .contact-list i {
-            color: #d9613f;
-            margin-right: 8px;
+        .event p {
+            margin: 0;
+            color: #4d4f47;
         }
 
-        .contact .social {
-            justify-content: center;
+        /* ===== Scrolling photos ===== */
+        .photo-strip {
+            overflow: hidden;
+            background-color: white;
+            padding: 25px 0;
         }
 
-        .contact .social a {
-            background-color: #123b3b;
-            width: 48px;
-            height: 48px;
-            font-size: 1.3rem;
-        }
-
-        .contact .social a:hover {
-            background-color: #d9613f;
-        }
-
-        /* ---------- Footer ---------- */
-        footer {
-            position: relative;
-            background-color: #123b3b;
-            color: white;
-            padding: 30px 20px;
-            text-align: center;
-        }
-
-        .footer-nav {
-            list-style: none;
-            margin: 0 0 14px;
-            padding: 0;
+        .photo-track {
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 6px 22px;
+            gap: 15px;
+            width: max-content;
+            animation: scroll 40s linear infinite;
         }
 
-        .footer-nav a {
+        .photo-track img {
+            height: 200px;
+            border-radius: 15px;
+        }
+
+        .photo-strip:hover .photo-track {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background-color: #123b3b;
             color: white;
-            text-decoration: none;
-            font-weight: 600;
+            padding: 50px 20px 20px 20px;
         }
 
-        .footer-nav a:hover {
-            text-decoration: underline;
+        .footer-columns {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        footer h3 {
+            color: #e2a33d;
+        }
+
+        footer a {
+            color: white;
+        }
+
+        .footer-social a {
+            font-size: 24px;
+            margin-right: 15px;
         }
 
         .copyright {
-            margin: 0;
-            font-size: 0.9rem;
-            opacity: 0.85;
+            text-align: center;
+            border-top: 1px solid #2f5555;
+            margin-top: 30px;
+            padding-top: 15px;
+            font-size: 14px;
         }
 
-        /* ---------- Tablets ---------- */
-        @media (max-width: 900px) {
-            .cards {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* ---------- Phones ---------- */
-        @media (max-width: 760px) {
-            .topbar {
-                padding: 4px 12px;
-            }
-
-            .site-header {
-                padding: 8px 16px;
-            }
-
+        /* ===== Phones ===== */
+        @media (max-width: 800px) {
             .logo {
-                height: 60px;
+                height: 55px;
             }
 
-            .menu-btn {
+            .menu-button {
                 display: block;
             }
 
-            nav ul {
+            .nav {
                 display: none;
                 position: absolute;
                 top: 100%;
                 left: 0;
                 right: 0;
-                flex-direction: column;
                 background-color: white;
-                border-bottom: 1px solid #e3ddcd;
-                padding: 8px 16px 16px;
-                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+                padding: 10px 20px;
             }
 
-            nav ul.open {
-                display: flex;
+            .nav.open {
+                display: block;
             }
 
-            nav a {
-                padding: 14px 8px;
-                border-bottom: 1px solid #f0ebe0;
+            .nav a {
+                display: block;
+                padding: 12px 0;
+                margin: 0;
+                border-bottom: 1px solid #eeeeee;
+            }
+
+            .nav .donate {
+                text-align: center;
+                margin-top: 10px;
             }
 
             .hero {
-                min-height: 80vh;
+                padding: 90px 20px;
+                text-align: center;
             }
 
-            .band {
-                min-height: 55vh;
+            .hero h1 {
+                font-size: 36px;
             }
 
-            .parallax-content {
-                padding: 60px 20px;
+            .hero p {
+                font-size: 18px;
             }
 
             .btn {
                 display: block;
+                max-width: 260px;
                 margin: 10px auto;
-                max-width: 280px;
+                text-align: center;
             }
 
-            .main {
-                padding: 56px 18px;
+            .section-title,
+            .who h2,
+            .help h2 {
+                font-size: 32px;
             }
 
-            .programs {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-list {
+            .who,
+            .cards,
+            .footer-columns {
                 flex-direction: column;
-                gap: 12px;
-                font-size: 1.1rem;
+            }
+
+            .who img {
+                width: 100%;
+            }
+
+            .help {
+                background-attachment: scroll;
+                padding: 80px 20px;
+            }
+
+            .slide p {
+                font-size: 22px;
+            }
+
+            .event {
+                width: 100%;
+            }
+
+            .photo-track img {
+                height: 140px;
+            }
+
+            footer {
+                text-align: center;
             }
         }
     </style>
@@ -469,180 +505,289 @@
 
     <!-- Top bar with social media icons -->
     <div class="topbar">
-        <span class="social">
-            <a href="https://www.facebook.com/foundationmakeaway" target="_blank" rel="noopener" aria-label="Make A Way Foundation on Facebook">
-                <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
-            </a>
-            <a href="https://www.instagram.com/makeaway.foundation/" target="_blank" rel="noopener" aria-label="Make A Way Foundation on Instagram">
-                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-            </a>
-        </span>
+        <a href="https://www.facebook.com/FoundationMakeAWay" target="_blank" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/makeaway.foundation/" target="_blank" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
     </div>
 
-    <!-- Logo + menu -->
-    <header class="site-header">
+    <!-- Header with logo and menu -->
+    <div class="header">
         <a href="/">
-            <img src="{{ asset('images/logo.png') }}" alt="Make A Way Foundation home" class="logo">
+            <img src="{{ asset('images/logo.png') }}" alt="Make A Way Foundation logo" class="logo">
         </a>
-        <nav aria-label="Main menu">
-            <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
-            <ul id="menu">
-                <li><a href="/" class="active" aria-current="page">Home</a></li>
-                <li><a href="/mission">Mission</a></li>
-                <li><a href="/history">History</a></li>
-                <li><a href="/what-we-offer">What We Offer</a></li>
-                <li><a href="/get-involved">Get Involved</a></li>
-            </ul>
+
+        <button class="menu-button" onclick="toggleMenu()">Menu</button>
+
+        <nav class="nav" id="nav">
+            <a href="/" class="active">Home</a>
+            <a href="/mission">Mission</a>
+            <a href="/history">History</a>
+            <a href="/what-we-offer">What We Offer</a>
+            <a href="/get-involved">Get Involved</a>
+            <a href="/get-involved" class="donate">Donate</a>
         </nav>
-    </header>
+    </div>
 
-    <main>
+    <!-- Hero -->
+    <div class="hero">
+        <div class="container">
+            <h1>Opening doors for special needs individuals and their families</h1>
+            <p>Empowering individuals with special needs through inclusion, community programs, sensory resources, and year-round support.</p>
+            <a href="#who-we-are" class="btn">Learn More</a>
+            <a href="/get-involved" class="btn btn-outline">Support the Mission</a>
+        </div>
+    </div>
 
-        <!-- Parallax 1: Hero (photo stays still while the page scrolls) -->
-        <section class="parallax hero">
-            <div class="parallax-bg" style="background-image: url('{{ asset('images/hero.jpg') }}');"></div>
-            <div class="parallax-content">
-                <h1>Making a Way for Everyone</h1>
-                <p>We open doors for children, teens, and adults with special needs and support the families who love them.</p>
-                <a href="/get-involved" class="btn">Get Involved</a>
-                <a href="/mission" class="btn btn-outline">Our Mission</a>
+    <!-- Who We Are -->
+    <div class="section" id="who-we-are">
+        <div class="container who">
+            <img src="{{ asset('images/home/who-we-are.jpg') }}" alt="Families at a Make A Way Foundation event">
+            <div>
+                <h2>Who We Are</h2>
+                <p>Make A Way Foundation is a 501(c)(3) nonprofit serving Athens and Limestone County.</p>
+                <p>We partner with schools, churches, and community organizations to create inclusive environments for individuals with special needs.</p>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i>Sensory rooms in all 21 Athens &amp; Limestone County schools (31 total spaces)</li>
+                    <li><i class="fa-solid fa-check"></i>Community programs, family events, adult socials, and STEM &amp; sports initiatives</li>
+                    <li><i class="fa-solid fa-check"></i>Training, advocacy, and sensory-friendly services, including free haircuts</li>
+                </ul>
+                <a href="/mission" class="link">About Us →</a>
             </div>
-        </section>
+        </div>
+    </div>
 
-        <!-- Our mission -->
-        <section class="main">
-            <div class="main-inner">
-                <h2 class="section-title">Our Mission</h2>
-                <p class="section-intro">
-                    Founded in 2019, Make A Way Foundation is a 501(c)(3) nonprofit. We work with school systems and churches across North Alabama to open doors for children, teens, and adults with special needs.
-                </p>
+    <!-- Our Impact -->
+    <div class="section impact">
+        <div class="container">
+            <h2 class="section-title">Our Impact</h2>
+            <p class="section-intro">Every room, event, and resource helps people with special needs learn, play, and belong.</p>
 
-                <div class="cards">
-                    <div class="card">
-                        <h3>Our Mission</h3>
-                        <p>Providing resources for groups of two or more people with special needs in learning and recreational settings.</p>
-                        <a href="/mission">Learn more →</a>
+            <div class="cards">
+                <div class="card">
+                    <img src="{{ asset('images/home/impact-rooms.jpg') }}" alt="A school sensory room">
+                    <div class="icon"><i class="fa-solid fa-school"></i></div>
+                    <h3>31 Sensory Rooms</h3>
+                    <p>Supporting K–12 students with calming and regulation tools.</p>
+                </div>
+
+                <div class="card">
+                    <img src="{{ asset('images/home/impact-events.jpg') }}" alt="Families at an inclusive community event">
+                    <div class="icon"><i class="fa-solid fa-calendar-check"></i></div>
+                    <h3>Dozens of Inclusive Events</h3>
+                    <p>Pool nights, Easter events, carnivals, fall festivals, and more.</p>
+                </div>
+
+                <div class="card">
+                    <img src="{{ asset('images/home/impact-families.jpg') }}" alt="Parents and children together">
+                    <div class="icon"><i class="fa-solid fa-people-roof"></i></div>
+                    <h3>Support for Families</h3>
+                    <p>Parent fellowship, resources, training, and sensory-friendly services.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- How You Can Help -->
+    <div class="help">
+        <h2>How You Can Help</h2>
+        <p>Your support creates accessible opportunities for children, families, and adults with special needs.</p>
+        <p>Whether you donate, volunteer, or partner with us, you become part of creating a community where everyone belongs in Athens and Limestone County.</p>
+        <br>
+        <a href="/get-involved" class="btn">Support Make A Way →</a>
+    </div>
+
+    <!-- Testimonials (slider) -->
+    <div class="section testimonials">
+        <div class="container">
+            <div class="slide">
+                <p>"My daughter has been through so much lately... I haven't seen her having fun like that in a while!"</p>
+                <span class="name">— Fall Festival Parent</span>
+            </div>
+
+            <div class="slide">
+                <p>"Thank you for making haircuts so much less stressful for our sweet girl."</p>
+                <span class="name">— Sensory Haircuts Parent</span>
+            </div>
+
+            <div class="slide">
+                <p>"Best Santa, best volunteers, best activities — best ever!"</p>
+                <span class="name">— Christmas Event Parent</span>
+            </div>
+
+            <br>
+            <button class="arrow" onclick="changeSlide(-1)" aria-label="Previous">&#10094;</button>
+            <button class="arrow" onclick="changeSlide(1)" aria-label="Next">&#10095;</button>
+        </div>
+    </div>
+
+    <!-- Upcoming Events -->
+    <div class="section">
+        <div class="container">
+            <h2 class="section-title">Upcoming Events</h2>
+            <p class="section-intro">Inclusive, sensory-friendly fun all year long. Everyone is welcome.</p>
+
+            <div class="events">
+                <div class="event">
+                    <div class="season"><i class="fa-solid fa-egg"></i>Spring</div>
+                    <div>
+                        <h3>Eggceptional Easter</h3>
+                        <p>An egg hunt and spring fun designed so every child can join in.</p>
                     </div>
-                    <div class="card">
-                        <h3>Our History</h3>
-                        <p>From one family's experience to a nonprofit serving our whole community.</p>
-                        <a href="/history">Read our story →</a>
+                </div>
+
+                <div class="event">
+                    <div class="season"><i class="fa-solid fa-person-swimming"></i>Summer</div>
+                    <div>
+                        <h3>Inclusive Swim Nights</h3>
+                        <p>Evening pool time where families with special needs can swim together.</p>
                     </div>
-                    <div class="card">
-                        <h3>Get Involved</h3>
-                        <p>Volunteer, donate, or partner with us to reach more people and families.</p>
-                        <a href="/get-involved">Join us →</a>
+                </div>
+
+                <div class="event">
+                    <div class="season"><i class="fa-solid fa-ticket"></i>Late Summer</div>
+                    <div>
+                        <h3>Night at the Carnival</h3>
+                        <p>Carnival games, treats, and activities at a pace that works for everyone.</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="season"><i class="fa-solid fa-leaf"></i>Fall</div>
+                    <div>
+                        <h3>Autumn Adventure</h3>
+                        <p>A fall festival with crafts, games, and a hayride for the whole family.</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="season"><i class="fa-solid fa-gifts"></i>December</div>
+                    <div>
+                        <h3>Santa Spotting</h3>
+                        <p>A calm, welcoming visit with Santa without the long lines.</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="season"><i class="fa-solid fa-film"></i>Year-Round</div>
+                    <div>
+                        <h3>Sensory-Friendly Movie Days</h3>
+                        <p>Softer sound, lights up, and moving around is always welcome.</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="season"><i class="fa-solid fa-basketball"></i>Year-Round</div>
+                    <div>
+                        <h3>Adaptive Sports</h3>
+                        <p>Sports adapted so people of all abilities can get in the game.</p>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Parallax 2: Scripture -->
-        <!-- Add a photo named community.jpg to public/images (shows teal until then) -->
-        <section class="parallax band">
-            <div class="parallax-bg" style="background-image: url('{{ asset('images/community.jpg') }}');"></div>
-            <div class="parallax-content">
-                <blockquote>
-                    <p>"I will praise thee; for I am fearfully and wonderfully made: marvellous are thy works; and that my soul knoweth right well."</p>
-                    <cite>Psalm 139:14</cite>
-                </blockquote>
+            <div style="text-align: center;">
+                <a href="/what-we-offer" class="btn">View All Events →</a>
             </div>
-        </section>
+        </div>
+    </div>
 
-        <!-- What we do -->
-        <section class="main">
-            <div class="main-inner">
-                <h2 class="section-title">What We Do</h2>
-                <p class="section-intro">Our programs support people with special needs at school, at home, and out in the community.</p>
+    <!-- Scrolling photos -->
+    <!-- The photos are listed twice so the scrolling loops smoothly -->
+    <div class="photo-strip">
+        <div class="photo-track">
+            <img src="{{ asset('images/scroll/scroll-1.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/scroll-2.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/scroll-3.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/scroll-4.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/scroll-5.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/scroll-6.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/scroll-7.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/scroll-8.jpg') }}" alt="Make A Way event photo">
 
-                <div class="programs">
-                    <div class="program">
-                        <h3>Community events</h3>
-                        <p>Fall festivals, holiday celebrations, and Touch-a-Truck days designed so everyone can join in.</p>
-                    </div>
-                    <div class="program">
-                        <h3>Support for families</h3>
-                        <p>Training, resources, and a community of people who understand what you're going through.</p>
-                    </div>
-                    <div class="program">
-                        <h3>Sensory-friendly haircuts</h3>
-                        <p>A calmer, more comfortable haircut experience at no cost to families.</p>
-                    </div>
-                    <div class="program">
-                        <h3>Calming spaces</h3>
-                        <p>Sensory rooms in local schools and churches where students can take a break and reset.</p>
-                    </div>
-                    <div class="program">
-                        <h3>Help for schools and teachers</h3>
-                        <p>Training and written resources for special education staff and our local library.</p>
-                    </div>
-                    <div class="program">
-                        <h3>Community partnerships</h3>
-                        <p>We work with churches, civic clubs, and the United Way to reach more people.</p>
-                    </div>
-                </div>
-
-                <p class="center"><a href="/what-we-offer" class="btn">See Everything We Offer</a></p>
-            </div>
-        </section>
-
-        <!-- Parallax 3: Call to action -->
-        <!-- Add a photo named events.jpg to public/images (shows teal until then) -->
-        <section class="parallax band">
-            <div class="parallax-bg" style="background-image: url('{{ asset('images/events.jpg') }}');"></div>
-            <div class="parallax-content">
-                <h2>Help us make a way.</h2>
-                <p>Your time and donations bring new programs and events to people with special needs in our community.</p>
-                <a href="/get-involved" class="btn">Donate</a>
-                <a href="/get-involved" class="btn btn-outline">Volunteer</a>
-            </div>
-        </section>
-
-        <!-- Contact -->
-        <section class="main contact">
-            <div class="main-inner">
-                <h2 class="section-title">We would love to hear from you.</h2>
-                <p class="section-intro">Questions, ideas, or want to partner with us? Reach out anytime.</p>
-
-                <div class="contact-list">
-                    <a href="tel:+12564341762"><i class="fa-solid fa-phone" aria-hidden="true"></i>256-434-1762</a>
-                    <a href="mailto:info@foundationmakeaway.org"><i class="fa-solid fa-envelope" aria-hidden="true"></i>info@foundationmakeaway.org</a>
-                </div>
-
-                <div class="social">
-                    <a href="https://www.facebook.com/foundationmakeaway" target="_blank" rel="noopener" aria-label="Make A Way Foundation on Facebook">
-                        <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
-                    </a>
-                    <a href="https://www.instagram.com/makeaway.foundation/" target="_blank" rel="noopener" aria-label="Make A Way Foundation on Instagram">
-                        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-    </main>
+            <!-- Same photos again -->
+            <img src="{{ asset('images/scroll/scroll-1.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/scroll-2.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/scroll-3.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/scroll-4.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/scroll-5.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/scroll-6.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/scroll-7.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/scroll-8.jpg') }}" alt="">
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer>
-        <ul class="footer-nav">
-            <li><a href="/">Home</a></li>
-            <li><a href="/mission">Mission</a></li>
-            <li><a href="/history">History</a></li>
-            <li><a href="/what-we-offer">What We Offer</a></li>
-            <li><a href="/get-involved">Get Involved</a></li>
-        </ul>
-        <p class="copyright">© {{ date('Y') }} Make A Way Foundation · 501(c)(3) Nonprofit</p>
+        <div class="footer-columns">
+            <div>
+                <h3>Make A Way Foundation</h3>
+                <p>A 501(c)(3) nonprofit serving individuals with special needs and their families in Athens and Limestone County.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/FoundationMakeAWay" target="_blank" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/makeaway.foundation/" target="_blank" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h3>Pages</h3>
+                <p><a href="/mission">Mission</a></p>
+                <p><a href="/history">History</a></p>
+                <p><a href="/what-we-offer">What We Offer</a></p>
+                <p><a href="/get-involved">Get Involved</a></p>
+            </div>
+
+            <div>
+                <h3>Contact Us</h3>
+                <p><a href="tel:2564341762">256-434-1762</a></p>
+                <p><a href="mailto:info@foundationmakeaway.org">info@foundationmakeaway.org</a></p>
+                <p>PO Box 1768<br>Athens, AL 35612</p>
+            </div>
+        </div>
+
+        <p class="copyright">© {{ date('Y') }} Make A Way Foundation. All rights reserved.</p>
     </footer>
 
     <script>
-        // Phone menu: open and close
-        const menuBtn = document.querySelector('.menu-btn');
-        const menu = document.getElementById('menu');
-        menuBtn.addEventListener('click', function () {
-            const isOpen = menu.classList.toggle('open');
-            menuBtn.setAttribute('aria-expanded', isOpen);
-            menuBtn.textContent = isOpen ? 'Close' : 'Menu';
-        });
+        // Open and close the menu on phones
+        function toggleMenu() {
+            document.getElementById("nav").classList.toggle("open");
+        }
+
+        // Testimonial slider
+        let slideIndex = 0;
+        let slides = document.getElementsByClassName("slide");
+
+        function showSlide() {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex].style.display = "block";
+        }
+
+        function changeSlide(step) {
+            slideIndex = slideIndex + step;
+
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            }
+            if (slideIndex < 0) {
+                slideIndex = slides.length - 1;
+            }
+
+            showSlide();
+        }
+
+        // Show the first slide, then switch every 6 seconds
+        showSlide();
+        setInterval(function () {
+            changeSlide(1);
+        }, 6000);
     </script>
 
 </body>
