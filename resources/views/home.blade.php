@@ -132,7 +132,7 @@
 
         /* ===== Hero ===== */
         .hero {
-            background: linear-gradient(rgba(18, 59, 59, 0.75), rgba(18, 59, 59, 0.75)),
+                        background: linear-gradient(rgba(18, 59, 59, 0.4), rgba(18, 59, 59, 0.4)),), rgba(18, 59, 59, 0.75)),
                         url("{{ asset('images/home/hero.jpg') }}");
             background-color: #1f5c5c;
             background-size: cover;
@@ -353,7 +353,7 @@
             display: flex;
             gap: 15px;
             width: max-content;
-            animation: scroll 40s linear infinite;
+            animation: scroll 90s linear infinite;
         }
 
         .photo-track img {
@@ -692,29 +692,52 @@
             </div>
         </div>
     </div>
-
-    <!-- Scrolling photos -->
+        <!-- Scrolling photos -->
     <!-- The photos are listed twice so the scrolling loops smoothly -->
     <div class="photo-strip">
         <div class="photo-track">
-            <img src="{{ asset('images/scroll/scroll-1.jpg') }}" alt="Make A Way event photo">
-            <img src="{{ asset('images/scroll/scroll-2.jpg') }}" alt="Make A Way event photo">
-            <img src="{{ asset('images/scroll/scroll-3.jpg') }}" alt="Make A Way event photo">
-            <img src="{{ asset('images/scroll/scroll-4.jpg') }}" alt="Make A Way event photo">
-            <img src="{{ asset('images/scroll/scroll-5.jpg') }}" alt="Make A Way event photo">
-            <img src="{{ asset('images/scroll/scroll-6.jpg') }}" alt="Make A Way event photo">
-            <img src="{{ asset('images/scroll/scroll-7.jpg') }}" alt="Make A Way event photo">
-            <img src="{{ asset('images/scroll/scroll-8.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-1.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-2.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-3.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-4.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-5.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-6.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-7.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-8.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-9.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-10.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-11.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-12.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-13.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-14.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-15.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-16.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-17.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-18.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-19.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-20.jpg') }}" alt="Make A Way event photo">
 
             <!-- Same photos again -->
-            <img src="{{ asset('images/scroll/scroll-1.jpg') }}" alt="">
-            <img src="{{ asset('images/scroll/scroll-2.jpg') }}" alt="">
-            <img src="{{ asset('images/scroll/scroll-3.jpg') }}" alt="">
-            <img src="{{ asset('images/scroll/scroll-4.jpg') }}" alt="">
-            <img src="{{ asset('images/scroll/scroll-5.jpg') }}" alt="">
-            <img src="{{ asset('images/scroll/scroll-6.jpg') }}" alt="">
-            <img src="{{ asset('images/scroll/scroll-7.jpg') }}" alt="">
-            <img src="{{ asset('images/scroll/scroll-8.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-1.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-2.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-3.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-4.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-5.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-6.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-7.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-8.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-9.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-10.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-11.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-12.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-13.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-14.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-15.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-16.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-17.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-18.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-19.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-20.jpg') }}" alt="">
         </div>
     </div>
 
