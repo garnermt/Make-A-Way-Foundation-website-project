@@ -632,3 +632,245 @@
     <!-- How You Can Help -->
     <div class="help">
         <h2>How You Can Help</h2>
+        <p>Your support creates accessible opportunities for children, families, and adults with special needs.</p>
+        <p>Whether you donate, volunteer, or partner with us, you become part of creating a community where everyone belongs in Athens and Limestone County.</p>
+        <br>
+        <a href="/get-involved" class="btn">Support Make A Way →</a>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="section testimonials">
+        <div class="container">
+            <div class="slide">
+                <p>"My daughter has been through so much lately... I haven't seen her having fun like that in a while!"</p>
+                <span class="name">— Fall Festival Parent</span>
+            </div>
+
+            <div class="slide">
+                <p>"Thank you for making haircuts so much less stressful for our sweet girl."</p>
+                <span class="name">— Sensory Haircuts Parent</span>
+            </div>
+
+            <div class="slide">
+                <p>"Best Santa, best volunteers, best activities — best ever!"</p>
+                <span class="name">— Christmas Event Parent</span>
+            </div>
+
+            <br>
+            <button class="arrow" onclick="changeSlide(-1)" aria-label="Previous">&#10094;</button>
+            <button class="arrow" onclick="changeSlide(1)" aria-label="Next">&#10095;</button>
+        </div>
+    </div>
+
+    <!-- Upcoming Events -->
+    <div class="section">
+        <div class="container">
+            <h2 class="section-title">Upcoming Events</h2>
+            <p class="section-intro">Inclusive, sensory-friendly fun all year long. Everyone is welcome.</p>
+
+            <div class="events">
+                <div class="event">
+                    <div class="season"><i class="fa-solid fa-egg"></i>Spring</div>
+                    <div>
+                        <h3>Eggceptional Easter</h3>
+                        <p>An egg hunt and spring fun designed so every child can join in.</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="season"><i class="fa-solid fa-person-swimming"></i>Summer</div>
+                    <div>
+                        <h3>Inclusive Swim Nights</h3>
+                        <p>Evening pool time where families with special needs can swim together.</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="season"><i class="fa-solid fa-ticket"></i>Late Summer</div>
+                    <div>
+                        <h3>Night at the Carnival</h3>
+                        <p>Carnival games, treats, and activities at a pace that works for everyone.</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="season"><i class="fa-solid fa-leaf"></i>Fall</div>
+                    <div>
+                        <h3>Autumn Adventure</h3>
+                        <p>A fall festival with crafts, games, and a hayride for the whole family.</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="season"><i class="fa-solid fa-gifts"></i>December</div>
+                    <div>
+                        <h3>Santa Spotting</h3>
+                        <p>A calm, welcoming visit with Santa without the long lines.</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="season"><i class="fa-solid fa-film"></i>Year-Round</div>
+                    <div>
+                        <h3>Sensory-Friendly Movie Days</h3>
+                        <p>Softer sound, lights up, and moving around is always welcome.</p>
+                    </div>
+                </div>
+
+                <div class="event">
+                    <div class="season"><i class="fa-solid fa-basketball"></i>Year-Round</div>
+                    <div>
+                        <h3>Adaptive Sports</h3>
+                        <p>Sports adapted so people of all abilities can get in the game.</p>
+                    </div>
+                </div>
+                
+                <div class="event">
+                    <div class="season"><i class="fa-solid fa-scissors"></i>Year-Round</div>
+                    <div>
+                        <h3>Sensory-Friendly Haircuts</h3>
+                        <p>Free haircuts in a calm, patient setting, at no cost to families.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <a href="/what-we-offer" class="btn">View All Events →</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Photo strip -->
+    <div class="photo-strip">
+        <div class="photo-track">
+            <img src="{{ asset('images/scroll/MWF-1.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-2.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-3.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-4.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-5.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-6.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-7.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-8.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-9.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-10.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-11.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-12.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-13.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-14.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-15.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-16.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-17.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-18.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-19.jpg') }}" alt="Make A Way event photo">
+            <img src="{{ asset('images/scroll/MWF-20.jpg') }}" alt="Make A Way event photo">
+
+            <img src="{{ asset('images/scroll/MWF-1.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-2.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-3.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-4.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-5.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-6.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-7.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-8.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-9.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-10.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-11.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-12.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-13.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-14.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-15.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-16.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-17.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-18.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-19.jpg') }}" alt="">
+            <img src="{{ asset('images/scroll/MWF-20.jpg') }}" alt="">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-columns">
+            <div>
+                <h3>Make A Way Foundation</h3>
+                <p>A 501(c)(3) nonprofit serving individuals with special needs and their families in Athens and Limestone County.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/FoundationMakeAWay" target="_blank" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/makeaway.foundation/" target="_blank" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h3>Pages</h3>
+                <p><a href="/mission">Mission</a></p>
+                <p><a href="/history">History</a></p>
+                <p><a href="/what-we-offer">What We Offer</a></p>
+                <p><a href="/get-involved">Get Involved</a></p>
+            </div>
+
+            <div>
+                <h3>Contact Us</h3>
+                <p><a href="mailto:info@foundationmakeaway.org">info@foundationmakeaway.org</a></p>
+                <p>PO Box 1768<br>Athens, AL 35612</p>
+            </div>
+        </div>
+
+        <p class="copyright">© {{ date('Y') }} Make A Way Foundation. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Menu
+        function toggleMenu() {
+            document.getElementById("nav").classList.toggle("open");
+        }
+
+        // Hero slideshow
+        let heroIndex = 0;
+        let heroPhotos = document.getElementsByClassName("hero-photo");
+
+        setInterval(function () {
+            heroPhotos[heroIndex].classList.remove("show");
+
+            heroIndex = heroIndex + 1;
+            if (heroIndex >= heroPhotos.length) {
+                heroIndex = 0;
+            }
+
+            heroPhotos[heroIndex].classList.add("show");
+        }, 5000);
+
+        // Testimonial slider
+        let slideIndex = 0;
+        let slides = document.getElementsByClassName("slide");
+
+        function showSlide() {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[slideIndex].style.display = "block";
+        }
+
+        function changeSlide(step) {
+            slideIndex = slideIndex + step;
+
+            if (slideIndex >= slides.length) {
+                slideIndex = 0;
+            }
+            if (slideIndex < 0) {
+                slideIndex = slides.length - 1;
+            }
+
+            showSlide();
+        }
+
+        showSlide();
+        setInterval(function () {
+            changeSlide(1);
+        }, 6000);
+    </script>
+
+</body>
+</html>
