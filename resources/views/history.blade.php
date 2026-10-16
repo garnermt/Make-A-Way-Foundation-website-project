@@ -4,509 +4,618 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our History | Make A Way Foundation</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Public+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Public+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
     <style>
-        :root {
-            --bg: #faf6ee;
-            --card: #ffffff;
-            --ink: #23241f;
-            --ink-soft: #4d4f47;
-            --teal: #1f5c5c;
-            --teal-deep: #123b3b;
-            --gold: #e2a33d;
-            --coral: #d9613f;
-            --line: #e3ddcd;
-            --shadow: 0 20px 40px rgba(18, 59, 59, 0.15);
-            --font-display: "Fraunces", Georgia, serif;
-            --font-body: "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        }
-
-        * { box-sizing: border-box; }
-
+        /* ===== General ===== */
         body {
             margin: 0;
-            background: var(--bg);
-            color: var(--ink);
-            font-family: var(--font-body);
+            font-family: "Public Sans", Arial, sans-serif;
+            color: #23241f;
+            background-color: #faf6ee;
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
-        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-
-        /* Top bar */
-        .topbar {
-            background: var(--teal-deep);
-            color: #fff;
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 24px;
-            font-weight: 600;
-        }
-        .topbar a { color: #fff; text-decoration: none; margin-left: 20px; }
-
-        /* Logo */
-        .logo-bar {
-            background: var(--card);
-            text-align: center;
-            padding: 20px 16px 4px;
-        }
-        .logo { height: 300px; width: auto; max-width: 100%; }
-
-        /* Menu */
-        nav {
-            background: var(--card);
-            border-bottom: 1px solid var(--line);
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 28px;
-            padding: 16px;
-        }
-        nav a { color: var(--ink); text-decoration: none; font-weight: 600; }
-        nav a:hover, nav a.active { color: var(--coral); }
-
-        /* Banner */
-        .page-banner {
-            background: var(--teal);
-            color: #fff;
-            text-align: center;
-            padding: 80px 24px 160px;
-        }
-        .page-banner h1 {
-            font-family: var(--font-display);
-            font-size: clamp(2.4rem, 6vw, 4rem);
-            margin: 0 0 12px;
-        }
-        .page-banner p { max-width: 640px; margin: 0 auto; font-size: 1.15rem; }
-
-        /* 12-column grid */
-        .grid-12 {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 24px;
+        h1, h2, h3 {
+            font-family: "Fraunces", Georgia, serif;
+            line-height: 1.2;
         }
 
-        /* Story card overlaps the banner, photo breaks out to the right */
-        .story-wrap {
-            margin-top: -110px;
-            position: relative;
-            z-index: 2;
-            align-items: center;
-        }
-        .story-card {
-            grid-column: 1 / 8;
-            grid-row: 1;
-            position: relative;
-            z-index: 2;
-            background: var(--card);
-            border-left: 8px solid var(--gold);
-            border-radius: 12px;
-            padding: 40px;
-            box-shadow: var(--shadow);
-        }
-        .story-card h2 {
-            font-family: var(--font-display);
-            color: var(--teal);
-            font-size: 2rem;
-            margin: 0 0 16px;
-        }
-        .story-card p { color: var(--ink-soft); margin: 0 0 14px; }
-        .story-card p:last-child { margin-bottom: 0; }
-
-        .story-photo {
-            grid-column: 7 / 13;
-            grid-row: 1;
-            position: relative;
-            margin-right: -80px;
-            margin-top: 140px;
-            isolation: isolate;
-        }
-        .story-photo img {
-            display: block;
-            width: 100%;
-            height: 420px;
-            object-fit: cover;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-        }
-        .story-photo::before {
-            content: "";
-            position: absolute;
-            top: -28px;
-            right: -28px;
-            width: 55%;
-            height: 60%;
-            background: var(--gold);
-            border-radius: 12px;
-            z-index: -1;
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        /* Timeline */
-        .timeline-section { margin-top: 120px; }
+        .section {
+            padding: 70px 0;
+        }
+
         .section-title {
-            font-family: var(--font-display);
-            color: var(--teal);
             text-align: center;
-            font-size: clamp(2rem, 4vw, 2.6rem);
-            margin: 0 0 56px;
+            color: #1f5c5c;
+            font-size: 40px;
+            margin-top: 0;
         }
-        .timeline {
-            position: relative;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        .timeline::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            width: 4px;
-            background: var(--gold);
-            border-radius: 4px;
-            transform: translateX(-50%);
-        }
-        .milestone {
-            position: relative;
-            width: 50%;
-            padding: 0 48px 56px 0;
-        }
-        .milestone:nth-child(even) {
-            margin-left: 50%;
-            padding: 0 0 56px 48px;
-        }
-        .milestone::after {
-            content: "";
-            position: absolute;
-            top: 30px;
-            right: -13px;
-            width: 26px;
-            height: 26px;
-            border-radius: 50%;
-            background: var(--coral);
-            border: 5px solid var(--bg);
-        }
-        .milestone:nth-child(even)::after {
-            right: auto;
-            left: -13px;
-        }
-        .milestone-card {
-            background: var(--card);
-            border: 1px solid var(--line);
-            border-top: 6px solid var(--teal);
-            border-radius: 12px;
-            padding: 28px;
-            box-shadow: var(--shadow);
-        }
-        .milestone:nth-child(even) .milestone-card { border-top-color: var(--coral); }
-        .milestone-label {
-            display: inline-block;
-            background: var(--teal);
-            color: #fff;
-            font-size: 0.85rem;
-            font-weight: 600;
-            padding: 4px 14px;
-            border-radius: 999px;
-            margin-bottom: 12px;
-        }
-        .milestone-card h3 {
-            font-family: var(--font-display);
-            color: var(--teal);
-            font-size: 1.4rem;
-            margin: 0 0 8px;
-        }
-        .milestone-card p { color: var(--ink-soft); margin: 0; }
 
-        /* Photo pair: large photo breaks left, small photo overlaps it */
-        .moments { margin-top: 64px; }
-        .photo-duo { align-items: start; }
-        .duo-large {
-            grid-column: 1 / 8;
-            grid-row: 1;
-            margin-left: -80px;
-            position: relative;
-            isolation: isolate;
-        }
-        .duo-large::before {
-            content: "";
-            position: absolute;
-            top: -28px;
-            left: -28px;
-            width: 50%;
-            height: 55%;
-            background: var(--coral);
-            border-radius: 12px;
-            z-index: -1;
-        }
-        .duo-large img {
-            display: block;
-            width: 100%;
-            height: 440px;
-            object-fit: cover;
-            border-radius: 12px;
-            box-shadow: var(--shadow);
-        }
-        .duo-small {
-            grid-column: 6 / 11;
-            grid-row: 1;
-            margin-top: 240px;
-            position: relative;
-            z-index: 2;
-        }
-        .duo-small img {
-            display: block;
-            width: 100%;
-            height: 320px;
-            object-fit: cover;
-            border-radius: 12px;
-            border: 8px solid var(--bg);
-            box-shadow: var(--shadow);
-        }
-        .duo-caption {
-            grid-column: 9 / 13;
-            grid-row: 1;
-            align-self: start;
-            position: relative;
-            z-index: 3;
-            background: var(--teal);
-            color: #fff;
-            border-radius: 12px;
-            padding: 28px;
-            box-shadow: var(--shadow);
-        }
-        .duo-caption h3 {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            margin: 0 0 8px;
-        }
-        .duo-caption p { margin: 0; }
-
-        /* Slanted quote band */
-        .quote-band {
-            background: var(--coral);
-            color: #fff;
+        .section-intro {
             text-align: center;
-            padding: 110px 24px 150px;
-            margin-top: 120px;
-            clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
-        }
-        .quote-band blockquote {
-            font-family: var(--font-display);
-            font-size: clamp(1.6rem, 3.6vw, 2.5rem);
-            line-height: 1.3;
-            max-width: 820px;
-            margin: 0 auto;
+            color: #4d4f47;
+            max-width: 650px;
+            margin: 0 auto 50px auto;
+            font-size: 18px;
         }
 
-        /* Call to action overlaps the quote band */
-        .cta {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
-            margin: -90px auto 0;
-            background: var(--teal-deep);
-            color: #fff;
-            text-align: center;
-            border-radius: 16px;
-            padding: 48px 24px;
-            box-shadow: var(--shadow);
-        }
-        .cta h2 { font-family: var(--font-display); font-size: 2rem; margin: 0 0 12px; }
-        .cta p { max-width: 560px; margin: 0 auto 24px; }
-
+        /* ===== Buttons ===== */
         .btn {
             display: inline-block;
-            background: var(--coral);
-            color: #fff;
+            background-color: #d9613f;
+            color: white;
             padding: 14px 28px;
-            border-radius: 6px;
+            border-radius: 30px;
             text-decoration: none;
-            font-weight: 600;
-            margin: 6px;
+            font-weight: bold;
+            margin: 5px;
         }
-        .btn:hover { background: var(--gold); color: var(--ink); }
-        .btn-outline { background: transparent; border: 2px solid #fff; }
-        .btn-outline:hover { background: #fff; color: var(--teal-deep); }
 
-        footer {
-            background: var(--teal-deep);
-            color: #fff;
+        .btn:hover {
+            background-color: #e2a33d;
+            color: #23241f;
+        }
+
+        /* ===== Top bar ===== */
+        .topbar {
+            background-color: #123b3b;
+            text-align: right;
+            padding: 8px 20px;
+        }
+
+        .topbar a {
+            color: white;
+            font-size: 20px;
+            margin-left: 15px;
+        }
+
+        /* ===== Header ===== */
+        .header {
+            background-color: white;
+            border-bottom: 1px solid #e3ddcd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            height: 80px;
+        }
+
+        .nav a {
+            color: #23241f;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+        .nav a:hover,
+        .nav a.active {
+            color: #d9613f;
+        }
+
+        .nav .donate {
+            background-color: #d9613f;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+        }
+
+        .menu-button {
+            display: none;
+            background-color: white;
+            border: 2px solid #123b3b;
+            padding: 8px 14px;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        /* ===== Page banner ===== */
+        .banner {
+            background: linear-gradient(rgba(18, 59, 59, 0.55), rgba(18, 59, 59, 0.55)),
+                        url("{{ asset('images/scroll/MWF-14.jpg') }}");
+            background-color: #1f5c5c;
+            background-size: cover;
+            background-position: center 10%;
+            background-attachment: fixed;
+            color: white;
             text-align: center;
-            padding: 24px;
-            margin-top: 80px;
+            padding: 130px 20px;
         }
 
-        /* Phones and small screens */
-        @media (max-width: 860px) {
-            .story-card,
-            .story-photo,
-            .duo-large,
-            .duo-small,
-            .duo-caption {
-                grid-column: 1 / -1;
-                grid-row: auto;
-                margin-left: 0;
-                margin-right: 0;
-                margin-top: 0;
-            }
-            .story-card { padding: 28px; }
-            .story-photo img { height: 280px; }
-            .story-photo::before { top: -14px; right: -14px; }
+        .banner h1 {
+            font-size: 52px;
+            margin: 0 0 15px 0;
+        }
 
-            .timeline-section { margin-top: 72px; }
-            .timeline::before { left: 13px; transform: none; }
-            .milestone,
-            .milestone:nth-child(even) {
-                width: 100%;
-                margin-left: 0;
-                padding: 0 0 40px 48px;
+        .banner p {
+            font-size: 20px;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        /* ===== Our story ===== */
+        .story {
+            background-color: white;
+        }
+
+        .story-row {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .story-row img {
+            width: 45%;
+            height: 400px;
+            object-fit: cover;
+            object-position: center 25%;
+            border-radius: 20px;
+        }
+
+        .story-row h2 {
+            color: #1f5c5c;
+            font-size: 40px;
+            margin-top: 0;
+        }
+
+        .story-row p {
+            color: #4d4f47;
+            font-size: 17px;
+        }
+
+        /* ===== Timeline ===== */
+        .timeline {
+            max-width: 750px;
+            margin: 0 auto;
+            border-left: 4px solid #e2a33d;
+            padding-left: 35px;
+        }
+
+        .step {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .step::before {
+            content: "";
+            position: absolute;
+            left: -47px;
+            top: 6px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #d9613f;
+            border: 4px solid #faf6ee;
+        }
+
+        .step .when {
+            font-weight: bold;
+            color: #d9613f;
+            font-size: 15px;
+        }
+
+        .step h3 {
+            color: #1f5c5c;
+            font-size: 26px;
+            margin: 5px 0 8px 0;
+        }
+
+        .step p {
+            color: #4d4f47;
+            margin: 0;
+        }
+
+        /* ===== Photo band ===== */
+        .photo-band {
+            height: 400px;
+            background-size: cover;
+            background-position: center 20%;
+            background-attachment: fixed;
+        }
+
+        /* ===== Today ===== */
+        .today {
+            background-color: white;
+        }
+
+        .programs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .program {
+            width: 300px;
+            background-color: #faf6ee;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .program i {
+            font-size: 34px;
+            color: #d9613f;
+        }
+
+        .program h3 {
+            color: #1f5c5c;
+            margin: 12px 0 8px 0;
+        }
+
+        .program p {
+            color: #4d4f47;
+            margin: 0;
+        }
+
+        /* ===== Call to action ===== */
+        .cta {
+            background-color: #e2a33d;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 40px;
+            color: #123b3b;
+            margin-top: 0;
+        }
+
+        .cta p {
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto 25px auto;
+        }
+
+        .cta .btn-dark {
+            background-color: #123b3b;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background-color: #123b3b;
+            color: white;
+            padding: 50px 20px 20px 20px;
+        }
+
+        .footer-columns {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        footer h3 {
+            color: #e2a33d;
+        }
+
+        footer a {
+            color: white;
+        }
+
+        .footer-social a {
+            font-size: 24px;
+            margin-right: 15px;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #2f5555;
+            margin-top: 30px;
+            padding-top: 15px;
+            font-size: 14px;
+        }
+
+        /* ===== Phones ===== */
+        @media (max-width: 800px) {
+            .logo {
+                height: 55px;
             }
-            .milestone::after,
-            .milestone:nth-child(even)::after {
+
+            .menu-button {
+                display: block;
+            }
+
+            .nav {
+                display: none;
+                position: absolute;
+                top: 100%;
                 left: 0;
-                right: auto;
+                right: 0;
+                background-color: white;
+                padding: 10px 20px;
             }
 
-            .duo-large img { height: 280px; }
-            .duo-large::before { top: -14px; left: -14px; }
-            .duo-small { margin: -48px 0 0 40px; }
-            .duo-small img { height: 220px; }
-            .quote-band { margin-top: 72px; }
-            .logo { height: 160px; }
+            .nav.open {
+                display: block;
+            }
+
+            .nav a {
+                display: block;
+                padding: 12px 0;
+                margin: 0;
+                border-bottom: 1px solid #eeeeee;
+            }
+
+            .nav .donate {
+                text-align: center;
+                margin-top: 10px;
+            }
+
+            .banner {
+                padding: 80px 20px;
+                background-attachment: scroll;
+            }
+
+            .banner h1 {
+                font-size: 36px;
+            }
+
+            .banner p {
+                font-size: 18px;
+            }
+
+            .section-title,
+            .story-row h2,
+            .cta h2 {
+                font-size: 32px;
+            }
+
+            .story-row,
+            .footer-columns {
+                flex-direction: column;
+            }
+
+            .story-row {
+                gap: 25px;
+            }
+
+            .story-row img {
+                width: 100%;
+                height: 260px;
+            }
+
+            .timeline {
+                padding-left: 25px;
+            }
+
+            .step::before {
+                left: -37px;
+            }
+
+            .step h3 {
+                font-size: 22px;
+            }
+
+            .photo-band {
+                height: 250px;
+                background-attachment: scroll;
+            }
+
+            .program {
+                width: 100%;
+            }
+
+            .btn {
+                display: block;
+                max-width: 260px;
+                margin: 10px auto;
+                text-align: center;
+            }
+
+            footer {
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
 
+    <!-- Top bar -->
     <div class="topbar">
-        <span>📞 256-434-1768</span>
-        <span>
-            <a href="https://www.facebook.com/foundationmakeaway" target="_blank" rel="noopener">Facebook</a>
-            <a href="https://www.instagram.com/makeaway.foundation/" target="_blank" rel="noopener">Instagram</a>
-        </span>
-    </div>
-
-    <div class="logo-bar">
-        <a href="/">
-            <img src="{{ asset('images/logo.png') }}" alt="Make A Way Foundation logo" class="logo">
+        <a href="https://www.facebook.com/FoundationMakeAWay" target="_blank" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/makeaway.foundation/" target="_blank" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
         </a>
     </div>
 
-    <nav>
-        <a href="/">Home</a>
-        <a href="/mission">Mission</a>
-        <a href="/history" class="active">History</a>
-        <a href="/what-we-offer">What We Offer</a>
-        <a href="/get-involved">Get Involved</a>
-    </nav>
+    <!-- Header -->
+    <div class="header">
+        <a href="/">
+            <img src="{{ asset('images/logo.png') }}" alt="Make A Way Foundation logo" class="logo">
+        </a>
 
-    <section class="page-banner">
+        <button class="menu-button" onclick="toggleMenu()">Menu</button>
+
+        <nav class="nav" id="nav">
+            <a href="/">Home</a>
+            <a href="/mission">Mission</a>
+            <a href="/history" class="active">History</a>
+            <a href="/what-we-offer">What We Offer</a>
+            <a href="/get-involved">Get Involved</a>
+            <a href="/get-involved" class="donate">Donate</a>
+        </nav>
+    </div>
+
+    <!-- Banner -->
+    <div class="banner">
         <h1>Our History</h1>
-        <p>How one family's journey became a way forward for students across our community.</p>
-    </section>
+        <p>How one family's love for their son grew into a foundation that serves our whole community.</p>
+    </div>
 
-    <!-- Story card overlapping the banner, photo breaking out -->
-    <section class="container">
-        <div class="grid-12 story-wrap">
-            <div class="story-card">
-                <h2>Where It Started</h2>
-                <p>Make A Way Foundation began with a family who saw firsthand how hard a typical classroom can be for a child with autism and sensory needs.</p>
-                <p>They saw how much a calm, sensory-friendly space could help, and wanted every student who needed one to have it.</p>
-                <p>What started as one family's mission has grown into a community effort to bring sensory rooms to local schools.</p>
-            </div>
-            <div class="story-photo">
-                <img src="{{ asset('images/history-photo.jpg') }}" alt="Make A Way Foundation story">
+    <!-- Our story -->
+    <div class="section story">
+        <div class="container story-row">
+            <img src="{{ asset('images/scroll/MWF-2.jpg') }}" alt="A family at a Make A Way Foundation event">
+            <div>
+                <h2>Our Story</h2>
+                <p>Make A Way Foundation was started by Kevin and Stacey Givens. Before it was ever a nonprofit, they spent years raising money on their own to help children with autism, including their own son.</p>
+                <p>They saw how much a little support could change a child's day. Other families noticed too, and the community began to get involved.</p>
+                <p>What started as one family helping where they could has grown into a foundation that brings people together through events, programs, and support all year long.</p>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Timeline -->
-    <section class="container timeline-section">
-        <h2 class="section-title">Our Journey</h2>
+    <div class="section">
+        <div class="container">
+            <h2 class="section-title">How We Grew</h2>
+            <p class="section-intro">A few of the milestones along the way.</p>
 
-        <div class="timeline">
-            <div class="milestone">
-                <div class="milestone-card">
-                    <span class="milestone-label">The Beginning</span>
-                    <h3>A Family's Why</h3>
-                    <p>A family's experience with autism sparked the idea that students deserve spaces built for how they learn.</p>
+            <div class="timeline">
+                <div class="step">
+                    <span class="when">The Beginning</span>
+                    <h3>A family steps up</h3>
+                    <p>Kevin and Stacey Givens raise money on their own to support children with autism in Athens.</p>
                 </div>
-            </div>
 
-            <div class="milestone">
-                <div class="milestone-card">
-                    <span class="milestone-label">First Step</span>
-                    <h3>The First Sensory Room</h3>
-                    <p>The first sensory room opened in a local school, giving students a place to reset and return to learning.</p>
+                <div class="step">
+                    <span class="when">First Steps</span>
+                    <h3>Help at school</h3>
+                    <p>The first calming space opens at Brookhill Elementary, where their son was a student. Other students start using it too.</p>
                 </div>
-            </div>
 
-            <div class="milestone">
-                <div class="milestone-card">
-                    <span class="milestone-label">Growing</span>
-                    <h3>More Schools, More Students</h3>
-                    <p>As schools saw the difference, more asked for sensory rooms, and the work expanded across the community.</p>
+                <div class="step">
+                    <span class="when">2019</span>
+                    <h3>Make A Way Foundation is founded</h3>
+                    <p>With support from local donors and civic clubs, the foundation becomes an official 501(c)(3) nonprofit.</p>
                 </div>
-            </div>
 
-            <div class="milestone">
-                <div class="milestone-card">
-                    <span class="milestone-label">Official</span>
-                    <h3>Becoming a 501(c)(3)</h3>
-                    <p>The foundation became a registered nonprofit, allowing it to accept tax-deductible donations and reach more students.</p>
+                <div class="step">
+                    <span class="when">Growing</span>
+                    <h3>Events for the whole community</h3>
+                    <p>The foundation begins hosting sensory-friendly events like fall festivals, Touch-a-Truck, and holiday celebrations, plus free sensory-friendly haircuts.</p>
                 </div>
-            </div>
 
-            <div class="milestone">
-                <div class="milestone-card">
-                    <span class="milestone-label">Today</span>
-                    <h3>Looking Ahead</h3>
-                    <p>With the help of volunteers, donors, and school partners, we're working to make a way for even more students.</p>
+                <div class="step">
+                    <span class="when">2023</span>
+                    <h3>United Way partner agency</h3>
+                    <p>Make A Way becomes a partner agency of the United Way of Athens-Limestone County.</p>
+                </div>
+
+                <div class="step">
+                    <span class="when">Today</span>
+                    <h3>Serving all of Athens and Limestone County</h3>
+                    <p>Family events, adult socials, sports, STEM, training for families, and calming spaces in all 21 local schools.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Photo pair -->
-    <section class="container moments">
-        <h2 class="section-title">Moments Along the Way</h2>
-        <div class="grid-12 photo-duo">
-            <div class="duo-large">
-                <img src="{{ asset('images/history-photo-2.jpg') }}" alt="A Make A Way Foundation moment">
-            </div>
-            <div class="duo-small">
-                <img src="{{ asset('images/history-photo-3.jpg') }}" alt="Another Make A Way Foundation moment">
-            </div>
-            <div class="duo-caption">
-                <h3>Built Together</h3>
-                <p>Every room is the work of families, teachers, and volunteers who believe students deserve a calm place to learn.</p>
+    <!-- Photo band -->
+    <div class="photo-band" role="img" aria-label="Make A Way event photo" style="background-image: url('{{ asset('images/scroll/MWF-17.jpg') }}');"></div>
+
+    <!-- Today -->
+    <div class="section today">
+        <div class="container">
+            <h2 class="section-title">Where We Are Today</h2>
+            <p class="section-intro">Our work keeps growing with the needs of the families we serve.</p>
+
+            <div class="programs">
+                <div class="program">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <h3>Family Events</h3>
+                    <p>Easter, carnival night, fall festival, swim nights, and Santa Spotting.</p>
+                </div>
+
+                <div class="program">
+                    <i class="fa-solid fa-people-group"></i>
+                    <h3>Adult Socials</h3>
+                    <p>Crafts, karaoke, dancing, food, and friendship.</p>
+                </div>
+
+                <div class="program">
+                    <i class="fa-solid fa-basketball"></i>
+                    <h3>Sports &amp; STEM</h3>
+                    <p>Adaptive sports and hands-on learning for every ability.</p>
+                </div>
+
+                <div class="program">
+                    <i class="fa-solid fa-scissors"></i>
+                    <h3>Sensory-Friendly Services</h3>
+                    <p>Free haircuts and calmer movie days and holiday visits.</p>
+                </div>
+
+                <div class="program">
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                    <h3>Training &amp; Advocacy</h3>
+                    <p>Resources and training for parents, teachers, and caregivers.</p>
+                </div>
+
+                <div class="program">
+                    <i class="fa-solid fa-school"></i>
+                    <h3>Calming Spaces</h3>
+                    <p>Sensory rooms in all 21 Athens and Limestone County schools.</p>
+                </div>
             </div>
         </div>
-    </section>
-
-    <!-- Slanted quote band -->
-    <section class="quote-band">
-        <blockquote>
-            "When you make a way for one child, you make a way for every child who comes after."
-        </blockquote>
-    </section>
+    </div>
 
     <!-- Call to action -->
-    <section class="container">
-        <div class="cta">
+    <div class="section cta">
+        <div class="container">
             <h2>Be Part of What's Next</h2>
-            <p>Every sensory room starts with people who care. Help us write the next chapter.</p>
+            <p>Every volunteer, donor, and partner helps us make a way for more families in Athens and Limestone County.</p>
+            <a href="/what-we-offer" class="btn btn-dark">See Our Events</a>
             <a href="/get-involved" class="btn">Get Involved</a>
-            <a href="/mission" class="btn btn-outline">Our Mission</a>
         </div>
-    </section>
+    </div>
 
+    <!-- Footer -->
     <footer>
-        © {{ date('Y') }} Make A Way Foundation · 501(c)(3) Nonprofit
+        <div class="footer-columns">
+            <div>
+                <h3>Make A Way Foundation</h3>
+                <p>A 501(c)(3) nonprofit serving individuals with special needs and their families in Athens and Limestone County.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/FoundationMakeAWay" target="_blank" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/makeaway.foundation/" target="_blank" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h3>Pages</h3>
+                <p><a href="/mission">Mission</a></p>
+                <p><a href="/history">History</a></p>
+                <p><a href="/what-we-offer">What We Offer</a></p>
+                <p><a href="/get-involved">Get Involved</a></p>
+            </div>
+
+            <div>
+                <h3>Contact Us</h3>
+                <p><a href="mailto:info@foundationmakeaway.org">info@foundationmakeaway.org</a></p>
+                <p>PO Box 1768<br>Athens, AL 35612</p>
+            </div>
+        </div>
+
+        <p class="copyright">© {{ date('Y') }} Make A Way Foundation. All rights reserved.</p>
     </footer>
 
+    <script>
+        // Menu
+        function toggleMenu() {
+            document.getElementById("nav").classList.toggle("open");
+        }
+    </script>
+
 </body>
-</html>
