@@ -279,7 +279,13 @@
             max-width: 700px;
             margin: 0 auto 15px auto;
         }
-
+        /* ===== Photo bands ===== */
+        .photo-band {
+            height: 400px;
+            background-size: cover;
+            background-position: center 20%;
+            background-attachment: fixed;
+        }
         /* ===== Testimonials ===== */
         .testimonials {
             background-color: #e2a33d;
@@ -513,7 +519,10 @@
                 background-attachment: scroll;
                 padding: 80px 20px;
             }
-
+            .photo-band {
+                height: 250px;
+                background-attachment: scroll;
+            }
             .slide p {
                 font-size: 22px;
             }
@@ -597,7 +606,7 @@
             </div>
         </div>
     </div>
-
+    <div class="photo-band" role="img" aria-label="Make A Way event photo" style="background-image: url('{{ asset('images/scroll/MWF-12.jpg') }}');"></div>
     <!-- Our Impact -->
     <div class="section impact">
         <div class="container">
@@ -661,7 +670,7 @@
             <button class="arrow" onclick="changeSlide(1)" aria-label="Next">&#10095;</button>
         </div>
     </div>
-
+    <div class="photo-band" role="img" aria-label="Make A Way event photo" style="background-image: url('{{ asset('images/scroll/MWF-15.jpg') }}');"></div>
     <!-- Upcoming Events -->
     <div class="section">
         <div class="container">
