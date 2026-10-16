@@ -279,6 +279,7 @@
             max-width: 700px;
             margin: 0 auto 15px auto;
         }
+
         /* ===== Photo bands ===== */
         .photo-band {
             height: 400px;
@@ -286,6 +287,7 @@
             background-position: center 20%;
             background-attachment: fixed;
         }
+
         /* ===== Testimonials ===== */
         .testimonials {
             background-color: #e2a33d;
@@ -348,21 +350,28 @@
 
         .season {
             background-color: #1f5c5c;
+            background-size: cover;
+            background-position: center 25%;
             color: white;
             border-radius: 10px;
-            width: 90px;
-            min-width: 90px;
+            width: 110px;
+            min-width: 110px;
+            min-height: 120px;
             text-align: center;
             padding: 12px 5px;
             font-size: 13px;
             font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
         }
 
         .season i {
             display: block;
-            font-size: 24px;
+            font-size: 22px;
             color: #e2a33d;
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
         .event h3 {
@@ -519,10 +528,12 @@
                 background-attachment: scroll;
                 padding: 80px 20px;
             }
+
             .photo-band {
                 height: 250px;
                 background-attachment: scroll;
             }
+
             .slide p {
                 font-size: 22px;
             }
@@ -606,7 +617,9 @@
             </div>
         </div>
     </div>
+
     <div class="photo-band" role="img" aria-label="Make A Way event photo" style="background-image: url('{{ asset('images/scroll/MWF-12.jpg') }}');"></div>
+
     <!-- Our Impact -->
     <div class="section impact">
         <div class="container">
@@ -670,7 +683,9 @@
             <button class="arrow" onclick="changeSlide(1)" aria-label="Next">&#10095;</button>
         </div>
     </div>
+
     <div class="photo-band" role="img" aria-label="Make A Way event photo" style="background-image: url('{{ asset('images/scroll/MWF-15.jpg') }}');"></div>
+
     <!-- Upcoming Events -->
     <div class="section">
         <div class="container">
@@ -679,7 +694,7 @@
 
             <div class="events">
                 <div class="event">
-                    <div class="season"><i class="fa-solid fa-egg"></i>Spring</div>
+                    <div class="season" style="background-image: linear-gradient(rgba(18, 59, 59, 0.45), rgba(18, 59, 59, 0.75)), url('{{ asset('images/home/impact-events.jpg') }}');"><i class="fa-solid fa-egg"></i>Spring</div>
                     <div>
                         <h3>Eggceptional Easter</h3>
                         <p>An egg hunt and spring fun designed so every child can join in.</p>
@@ -687,7 +702,7 @@
                 </div>
 
                 <div class="event">
-                    <div class="season"><i class="fa-solid fa-person-swimming"></i>Summer</div>
+                    <div class="season" style="background-image: linear-gradient(rgba(18, 59, 59, 0.45), rgba(18, 59, 59, 0.75)), url('{{ asset('images/home/help.jpg') }}');"><i class="fa-solid fa-person-swimming"></i>Summer</div>
                     <div>
                         <h3>Inclusive Swim Nights</h3>
                         <p>Evening pool time where families with special needs can swim together.</p>
@@ -695,7 +710,7 @@
                 </div>
 
                 <div class="event">
-                    <div class="season"><i class="fa-solid fa-ticket"></i>Late Summer</div>
+                    <div class="season" style="background-image: linear-gradient(rgba(18, 59, 59, 0.45), rgba(18, 59, 59, 0.75)), url('{{ asset('images/scroll/MWF-3.jpg') }}');"><i class="fa-solid fa-ticket"></i>Late Summer</div>
                     <div>
                         <h3>Night at the Carnival</h3>
                         <p>Carnival games, treats, and activities at a pace that works for everyone.</p>
@@ -703,7 +718,7 @@
                 </div>
 
                 <div class="event">
-                    <div class="season"><i class="fa-solid fa-leaf"></i>Fall</div>
+                    <div class="season" style="background-image: linear-gradient(rgba(18, 59, 59, 0.45), rgba(18, 59, 59, 0.75)), url('{{ asset('images/home/impact-rooms.jpg') }}');"><i class="fa-solid fa-leaf"></i>Fall</div>
                     <div>
                         <h3>Autumn Adventure</h3>
                         <p>A fall festival with crafts, games, and a hayride for the whole family.</p>
@@ -711,7 +726,7 @@
                 </div>
 
                 <div class="event">
-                    <div class="season"><i class="fa-solid fa-gifts"></i>December</div>
+                    <div class="season" style="background-image: linear-gradient(rgba(18, 59, 59, 0.45), rgba(18, 59, 59, 0.75)), url('{{ asset('images/scroll/MWF-21.jpg') }}');"><i class="fa-solid fa-gifts"></i>December</div>
                     <div>
                         <h3>Santa Spotting</h3>
                         <p>A calm, welcoming visit with Santa without the long lines.</p>
@@ -719,7 +734,7 @@
                 </div>
 
                 <div class="event">
-                    <div class="season"><i class="fa-solid fa-film"></i>Year-Round</div>
+                    <div class="season" style="background-image: linear-gradient(rgba(18, 59, 59, 0.45), rgba(18, 59, 59, 0.75)), url('{{ asset('images/scroll/MWF-22.jpg') }}');"><i class="fa-solid fa-film"></i>Year-Round</div>
                     <div>
                         <h3>Sensory-Friendly Movie Days</h3>
                         <p>Softer sound, lights up, and moving around is always welcome.</p>
@@ -727,15 +742,15 @@
                 </div>
 
                 <div class="event">
-                    <div class="season"><i class="fa-solid fa-basketball"></i>Year-Round</div>
+                    <div class="season" style="background-image: linear-gradient(rgba(18, 59, 59, 0.45), rgba(18, 59, 59, 0.75)), url('{{ asset('images/scroll/MWF-23.jpg') }}');"><i class="fa-solid fa-basketball"></i>Year-Round</div>
                     <div>
                         <h3>Adaptive Sports</h3>
                         <p>Sports adapted so people of all abilities can get in the game.</p>
                     </div>
                 </div>
-                
+
                 <div class="event">
-                    <div class="season"><i class="fa-solid fa-scissors"></i>Year-Round</div>
+                    <div class="season" style="background-image: linear-gradient(rgba(18, 59, 59, 0.45), rgba(18, 59, 59, 0.75)), url('{{ asset('images/scroll/MWF-9.jpg') }}');"><i class="fa-solid fa-scissors"></i>Year-Round</div>
                     <div>
                         <h3>Sensory-Friendly Haircuts</h3>
                         <p>Free haircuts in a calm, patient setting, at no cost to families.</p>
