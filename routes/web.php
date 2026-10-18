@@ -26,3 +26,6 @@ Route::get('/donate', function () {
 });Route::get('/donate', function () {
     return view('donate');
 });
+Route::get('/board', function () {
+    return view('board');
+});
