@@ -101,7 +101,7 @@
             cursor: pointer;
         }
 
-        /* ---------- Parallax (photo stays still, page scrolls over it) ---------- */
+        /* ---------- Parallax ---------- */
         .parallax {
             position: relative;
             clip-path: inset(0);
@@ -157,7 +157,6 @@
             margin: 0 0 24px;
         }
 
-        /* Adult socials tags */
         .tags {
             list-style: none;
             margin: 0;
@@ -216,7 +215,6 @@
             margin: 0 auto 40px;
         }
 
-        /* Family event cards */
         .events {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -225,10 +223,21 @@
 
         .event {
             background-color: white;
-            border-top: 5px solid #e2a33d;
             border-radius: 8px;
-            padding: 24px;
+            overflow: hidden;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .event img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 5 / 3;
+            object-fit: cover;
+            border-bottom: 5px solid #e2a33d;
+        }
+
+        .event-body {
+            padding: 20px 24px 24px;
         }
 
         .event h3 {
@@ -239,23 +248,49 @@
 
         .event p { margin: 0; color: #4d4f47; }
 
-        /* Photo gallery (teal squares show until photos are added) */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 12px;
+        .quote-cards {
+            display: flex;
+            gap: 20px;
             margin-top: 40px;
         }
 
-        .gallery div {
-            aspect-ratio: 4 / 3;
-            border-radius: 8px;
-            background-color: #1f5c5c;
-            background-size: cover;
-            background-position: center;
+        .quote-card {
+            flex: 1;
+            border-radius: 15px;
+            padding: 30px 25px;
+            color: white;
         }
 
-        /* Services list */
+        .quote-card.teal {
+            background-color: #1f5c5c;
+        }
+
+        .quote-card.coral {
+            background-color: #c4502f;
+        }
+
+        .quote-card.gold {
+            background-color: #e2a33d;
+            color: #23241f;
+        }
+
+        .quote-card i {
+            font-size: 30px;
+            opacity: 0.6;
+        }
+
+        .quote-card p {
+            font-family: "Fraunces", Georgia, serif;
+            font-size: 20px;
+            line-height: 1.4;
+            margin: 15px 0;
+        }
+
+        .quote-card span {
+            font-weight: bold;
+            font-size: 15px;
+        }
+
         .services {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -367,13 +402,13 @@
             .events,
             .services { grid-template-columns: 1fr; }
 
-            .gallery { grid-template-columns: 1fr 1fr; gap: 8px; }
+            .quote-cards { flex-direction: column; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Top bar with social media icons -->
+    <!-- Top bar -->
     <div class="topbar">
         <span class="social">
             <a href="https://www.facebook.com/foundationmakeaway" target="_blank" rel="noopener" aria-label="Make A Way Foundation on Facebook">
@@ -385,7 +420,7 @@
         </span>
     </div>
 
-    <!-- Logo + menu -->
+    <!-- Header -->
     <header class="site-header">
         <a href="/">
             <img src="{{ asset('images/logo.png') }}" alt="Make A Way Foundation home" class="logo">
@@ -405,9 +440,8 @@
     <main>
 
         <!-- Hero -->
-        <!-- Photo: public/images/events-hero.jpg -->
         <section class="parallax hero">
-            <div class="parallax-bg" style="background-image: url('{{ asset('images/events-hero.jpg') }}');"></div>
+            <div class="parallax-bg" style="background-image: url('{{ asset('images/scroll/MWF-13.jpg') }}');"></div>
             <div class="parallax-content">
                 <h1>Inclusive Events for Every Season</h1>
                 <p>Make A Way hosts family events, adult socials, sensory-friendly programs, sports, STEM opportunities, and more.</p>
@@ -420,56 +454,81 @@
         <section class="main" id="family-events">
             <div class="main-inner">
                 <h2 class="section-title">Family Events</h2>
-                <!-- REPLACE: intro copy from PDF page 13 -->
                 <p class="section-intro">Throughout the year, we host events where families can relax, have fun, and be themselves, with activities planned so every child can take part.</p>
 
-                <!-- REPLACE: each description with copy from PDF page 13 -->
                 <div class="events">
                     <div class="event">
-                        <h3>Eggceptional Easter</h3>
-                        <p>A spring celebration with an egg hunt designed so children of all abilities can join in.</p>
+                        <img src="{{ asset('images/home/impact-events.jpg') }}" alt="Easter bunny with families">
+                        <div class="event-body">
+                            <h3>Eggceptional Easter</h3>
+                            <p>A spring celebration with an egg hunt designed so children of all abilities can join in.</p>
+                        </div>
                     </div>
                     <div class="event">
-                        <h3>Autumn Adventure</h3>
-                        <p>A fall festival with crafts, games, and seasonal fun for the whole family.</p>
+                        <img src="{{ asset('images/home/impact-rooms.jpg') }}" alt="Hayride at the fall festival">
+                        <div class="event-body">
+                            <h3>Autumn Adventure</h3>
+                            <p>A fall festival with crafts, games, and seasonal fun for the whole family.</p>
+                        </div>
                     </div>
                     <div class="event">
-                        <h3>Night at the Carnival</h3>
-                        <p>Carnival games, treats, and activities at a pace that works for everyone.</p>
+                        <img src="{{ asset('images/scroll/MWF-24.jpg') }}" alt="Families at the carnival">
+                        <div class="event-body">
+                            <h3>Night at the Carnival</h3>
+                            <p>Carnival games, treats, and activities at a pace that works for everyone.</p>
+                        </div>
                     </div>
                     <div class="event">
-                        <h3>Santa Spotting</h3>
-                        <p>A calm, welcoming visit with Santa, without the long lines and crowds.</p>
+                        <img src="{{ asset('images/scroll/MWF-21.jpg') }}" alt="Child visiting Santa">
+                        <div class="event-body">
+                            <h3>Santa Spotting</h3>
+                            <p>A calm, welcoming visit with Santa, without the long lines and crowds.</p>
+                        </div>
                     </div>
                     <div class="event">
-                        <h3>Inclusive Pool Nights</h3>
-                        <p>Evening swim time where families with special needs can enjoy the pool together.</p>
+                        <img src="{{ asset('images/home/help.jpg') }}" alt="Kids swimming at the pool">
+                        <div class="event-body">
+                            <h3>Inclusive Pool Nights</h3>
+                            <p>Evening swim time where families with special needs can enjoy the pool together.</p>
+                        </div>
                     </div>
                     <div class="event">
-                        <h3>Sensory-Friendly Movie Days</h3>
-                        <p>Movies with softer sound and lights up, where moving around and talking are welcome.</p>
+                        <img src="{{ asset('images/scroll/MWF-22.jpg') }}" alt="Sensory-friendly movie day">
+                        <div class="event-body">
+                            <h3>Sensory-Friendly Movie Days</h3>
+                            <p>Movies with softer sound and lights up, where moving around and talking are welcome.</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Photo gallery from PDF page 14: save photos as event-1.jpg to event-6.jpg in public/images -->
-                <div class="gallery">
-                    <div role="img" aria-label="Family event photo 1" style="background-image: url('{{ asset('images/event-1.jpg') }}');"></div>
-                    <div role="img" aria-label="Family event photo 2" style="background-image: url('{{ asset('images/event-2.jpg') }}');"></div>
-                    <div role="img" aria-label="Family event photo 3" style="background-image: url('{{ asset('images/event-3.jpg') }}');"></div>
-                    <div role="img" aria-label="Family event photo 4" style="background-image: url('{{ asset('images/event-4.jpg') }}');"></div>
-                    <div role="img" aria-label="Family event photo 5" style="background-image: url('{{ asset('images/event-5.jpg') }}');"></div>
-                    <div role="img" aria-label="Family event photo 6" style="background-image: url('{{ asset('images/event-6.jpg') }}');"></div>
+                <!-- Parent quotes -->
+                <div class="quote-cards">
+                    <div class="quote-card teal">
+                        <i class="fa-solid fa-quote-left"></i>
+                        <p>"My daughter has been through so much lately... I haven't seen her having fun like that in a while!"</p>
+                        <span>— Fall Festival Parent</span>
+                    </div>
+
+                    <div class="quote-card coral">
+                        <i class="fa-solid fa-quote-left"></i>
+                        <p>"Thank you for making haircuts so much less stressful for our sweet girl."</p>
+                        <span>— Sensory Haircuts Parent</span>
+                    </div>
+
+                    <div class="quote-card gold">
+                        <i class="fa-solid fa-quote-left"></i>
+                        <p>"Best Santa, best volunteers, best activities — best ever!"</p>
+                        <span>— Christmas Event Parent</span>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Adult socials (parallax) -->
-        <!-- Photo: public/images/adult-socials.jpg -->
+        <!-- Adult socials -->
         <section class="parallax band">
-            <div class="parallax-bg" style="background-image: url('{{ asset('images/adult-socials.jpg') }}');"></div>
+            <div class="parallax-bg" style="background-image: url('{{ asset('images/scroll/MWF-8.jpg') }}');"></div>
             <div class="parallax-content">
                 <h2>Adult Socials</h2>
-                <!-- REPLACE: copy from PDF pages 15–16 -->
                 <p>Our adult socials are a place to have fun, meet new people, and build meaningful friendships.</p>
                 <ul class="tags">
                     <li>Crafts</li>
@@ -485,7 +544,6 @@
         <section class="main white">
             <div class="main-inner">
                 <h2 class="section-title">STEM, Sports &amp; Services</h2>
-                <!-- REPLACE: descriptions with copy from PDF pages 16–23 -->
                 <p class="section-intro">Programs and resources that support people with special needs and their families every day.</p>
 
                 <div class="services">
@@ -542,10 +600,9 @@
             </div>
         </section>
 
-        <!-- Call to action (parallax) -->
-        <!-- Photo: public/images/events.jpg -->
+        <!-- Call to action -->
         <section class="parallax band">
-            <div class="parallax-bg" style="background-image: url('{{ asset('images/events.jpg') }}');"></div>
+                        <div class="parallax-bg" style="background-image: url('{{ asset('images/scroll/MWF-19.jpg') }}'); background-position: center 20%;"></div>
             <div class="parallax-content">
                 <h2>Help keep these programs going.</h2>
                 <p>Volunteers and donations make every event and service possible.</p>
@@ -569,7 +626,7 @@
     </footer>
 
     <script>
-        // Phone menu: open and close
+        // Menu
         const menuBtn = document.querySelector('.menu-btn');
         const menu = document.getElementById('menu');
         menuBtn.addEventListener('click', function () {
