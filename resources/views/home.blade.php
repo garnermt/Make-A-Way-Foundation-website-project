@@ -710,7 +710,7 @@
                 </div>
 
                 <div class="event">
-                    <div class="season" style="background-image: linear-gradient(rgba(18, 59, 59, 0.45), rgba(18, 59, 59, 0.75)), url('{{ asset('images/scroll/MWF-3.jpg') }}');"><i class="fa-solid fa-ticket"></i>Late Summer</div>
+                    <div class="season" style="background-image: linear-gradient(rgba(18, 59, 59, 0.45), rgba(18, 59, 59, 0.75)), url('{{ asset('images/scroll/MWF-24.jpg') }}');"><i class="fa-solid fa-ticket"></i>Late Summer</div>
                     <div>
                         <h3>Night at the Carnival</h3>
                         <p>Carnival games, treats, and activities at a pace that works for everyone.</p>
