@@ -449,7 +449,7 @@
             <a href="/history" class="active">History</a>
             <a href="/what-we-offer">What We Offer</a>
             <a href="/get-involved">Get Involved</a>
-            <a href="/get-involved" class="donate">Donate</a>
+            <a href="/donate" class="donate">Donate</a>
         </nav>
     </div>
 

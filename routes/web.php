@@ -21,3 +21,8 @@ Route::get('/what-we-offer', function () {
 Route::get('/get-involved', function () {
     return view('get-involved');
 });
+Route::get('/donate', function () {
+    return view('donate');
+});Route::get('/donate', function () {
+    return view('donate');
+});

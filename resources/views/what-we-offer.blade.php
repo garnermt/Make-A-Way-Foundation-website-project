@@ -338,6 +338,42 @@
             vertical-align: middle;
         }
 
+        .flyer-row {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .flyer-row img {
+            width: 40%;
+            border-radius: 12px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+        }
+
+        .flyer-row h2 {
+            color: #1f5c5c;
+            font-size: clamp(1.8rem, 4vw, 2.4rem);
+            margin: 10px 0 15px 0;
+        }
+
+        .flyer-row p {
+            color: #4d4f47;
+        }
+
+        .flyer-row ul {
+            color: #4d4f47;
+            padding-left: 20px;
+        }
+
+        .flyer-row li {
+            margin-bottom: 6px;
+        }
+
+        .flyer-row .free,
+        .flyer-row .btn {
+            margin-left: 0;
+        }
+
         /* ---------- Footer ---------- */
         footer {
             position: relative;
@@ -403,6 +439,10 @@
             .services { grid-template-columns: 1fr; }
 
             .quote-cards { flex-direction: column; }
+
+            .flyer-row { flex-direction: column; gap: 25px; }
+
+            .flyer-row img { width: 100%; }
         }
     </style>
 </head>
@@ -600,9 +640,27 @@
             </div>
         </section>
 
+        <!-- Sensory-friendly haircuts -->
+        <section class="main" id="haircuts">
+            <div class="main-inner flyer-row">
+                <                               <img src="{{ asset('images/scroll/MWF-9.jpg') }}" alt="A child getting a sensory-friendly haircut" style="object-position: center top;">
+                <div>
+                    <span class="free">Free</span>
+                    <h2>Sensory-Friendly Haircuts</h2>
+                    <p>A haircut can be overwhelming for kids with sensory needs. Our sensory-friendly haircuts give families a calmer, more comfortable experience, at no cost.</p>
+                    <ul>
+                        <li>Patient stylists who take their time</li>
+                        <li>A quieter, low-stress setting</li>
+                        <li>Free for families</li>
+                    </ul>
+                    <a href="mailto:info@foundationmakeaway.org?subject=Sensory-Friendly%20Haircuts" class="btn">Ask About Haircuts</a>
+                </div>
+            </div>
+        </section>
+
         <!-- Call to action -->
         <section class="parallax band">
-                        <div class="parallax-bg" style="background-image: url('{{ asset('images/scroll/MWF-19.jpg') }}'); background-position: center 20%;"></div>
+            <div class="parallax-bg" style="background-image: url('{{ asset('images/scroll/MWF-19.jpg') }}'); background-position: center 20%;"></div>
             <div class="parallax-content">
                 <h2>Help keep these programs going.</h2>
                 <p>Volunteers and donations make every event and service possible.</p>
