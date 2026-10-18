@@ -210,6 +210,45 @@
             margin: 0;
         }
 
+        /* ===== Sponsors ===== */
+        .sponsors {
+            background-color: #faf6ee;
+        }
+
+        .sponsor-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .sponsor {
+            width: 200px;
+            background-color: white;
+            border: 2px solid #e3ddcd;
+            border-radius: 15px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+        .sponsor img {
+            width: 100%;
+            height: 120px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+
+        .sponsor h3 {
+            color: #1f5c5c;
+            font-family: "Public Sans", Arial, sans-serif;
+            font-size: 15px;
+            margin: 0;
+        }
+
         /* ===== Join us ===== */
         .join {
             background-color: #e2a33d;
@@ -331,7 +370,8 @@
                 flex-direction: column;
             }
 
-            .member {
+            .member,
+            .sponsor {
                 width: 100%;
             }
 
@@ -394,7 +434,7 @@
                 <div class="member">
                     <div class="initials teal">SG</div>
                     <h3>Stacey Givens</h3>
-                    <p>President &amp; Co-Founder</p>
+                    <p>President and Co-Founder</p>
                 </div>
 
                 <div class="member">
@@ -476,6 +516,86 @@
         </div>
     </div>
 
+    <!-- Sponsors -->
+    <div class="section sponsors">
+        <div class="container">
+            <h2 class="section-title">Our Sponsors &amp; Partners</h2>
+            <p class="section-intro">We're grateful for the churches, clubs, businesses, and organizations that help us make a way for families in our community.</p>
+
+            <div class="sponsor-list">
+                <div class="sponsor">
+                    <img src="{{ asset('images/sponsors/athens-police.png') }}" alt="Athens Police Department logo">
+                    <h3>Athens Police Department</h3>
+                </div>
+
+                <div class="sponsor">
+                    <img src="{{ asset('images/sponsors/birdie-thornton.png') }}" alt="Birdie Thornton Center logo">
+                    <h3>Birdie Thornton Center</h3>
+                </div>
+
+                <div class="sponsor">
+                    <img src="{{ asset('images/sponsors/blue-butterflies.png') }}" alt="Team Blue Butterflies logo">
+                    <h3>Team Blue Butterflies</h3>
+                </div>
+
+                <div class="sponsor">
+                    <img src="{{ asset('images/sponsors/chick-fil-a-athens.png') }}" alt="Chick-fil-A Athens logo">
+                    <h3>Chick-fil-A Athens</h3>
+                </div>
+
+                <div class="sponsor">
+                    <img src="{{ asset('images/sponsors/chamber-of-commerce.png') }}" alt="Athens-Limestone Chamber of Commerce logo">
+                    <h3>Athens-Limestone Chamber of Commerce</h3>
+                </div>
+
+                <div class="sponsor">
+                    <img src="{{ asset('images/sponsors/city-of-athens.png') }}" alt="City of Athens logo">
+                    <h3>City of Athens</h3>
+                </div>
+
+                <div class="sponsor">
+                    <img src="{{ asset('images/sponsors/cultivate-church.png') }}" alt="Cultivate Free Will Baptist Church logo">
+                    <h3>Cultivate Free Will Baptist Church</h3>
+                </div>
+
+                <div class="sponsor">
+                    <img src="{{ asset('images/sponsors/fbc-athens.png') }}" alt="First Baptist Church Athens logo">
+                    <h3>First Baptist Church Athens</h3>
+                </div>
+
+                <div class="sponsor">
+                    <img src="{{ asset('images/sponsors/junior-civitan.png') }}" alt="Junior Civitan International logo">
+                    <h3>Junior Civitan International</h3>
+                </div>
+
+                <div class="sponsor">
+                    <img src="{{ asset('images/sponsors/league-of-dreams.png') }}" alt="League of Dreams logo">
+                    <h3>League of Dreams</h3>
+                </div>
+
+                <div class="sponsor">
+                    <img src="{{ asset('images/sponsors/limestone-sheriff.png') }}" alt="Limestone County Sheriff's Office logo">
+                    <h3>Limestone County Sheriff's Office</h3>
+                </div>
+
+                <div class="sponsor">
+                    <img src="{{ asset('images/sponsors/lions-club.png') }}" alt="Lions Club logo">
+                    <h3>Lions Club</h3>
+                </div>
+
+                <div class="sponsor">
+                    <img src="{{ asset('images/sponsors/renaissance-robotics.png') }}" alt="Renaissance Robotics Team 538 logo">
+                    <h3>Renaissance Robotics Team 538</h3>
+                </div>
+
+                <div class="sponsor">
+                    <img src="{{ asset('images/sponsors/rotary-club.png') }}" alt="Rotary Club logo">
+                    <h3>Rotary Club</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Join us -->
     <div class="section join">
         <div class="container">
@@ -506,7 +626,8 @@
                 <p><a href="/mission">Mission</a></p>
                 <p><a href="/history">History</a></p>
                 <p><a href="/what-we-offer">What We Offer</a></p>
-                                <p><a href="/board">Our Board</a></p>
+                <p><a href="/get-involved">Get Involved</a></p>
+                <p><a href="/board">Our Board</a></p>
             </div>
 
             <div>
