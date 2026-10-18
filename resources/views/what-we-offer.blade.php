@@ -473,6 +473,7 @@
                 <li><a href="/history">History</a></li>
                 <li><a href="/what-we-offer" class="active" aria-current="page">What We Offer</a></li>
                 <li><a href="/get-involved">Get Involved</a></li>
+                            <li><a href="/board">Our Board</a></li>
             </ul>
         </nav>
     </header>

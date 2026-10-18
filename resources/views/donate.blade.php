@@ -497,6 +497,7 @@
                 <p><a href="/history">History</a></p>
                 <p><a href="/what-we-offer">What We Offer</a></p>
                 <p><a href="/get-involved">Get Involved</a></p>
+                                <p><a href="/board">Our Board</a></p>
             </div>
 
             <div>
