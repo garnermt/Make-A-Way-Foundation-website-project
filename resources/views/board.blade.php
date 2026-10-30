@@ -432,6 +432,102 @@
                 border-bottom: 1px solid #2f5555;
             }
         }
+            /* ===== Hamburger menu ===== */
+        .main-header {
+            background-color: #123b3b;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .main-header .logo {
+            height: 80px;
+            display: block;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .donate-btn {
+            background-color: #d9613f;
+            color: white;
+            padding: 10px 22px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .donate-btn:hover {
+            background-color: #c4502f;
+        }
+
+        .menu {
+            position: relative;
+        }
+
+        .hamburger {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            font-size: 22px;
+            width: 50px;
+            height: 46px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 230px;
+            background-color: #1f5c5c;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            padding: 10px 0;
+        }
+
+        .dropdown a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 12px 20px;
+            border-bottom: none;
+        }
+
+        .dropdown a:hover {
+            background-color: #123b3b;
+            color: #e2a33d;
+        }
+
+        .dropdown.open {
+            display: block;
+        }
+
+        @media (hover: hover) {
+            .menu:hover .dropdown {
+                display: block;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .main-header .logo {
+                height: 55px;
+            }
+
+            .donate-btn {
+                padding: 8px 16px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -446,7 +542,7 @@
         </a>
     </div>
 
-    <!-- Header -->
+    
     <div class="header">
         <a href="/">
             <img src="{{ asset('images/scroll/MWF-27.jpg') }}" alt="Make A Way Foundation logo" class="logo">
@@ -454,16 +550,31 @@
 
         <button class="menu-button" onclick="toggleMenu()">Menu</button>
 
-        <nav class="nav" id="nav">
-            <a href="/">Home</a>
-            <a href="/mission">Mission</a>
-            <a href="/history">History</a>
-            <a href="/what-we-offer">What We Offer</a>
-            <a href="/get-involved">Get Involved</a>
-            <a href="/donate" class="donate">Donate</a>
-        </nav>
-    </div>
+           <!-- Header -->
+    <div class="main-header">
+        <a href="/">
+            <img src="{{ asset('images/scroll/MWF-27.jpg') }}" alt="Make A Way Foundation logo" class="logo">
+        </a>
 
+        <div class="header-right">
+            <a href="/donate" class="donate-btn">Donate</a>
+
+            <div class="menu">
+                <button class="hamburger" aria-label="Menu" onclick="document.getElementById('dropdown').classList.toggle('open')">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <nav class="dropdown" id="dropdown">
+                    <a href="/">Home</a>
+                    <a href="/mission">Mission</a>
+                    <a href="/history">History</a>
+                    <a href="/what-we-offer">What We Offer</a>
+                    <a href="/get-involved">Get Involved</a>
+                    <a href="/board">Our Board</a>
+                </nav>
+            </div>
+        </div>
+    </div>
     <!-- Banner -->
     <div class="banner">
         <h1>Our Board</h1>

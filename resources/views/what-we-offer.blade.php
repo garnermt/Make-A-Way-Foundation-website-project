@@ -57,48 +57,79 @@
         .social a:hover { background-color: rgba(255, 255, 255, 0.18); }
 
         /* ---------- Header ---------- */
-        .site-header {
+        .main-header {
+            background-color: #123b3b;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 24px;
             position: sticky;
             top: 0;
             z-index: 100;
-            background-color: white;
-            border-bottom: 1px solid #e3ddcd;
+        }
+
+        .logo { height: 80px; width: auto; display: block; }
+
+        .header-right {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            padding: 10px 24px;
+            gap: 15px;
         }
 
-        .logo { height: 90px; width: auto; display: block; }
-
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            gap: 4px;
-        }
-
-        nav a {
-            display: block;
-            color: #23241f;
+        .donate-btn {
+            background-color: #d9613f;
+            color: white;
+            padding: 10px 22px;
+            border-radius: 30px;
             text-decoration: none;
             font-weight: 700;
-            padding: 10px 14px;
         }
 
-        nav a:hover,
-        nav a.active { color: #c4502f; }
+        .donate-btn:hover { background-color: #c4502f; }
 
-        .menu-btn {
-            display: none;
-            background: none;
-            border: 2px solid #123b3b;
-            color: #123b3b;
-            font: 700 1rem "Public Sans", Arial, sans-serif;
-            padding: 8px 16px;
-            border-radius: 6px;
+        .menu { position: relative; }
+
+        .hamburger {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            font-size: 22px;
+            width: 50px;
+            height: 46px;
+            border-radius: 8px;
             cursor: pointer;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 230px;
+            background-color: #1f5c5c;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            padding: 10px 0;
+        }
+
+        .dropdown a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            padding: 12px 20px;
+        }
+
+        .dropdown a:hover,
+        .dropdown a.active {
+            background-color: #123b3b;
+            color: #e2a33d;
+        }
+
+        .dropdown.open { display: block; }
+
+        @media (hover: hover) {
+            .menu:hover .dropdown { display: block; }
         }
 
         /* ---------- Parallax ---------- */
@@ -406,26 +437,9 @@
         /* ---------- Phones ---------- */
         @media (max-width: 760px) {
             .topbar { padding: 4px 12px; }
-            .site-header { padding: 8px 16px; }
-            .logo { height: 60px; }
-            .menu-btn { display: block; }
-
-            nav ul {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                flex-direction: column;
-                background-color: white;
-                border-bottom: 1px solid #e3ddcd;
-                padding: 8px 16px 16px;
-                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
-            }
-
-            nav ul.open { display: flex; }
-
-            nav a { padding: 14px 8px; border-bottom: 1px solid #f0ebe0; }
+            .main-header { padding: 8px 16px; }
+            .logo { height: 55px; }
+            .donate-btn { padding: 8px 16px; }
 
             .hero { min-height: 65vh; }
             .band { min-height: 55vh; }
@@ -444,52 +458,6 @@
 
             .flyer-row img { width: 100%; }
         }
-            /* ===== Green header ===== */
-        .header,
-        .site-header {
-            background-color: #123b3b;
-            border-bottom: none;
-        }
-
-        .nav a,
-        nav a {
-            color: white;
-        }
-
-        .nav a:hover,
-        .nav a.active,
-        nav a:hover,
-        nav a.active {
-            color: #e2a33d;
-        }
-
-        .nav .donate,
-        .nav .donate:hover {
-            color: white;
-        }
-
-        .nav .donate:hover {
-            background-color: #c4502f;
-        }
-
-        .menu-button,
-        .menu-btn {
-            background-color: transparent;
-            border: 2px solid white;
-            color: white;
-        }
-
-        @media (max-width: 800px) {
-            .nav,
-            nav ul {
-                background-color: #123b3b;
-            }
-
-            .nav a,
-            nav a {
-                border-bottom: 1px solid #2f5555;
-            }
-        }
     </style>
 </head>
 <body>
@@ -507,22 +475,30 @@
     </div>
 
     <!-- Header -->
-    <header class="site-header">
+    <div class="main-header">
         <a href="/">
-            <img src="{{ asset('images/scroll/MWF-27.jpg') }}" alt="Make A Way Foundation home" class="logo">
+            <img src="{{ asset('images/scroll/MWF-27.jpg') }}" alt="Make A Way Foundation logo" class="logo">
         </a>
-        <nav aria-label="Main menu">
-            <button class="menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
-            <ul id="menu">
-                <li><a href="/">Home</a></li>
-                <li><a href="/mission">Mission</a></li>
-                <li><a href="/history">History</a></li>
-                <li><a href="/what-we-offer" class="active" aria-current="page">What We Offer</a></li>
-                <li><a href="/get-involved">Get Involved</a></li>
-                            <li><a href="/board">Our Board</a></li>
-            </ul>
-        </nav>
-    </header>
+
+        <div class="header-right">
+            <a href="/donate" class="donate-btn">Donate</a>
+
+            <div class="menu">
+                <button class="hamburger" aria-label="Menu" onclick="document.getElementById('dropdown').classList.toggle('open')">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <nav class="dropdown" id="dropdown">
+                    <a href="/">Home</a>
+                    <a href="/mission">Mission</a>
+                    <a href="/history">History</a>
+                    <a href="/what-we-offer" class="active">What We Offer</a>
+                    <a href="/get-involved">Get Involved</a>
+                    <a href="/board">Our Board</a>
+                </nav>
+            </div>
+        </div>
+    </div>
 
     <main>
 
@@ -690,7 +666,7 @@
         <!-- Sensory-friendly haircuts -->
         <section class="main" id="haircuts">
             <div class="main-inner flyer-row">
-                <                               <img src="{{ asset('images/scroll/MWF-9.jpg') }}" alt="A child getting a sensory-friendly haircut" style="object-position: center top;">
+                <img src="{{ asset('images/scroll/MWF-9.jpg') }}" alt="A child getting a sensory-friendly haircut">
                 <div>
                     <span class="free">Free</span>
                     <h2>Sensory-Friendly Haircuts</h2>
@@ -711,7 +687,7 @@
             <div class="parallax-content">
                 <h2>Help keep these programs going.</h2>
                 <p>Volunteers and donations make every event and service possible.</p>
-                <a href="/get-involved" class="btn">Donate</a>
+                <a href="/donate" class="btn">Donate</a>
                 <a href="/get-involved" class="btn btn-outline">Volunteer</a>
             </div>
         </section>
@@ -726,20 +702,10 @@
             <li><a href="/history">History</a></li>
             <li><a href="/what-we-offer">What We Offer</a></li>
             <li><a href="/get-involved">Get Involved</a></li>
+            <li><a href="/board">Our Board</a></li>
         </ul>
         <p class="copyright">© {{ date('Y') }} Make A Way Foundation · 501(c)(3) Nonprofit</p>
     </footer>
-
-    <script>
-        // Menu
-        const menuBtn = document.querySelector('.menu-btn');
-        const menu = document.getElementById('menu');
-        menuBtn.addEventListener('click', function () {
-            const isOpen = menu.classList.toggle('open');
-            menuBtn.setAttribute('aria-expanded', isOpen);
-            menuBtn.textContent = isOpen ? 'Close' : 'Menu';
-        });
-    </script>
 
 </body>
 </html>
