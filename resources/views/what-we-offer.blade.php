@@ -356,19 +356,6 @@
 
         .service p { margin: 0; color: #4d4f47; }
 
-        .free {
-            display: inline-block;
-            background-color: #e2a33d;
-            color: #23241f;
-            font-family: "Public Sans", Arial, sans-serif;
-            font-size: 0.8rem;
-            font-weight: 700;
-            padding: 2px 10px;
-            border-radius: 999px;
-            margin-left: 6px;
-            vertical-align: middle;
-        }
-
         .flyer-row {
             display: flex;
             align-items: center;
@@ -400,7 +387,6 @@
             margin-bottom: 6px;
         }
 
-        .flyer-row .free,
         .flyer-row .btn {
             margin-left: 0;
         }
@@ -613,7 +599,7 @@
                     <div class="service">
                         <i class="fa-solid fa-scissors" aria-hidden="true"></i>
                         <div>
-                            <h3>Sensory-Friendly Haircuts <span class="free">Free</span></h3>
+                            <h3>Sensory-Friendly Haircuts</h3>
                             <p>A calmer, more comfortable haircut experience at no cost to families.</p>
                         </div>
                     </div>
@@ -668,7 +654,6 @@
             <div class="main-inner flyer-row">
                 <img src="{{ asset('images/scroll/MWF-9.jpg') }}" alt="A child getting a sensory-friendly haircut">
                 <div>
-                    <span class="free">Free</span>
                     <h2>Sensory-Friendly Haircuts</h2>
                     <p>A haircut can be overwhelming for kids with sensory needs. Our sensory-friendly haircuts give families a calmer, more comfortable experience, at no cost.</p>
                     <ul>
