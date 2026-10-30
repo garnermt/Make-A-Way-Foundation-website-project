@@ -84,48 +84,100 @@
         }
 
         /* ===== Header ===== */
-        .header {
-            background-color: white;
-            border-bottom: 1px solid #e3ddcd;
+        .main-header {
+            background-color: #123b3b;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
             position: sticky;
             top: 0;
-            z-index: 10;
+            z-index: 100;
         }
 
-        .logo {
+        .main-header .logo {
             height: 80px;
+            display: block;
         }
 
-        .nav a {
-            color: #23241f;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 0 10px;
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
-        .nav a:hover,
-        .nav a.active {
-            color: #d9613f;
-        }
-
-        .nav .donate {
+        .donate-btn {
             background-color: #d9613f;
             color: white;
-            padding: 10px 20px;
+            padding: 10px 22px;
             border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
         }
 
-        .menu-button {
+        .donate-btn:hover {
+            background-color: #c4502f;
+        }
+
+        .menu {
+            position: relative;
+        }
+
+        .hamburger {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            font-size: 22px;
+            width: 50px;
+            height: 46px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .dropdown {
             display: none;
-            background-color: white;
-            border: 2px solid #123b3b;
-            padding: 8px 14px;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 230px;
+            background-color: #1f5c5c;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            padding: 10px 0;
+        }
+
+        .dropdown a {
+            display: block;
+            color: white;
+            text-decoration: none;
             font-weight: bold;
-            border-radius: 5px;
+            padding: 12px 20px;
+            border-bottom: none;
+        }
+
+        .dropdown a:hover {
+            background-color: #123b3b;
+            color: #e2a33d;
+        }
+
+        .dropdown.open {
+            display: block;
+        }
+
+        @media (hover: hover) {
+            .menu:hover .dropdown {
+                display: block;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .main-header .logo {
+                height: 55px;
+            }
+
+            .donate-btn {
+                padding: 8px 16px;
+            }
         }
 
         /* ===== Hero ===== */
@@ -448,42 +500,60 @@
             font-size: 14px;
         }
 
+        /* ===== Footer menu ===== */
+        .footer-menu {
+            position: relative;
+        }
+
+        .footer-hamburger {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            font-size: 22px;
+            width: 50px;
+            height: 46px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .footer-links {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 220px;
+            background-color: #1f5c5c;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            padding: 10px 0;
+            z-index: 50;
+        }
+
+        .footer-links a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+        }
+
+        .footer-links a:hover {
+            background-color: #123b3b;
+            color: #e2a33d;
+        }
+
+        .footer-links.open {
+            display: block;
+        }
+
+        @media (hover: hover) {
+            .footer-menu:hover .footer-links {
+                display: block;
+            }
+        }
+
         /* ===== Phones ===== */
         @media (max-width: 800px) {
-            .logo {
-                height: 55px;
-            }
-
-            .menu-button {
-                display: block;
-            }
-
-            .nav {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background-color: white;
-                padding: 10px 20px;
-            }
-
-            .nav.open {
-                display: block;
-            }
-
-            .nav a {
-                display: block;
-                padding: 12px 0;
-                margin: 0;
-                border-bottom: 1px solid #eeeeee;
-            }
-
-            .nav .donate {
-                text-align: center;
-                margin-top: 10px;
-            }
-
             .hero {
                 padding: 90px 20px;
                 text-align: center;
@@ -549,147 +619,11 @@
             footer {
                 text-align: center;
             }
-        }
-            /* ===== Green header ===== */
-        .header,
-        .site-header {
-            background-color: #123b3b;
-            border-bottom: none;
-        }
 
-        .nav a,
-        nav a {
-            color: white;
-        }
-
-        .nav a:hover,
-        .nav a.active,
-        nav a:hover,
-        nav a.active {
-            color: #e2a33d;
-        }
-
-        .nav .donate,
-        .nav .donate:hover {
-            color: white;
-        }
-
-        .nav .donate:hover {
-            background-color: #c4502f;
-        }
-
-        .menu-button,
-        .menu-btn {
-            background-color: transparent;
-            border: 2px solid white;
-            color: white;
-        }
-
-        @media (max-width: 800px) {
-            .nav,
-            nav ul {
-                background-color: #123b3b;
-            }
-
-            .nav a,
-            nav a {
-                border-bottom: 1px solid #2f5555;
-            }
-        }
-            /* ===== Hamburger menu ===== */
-        .main-header {
-            background-color: #123b3b;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .main-header .logo {
-            height: 80px;
-            display: block;
-        }
-
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .donate-btn {
-            background-color: #d9613f;
-            color: white;
-            padding: 10px 22px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .donate-btn:hover {
-            background-color: #c4502f;
-        }
-
-        .menu {
-            position: relative;
-        }
-
-        .hamburger {
-            background-color: transparent;
-            border: 2px solid white;
-            color: white;
-            font-size: 22px;
-            width: 50px;
-            height: 46px;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-        .dropdown {
-            display: none;
-            position: absolute;
-            top: 100%;
-            right: 0;
-            width: 230px;
-            background-color: #1f5c5c;
-            border-radius: 10px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-            padding: 10px 0;
-        }
-
-        .dropdown a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 12px 20px;
-            border-bottom: none;
-        }
-
-        .dropdown a:hover {
-            background-color: #123b3b;
-            color: #e2a33d;
-        }
-
-        .dropdown.open {
-            display: block;
-        }
-
-        @media (hover: hover) {
-            .menu:hover .dropdown {
-                display: block;
-            }
-        }
-
-        @media (max-width: 800px) {
-            .main-header .logo {
-                height: 55px;
-            }
-
-            .donate-btn {
-                padding: 8px 16px;
+            .footer-links {
+                position: static;
+                width: 100%;
+                margin-top: 10px;
             }
         }
     </style>
@@ -706,7 +640,7 @@
         </a>
     </div>
 
-        <!-- Header -->
+    <!-- Header -->
     <div class="main-header">
         <a href="/">
             <img src="{{ asset('images/scroll/MWF-27.jpg') }}" alt="Make A Way Foundation logo" class="logo">
@@ -746,7 +680,7 @@
             <h1>Opening doors for special needs individuals and their families</h1>
             <p>Empowering individuals with special needs through inclusion, community programs, sensory resources, and year-round support.</p>
             <a href="#who-we-are" class="btn">Learn More</a>
-            <a href="/get-involved" class="btn btn-outline">Support the Mission</a>
+            <a href="/donate" class="btn btn-outline">Support the Mission</a>
         </div>
     </div>
 
@@ -977,12 +911,21 @@
                 </div>
             </div>
 
-            <div>
+            <div class="footer-menu">
                 <h3>Pages</h3>
-                <p><a href="/mission">Mission</a></p>
-                <p><a href="/history">History</a></p>
-                <p><a href="/what-we-offer">What We Offer</a></p>
-                                <p><a href="/board">Our Board</a></p>
+                <button class="footer-hamburger" aria-label="Pages menu" onclick="document.getElementById('footer-links').classList.toggle('open')">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="footer-links" id="footer-links">
+                    <a href="/">Home</a>
+                    <a href="/mission">Mission</a>
+                    <a href="/history">History</a>
+                    <a href="/what-we-offer">What We Offer</a>
+                    <a href="/get-involved">Get Involved</a>
+                    <a href="/board">Our Board</a>
+                    <a href="/donate">Donate</a>
+                </div>
             </div>
 
             <div>
@@ -996,11 +939,6 @@
     </footer>
 
     <script>
-        // Menu
-        function toggleMenu() {
-            document.getElementById("nav").classList.toggle("open");
-        }
-
         // Hero slideshow
         let heroIndex = 0;
         let heroPhotos = document.getElementsByClassName("hero-photo");

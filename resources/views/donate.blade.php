@@ -344,6 +344,58 @@
             font-size: 14px;
         }
 
+        /* ===== Footer menu ===== */
+        .footer-menu {
+            position: relative;
+        }
+
+        .footer-hamburger {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            font-size: 22px;
+            width: 50px;
+            height: 46px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .footer-links {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 220px;
+            background-color: #1f5c5c;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            padding: 10px 0;
+            z-index: 50;
+        }
+
+        .footer-links a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+        }
+
+        .footer-links a:hover {
+            background-color: #123b3b;
+            color: #e2a33d;
+        }
+
+        .footer-links.open {
+            display: block;
+        }
+
+        @media (hover: hover) {
+            .footer-menu:hover .footer-links {
+                display: block;
+            }
+        }
+
         /* ===== Phones ===== */
         @media (max-width: 800px) {
             .banner {
@@ -384,6 +436,12 @@
 
             footer {
                 text-align: center;
+            }
+
+            .footer-links {
+                position: static;
+                width: 100%;
+                margin-top: 10px;
             }
         }
     </style>
@@ -518,13 +576,21 @@
                 </div>
             </div>
 
-            <div>
+            <div class="footer-menu">
                 <h3>Pages</h3>
-                <p><a href="/mission">Mission</a></p>
-                <p><a href="/history">History</a></p>
-                <p><a href="/what-we-offer">What We Offer</a></p>
-                <p><a href="/get-involved">Get Involved</a></p>
-                <p><a href="/board">Our Board</a></p>
+                <button class="footer-hamburger" aria-label="Pages menu" onclick="document.getElementById('footer-links').classList.toggle('open')">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="footer-links" id="footer-links">
+                    <a href="/">Home</a>
+                    <a href="/mission">Mission</a>
+                    <a href="/history">History</a>
+                    <a href="/what-we-offer">What We Offer</a>
+                    <a href="/get-involved">Get Involved</a>
+                    <a href="/board">Our Board</a>
+                    <a href="/donate">Donate</a>
+                </div>
             </div>
 
             <div>

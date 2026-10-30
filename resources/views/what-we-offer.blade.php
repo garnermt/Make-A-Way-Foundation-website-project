@@ -391,29 +391,94 @@
             margin-left: 0;
         }
 
-        /* ---------- Footer ---------- */
+        /* ===== Footer ===== */
         footer {
             position: relative;
             background-color: #123b3b;
             color: white;
-            padding: 30px 20px;
-            text-align: center;
+            padding: 50px 20px 20px 20px;
         }
 
-        .footer-nav {
-            list-style: none;
-            margin: 0 0 14px;
-            padding: 0;
+        .footer-columns {
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 6px 22px;
+            justify-content: space-between;
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
-        .footer-nav a { color: white; text-decoration: none; font-weight: 600; }
-        .footer-nav a:hover { text-decoration: underline; }
+        footer h3 {
+            color: #e2a33d;
+        }
 
-        .copyright { margin: 0; font-size: 0.9rem; opacity: 0.85; }
+        footer a {
+            color: white;
+        }
+
+        .footer-social a {
+            font-size: 24px;
+            margin-right: 15px;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #2f5555;
+            margin-top: 30px;
+            padding-top: 15px;
+            font-size: 14px;
+        }
+
+        /* ===== Footer menu ===== */
+        .footer-menu {
+            position: relative;
+        }
+
+        .footer-hamburger {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            font-size: 22px;
+            width: 50px;
+            height: 46px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .footer-links {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 220px;
+            background-color: #1f5c5c;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            padding: 10px 0;
+            z-index: 50;
+        }
+
+        .footer-links a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+        }
+
+        .footer-links a:hover {
+            background-color: #123b3b;
+            color: #e2a33d;
+        }
+
+        .footer-links.open {
+            display: block;
+        }
+
+        @media (hover: hover) {
+            .footer-menu:hover .footer-links {
+                display: block;
+            }
+        }
 
         /* ---------- Tablets ---------- */
         @media (max-width: 900px) {
@@ -443,6 +508,16 @@
             .flyer-row { flex-direction: column; gap: 25px; }
 
             .flyer-row img { width: 100%; }
+
+            .footer-columns { flex-direction: column; }
+
+            footer { text-align: center; }
+
+            .footer-links {
+                position: static;
+                width: 100%;
+                margin-top: 10px;
+            }
         }
     </style>
 </head>
@@ -681,15 +756,45 @@
 
     <!-- Footer -->
     <footer>
-        <ul class="footer-nav">
-            <li><a href="/">Home</a></li>
-            <li><a href="/mission">Mission</a></li>
-            <li><a href="/history">History</a></li>
-            <li><a href="/what-we-offer">What We Offer</a></li>
-            <li><a href="/get-involved">Get Involved</a></li>
-            <li><a href="/board">Our Board</a></li>
-        </ul>
-        <p class="copyright">© {{ date('Y') }} Make A Way Foundation · 501(c)(3) Nonprofit</p>
+        <div class="footer-columns">
+            <div>
+                <h3>Make A Way Foundation</h3>
+                <p>A 501(c)(3) nonprofit serving individuals with special needs and their families in Athens and Limestone County.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/FoundationMakeAWay" target="_blank" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/makeaway.foundation/" target="_blank" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-menu">
+                <h3>Pages</h3>
+                <button class="footer-hamburger" aria-label="Pages menu" onclick="document.getElementById('footer-links').classList.toggle('open')">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <div class="footer-links" id="footer-links">
+                    <a href="/">Home</a>
+                    <a href="/mission">Mission</a>
+                    <a href="/history">History</a>
+                    <a href="/what-we-offer">What We Offer</a>
+                    <a href="/get-involved">Get Involved</a>
+                    <a href="/board">Our Board</a>
+                    <a href="/donate">Donate</a>
+                </div>
+            </div>
+
+            <div>
+                <h3>Contact Us</h3>
+                <p><a href="mailto:info@foundationmakeaway.org">info@foundationmakeaway.org</a></p>
+                <p>PO Box 1768<br>Athens, AL 35612</p>
+            </div>
+        </div>
+
+        <p class="copyright">© {{ date('Y') }} Make A Way Foundation. All rights reserved.</p>
     </footer>
 
 </body>
