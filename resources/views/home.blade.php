@@ -550,6 +550,52 @@
                 text-align: center;
             }
         }
+            /* ===== Green header ===== */
+        .header,
+        .site-header {
+            background-color: #123b3b;
+            border-bottom: none;
+        }
+
+        .nav a,
+        nav a {
+            color: white;
+        }
+
+        .nav a:hover,
+        .nav a.active,
+        nav a:hover,
+        nav a.active {
+            color: #e2a33d;
+        }
+
+        .nav .donate,
+        .nav .donate:hover {
+            color: white;
+        }
+
+        .nav .donate:hover {
+            background-color: #c4502f;
+        }
+
+        .menu-button,
+        .menu-btn {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        @media (max-width: 800px) {
+            .nav,
+            nav ul {
+                background-color: #123b3b;
+            }
+
+            .nav a,
+            nav a {
+                border-bottom: 1px solid #2f5555;
+            }
+        }
     </style>
 </head>
 <body>
@@ -567,7 +613,7 @@
     <!-- Header -->
     <div class="header">
         <a href="/">
-            <img src="{{ asset('images/logo.png') }}" alt="Make A Way Foundation logo" class="logo">
+            <img src="{{ asset('images/scroll/MWF-27.jpg') }}" alt="Make A Way Foundation logo" class="logo">
         </a>
 
         <button class="menu-button" onclick="toggleMenu()">Menu</button>
