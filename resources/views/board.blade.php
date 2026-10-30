@@ -79,47 +79,100 @@
         }
 
         /* ===== Header ===== */
-        .header {
-            background-color: white;
-            border-bottom: 1px solid #e3ddcd;
+        .main-header {
+            background-color: #123b3b;
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
             position: sticky;
             top: 0;
-            z-index: 10;
+            z-index: 100;
         }
 
-        .logo {
+        .main-header .logo {
             height: 80px;
+            display: block;
         }
 
-        .nav a {
-            color: #23241f;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 0 10px;
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
-        .nav a:hover {
-            color: #d9613f;
-        }
-
-        .nav .donate {
+        .donate-btn {
             background-color: #d9613f;
             color: white;
-            padding: 10px 20px;
+            padding: 10px 22px;
             border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
         }
 
-        .menu-button {
+        .donate-btn:hover {
+            background-color: #c4502f;
+        }
+
+        .menu {
+            position: relative;
+        }
+
+        .hamburger {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            font-size: 22px;
+            width: 50px;
+            height: 46px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .dropdown {
             display: none;
-            background-color: white;
-            border: 2px solid #123b3b;
-            padding: 8px 14px;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 230px;
+            background-color: #1f5c5c;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            padding: 10px 0;
+        }
+
+        .dropdown a {
+            display: block;
+            color: white;
+            text-decoration: none;
             font-weight: bold;
-            border-radius: 5px;
+            padding: 12px 20px;
+            border-bottom: none;
+        }
+
+        .dropdown a:hover {
+            background-color: #123b3b;
+            color: #e2a33d;
+        }
+
+        .dropdown.open {
+            display: block;
+        }
+
+        @media (hover: hover) {
+            .menu:hover .dropdown {
+                display: block;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .main-header .logo {
+                height: 55px;
+            }
+
+            .donate-btn {
+                padding: 8px 16px;
+            }
         }
 
         /* ===== Page banner ===== */
@@ -314,40 +367,6 @@
 
         /* ===== Phones ===== */
         @media (max-width: 800px) {
-            .logo {
-                height: 55px;
-            }
-
-            .menu-button {
-                display: block;
-            }
-
-            .nav {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background-color: white;
-                padding: 10px 20px;
-            }
-
-            .nav.open {
-                display: block;
-            }
-
-            .nav a {
-                display: block;
-                padding: 12px 0;
-                margin: 0;
-                border-bottom: 1px solid #eeeeee;
-            }
-
-            .nav .donate {
-                text-align: center;
-                margin-top: 10px;
-            }
-
             .banner {
                 padding: 80px 20px;
                 background-attachment: scroll;
@@ -386,148 +405,6 @@
                 text-align: center;
             }
         }
-            /* ===== Green header ===== */
-        .header,
-        .site-header {
-            background-color: #123b3b;
-            border-bottom: none;
-        }
-
-        .nav a,
-        nav a {
-            color: white;
-        }
-
-        .nav a:hover,
-        .nav a.active,
-        nav a:hover,
-        nav a.active {
-            color: #e2a33d;
-        }
-
-        .nav .donate,
-        .nav .donate:hover {
-            color: white;
-        }
-
-        .nav .donate:hover {
-            background-color: #c4502f;
-        }
-
-        .menu-button,
-        .menu-btn {
-            background-color: transparent;
-            border: 2px solid white;
-            color: white;
-        }
-
-        @media (max-width: 800px) {
-            .nav,
-            nav ul {
-                background-color: #123b3b;
-            }
-
-            .nav a,
-            nav a {
-                border-bottom: 1px solid #2f5555;
-            }
-        }
-            /* ===== Hamburger menu ===== */
-        .main-header {
-            background-color: #123b3b;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .main-header .logo {
-            height: 80px;
-            display: block;
-        }
-
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .donate-btn {
-            background-color: #d9613f;
-            color: white;
-            padding: 10px 22px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .donate-btn:hover {
-            background-color: #c4502f;
-        }
-
-        .menu {
-            position: relative;
-        }
-
-        .hamburger {
-            background-color: transparent;
-            border: 2px solid white;
-            color: white;
-            font-size: 22px;
-            width: 50px;
-            height: 46px;
-            border-radius: 8px;
-            cursor: pointer;
-        }
-
-        .dropdown {
-            display: none;
-            position: absolute;
-            top: 100%;
-            right: 0;
-            width: 230px;
-            background-color: #1f5c5c;
-            border-radius: 10px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-            padding: 10px 0;
-        }
-
-        .dropdown a {
-            display: block;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 12px 20px;
-            border-bottom: none;
-        }
-
-        .dropdown a:hover {
-            background-color: #123b3b;
-            color: #e2a33d;
-        }
-
-        .dropdown.open {
-            display: block;
-        }
-
-        @media (hover: hover) {
-            .menu:hover .dropdown {
-                display: block;
-            }
-        }
-
-        @media (max-width: 800px) {
-            .main-header .logo {
-                height: 55px;
-            }
-
-            .donate-btn {
-                padding: 8px 16px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -542,15 +419,7 @@
         </a>
     </div>
 
-    
-    <div class="header">
-        <a href="/">
-            <img src="{{ asset('images/scroll/MWF-27.jpg') }}" alt="Make A Way Foundation logo" class="logo">
-        </a>
-
-        <button class="menu-button" onclick="toggleMenu()">Menu</button>
-
-           <!-- Header -->
+    <!-- Header -->
     <div class="main-header">
         <a href="/">
             <img src="{{ asset('images/scroll/MWF-27.jpg') }}" alt="Make A Way Foundation logo" class="logo">
@@ -575,6 +444,7 @@
             </div>
         </div>
     </div>
+
     <!-- Banner -->
     <div class="banner">
         <h1>Our Board</h1>
@@ -796,13 +666,6 @@
 
         <p class="copyright">© {{ date('Y') }} Make A Way Foundation. All rights reserved.</p>
     </footer>
-
-    <script>
-        // Menu
-        function toggleMenu() {
-            document.getElementById("nav").classList.toggle("open");
-        }
-    </script>
 
 </body>
 </html>
