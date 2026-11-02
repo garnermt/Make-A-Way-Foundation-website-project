@@ -175,28 +175,23 @@
             }
         }
 
-        /* ===== Page banner ===== */
-        .banner {
-            background: linear-gradient(rgba(18, 59, 59, 0.55), rgba(18, 59, 59, 0.55)),
+        /* ===== Ways to give ===== */
+        .give-area {
+            background: linear-gradient(rgba(18, 59, 59, 0.6), rgba(18, 59, 59, 0.6)),
                         url("{{ asset('images/scroll/MWF-25.jpg') }}");
             background-color: #1f5c5c;
             background-size: cover;
             background-position: center 25%;
             background-attachment: fixed;
+            padding: 80px 0;
+        }
+
+        .give-area .section-title {
             color: white;
-            text-align: center;
-            padding: 220px 20px;
         }
 
-        .banner h1 {
-            font-size: 52px;
-            margin: 0 0 15px 0;
-        }
-
-        .banner p {
-            font-size: 20px;
-            max-width: 650px;
-            margin: 0 auto 25px auto;
+        .give-area .section-intro {
+            color: white;
         }
 
         /* ===== Your gift at work ===== */
@@ -237,7 +232,6 @@
             color: #4d4f47;
         }
 
-        /* ===== Ways to give ===== */
         .ways {
             display: flex;
             gap: 25px;
@@ -268,6 +262,21 @@
             color: #4d4f47;
         }
 
+        .way .btn i {
+            font-size: 18px;
+            color: inherit;
+            margin-right: 6px;
+        }
+
+        .btn-venmo {
+            background-color: #1f5c5c;
+        }
+
+        .handle {
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
         .address {
             background-color: #faf6ee;
             border-radius: 10px;
@@ -278,7 +287,7 @@
 
         .tax-note {
             text-align: center;
-            color: #4d4f47;
+            color: white;
             max-width: 700px;
             margin: 40px auto 0 auto;
             font-size: 15px;
@@ -363,7 +372,7 @@
         .footer-links {
             display: none;
             position: absolute;
-            top: 100%;
+            bottom: 100%;
             left: 0;
             width: 220px;
             background-color: #1f5c5c;
@@ -398,17 +407,9 @@
 
         /* ===== Phones ===== */
         @media (max-width: 800px) {
-            .banner {
-                padding: 80px 20px;
+            .give-area {
+                padding: 50px 0;
                 background-attachment: scroll;
-            }
-
-            .banner h1 {
-                font-size: 36px;
-            }
-
-            .banner p {
-                font-size: 18px;
             }
 
             .section-title,
@@ -484,11 +485,40 @@
         </div>
     </div>
 
-    <!-- Banner -->
-    <div class="banner">
-        <h1>Support Make A Way</h1>
-        <p>Your gift helps people with special needs and their families in Athens and Limestone County learn, play, and belong.</p>
-        <a href="#ways-to-give" class="btn">Give Today</a>
+    <!-- Ways to give -->
+    <div class="give-area" id="ways-to-give">
+        <div class="container">
+            <h2 class="section-title">Ways to Give</h2>
+            <p class="section-intro">Choose the way that works best for you. Every gift makes a difference.</p>
+
+            <div class="ways">
+                <div class="way">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                    <h3>Give Online</h3>
+                    <p>Donate quickly and securely with PayPal or Venmo from your phone or computer.</p>
+                    <a href="https://paypal.me/foundationmakeaway" target="_blank" class="btn"><i class="fa-brands fa-paypal"></i> PayPal</a>
+                    <a href="https://venmo.com/foundationmakeaway" target="_blank" class="btn btn-venmo"><i class="fa-solid fa-v"></i> Venmo</a>
+                    <p class="handle">@foundationmakeaway</p>
+                </div>
+
+                <div class="way">
+                    <i class="fa-solid fa-envelope-open-text"></i>
+                    <h3>Mail a Check</h3>
+                    <p>Make checks payable to <strong>Make A Way Foundation</strong> and mail to:</p>
+                    <p class="address">PO Box 1768<br>Athens, AL 35612</p>
+                    <p>Include your mailing address so we can send you a thank-you letter for your records.</p>
+                </div>
+
+                <div class="way">
+                    <i class="fa-solid fa-handshake"></i>
+                    <h3>Sponsor or Partner</h3>
+                    <p>Churches, clubs, and businesses can sponsor an event or partner with us to reach more families.</p>
+                    <a href="mailto:info@foundationmakeaway.org?subject=Sponsorship" class="btn">Contact Us</a>
+                </div>
+            </div>
+
+            <p class="tax-note">Make A Way Foundation is a 501(c)(3) nonprofit organization. Donations may be tax-deductible as allowed by law.</p>
+        </div>
     </div>
 
     <!-- Your gift at work -->
@@ -516,40 +546,6 @@
                     <p>Adult socials, sports, STEM, calming spaces, and training for families.</p>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- Ways to give -->
-    <div class="section" id="ways-to-give">
-        <div class="container">
-            <h2 class="section-title">Ways to Give</h2>
-            <p class="section-intro">Choose the way that works best for you. Every gift makes a difference.</p>
-
-            <div class="ways">
-                <div class="way">
-                    <i class="fa-brands fa-paypal"></i>
-                    <h3>Give Online</h3>
-                    <p>Donate quickly and securely through PayPal using a card or your PayPal account.</p>
-                    <a href="https://www.paypal.com/donate/?hosted_button_id=PASTE-ID-HERE" target="_blank" class="btn">Donate with PayPal</a>
-                </div>
-
-                <div class="way">
-                    <i class="fa-solid fa-envelope-open-text"></i>
-                    <h3>Mail a Check</h3>
-                    <p>Make checks payable to <strong>Make A Way Foundation</strong> and mail to:</p>
-                    <p class="address">PO Box 1768<br>Athens, AL 35612</p>
-                    <p>Include your mailing address so we can send you a thank-you letter for your records.</p>
-                </div>
-
-                <div class="way">
-                    <i class="fa-solid fa-handshake"></i>
-                    <h3>Sponsor or Partner</h3>
-                    <p>Churches, clubs, and businesses can sponsor an event or partner with us to reach more families.</p>
-                    <a href="mailto:info@foundationmakeaway.org?subject=Sponsorship" class="btn">Contact Us</a>
-                </div>
-            </div>
-
-            <p class="tax-note">Make A Way Foundation is a 501(c)(3) nonprofit organization. Donations may be tax-deductible as allowed by law.</p>
         </div>
     </div>
 

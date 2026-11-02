@@ -447,7 +447,7 @@
         .footer-links {
             display: none;
             position: absolute;
-            top: 100%;
+            bottom: 100%;
             left: 0;
             width: 220px;
             background-color: #1f5c5c;
