@@ -68,7 +68,7 @@
         /* ===== Top bar ===== */
         .topbar {
             background-color: #123b3b;
-            text-align: right;
+            text-align: left;
             padding: 8px 20px;
         }
 
@@ -99,6 +99,7 @@
             display: flex;
             align-items: center;
             gap: 15px;
+            margin-left: auto;
         }
 
         .donate-btn {
@@ -177,15 +178,16 @@
 
         /* ===== Page banner ===== */
         .banner {
-            background: linear-gradient(rgba(18, 59, 59, 0.55), rgba(18, 59, 59, 0.55)),
-                        url("{{ asset('images/scroll/MWF-14.jpg') }}");
-            background-color: #1f5c5c;
-            background-size: cover;
-            background-position: center 10%;
-            background-attachment: fixed;
+            background: linear-gradient(rgba(18, 59, 59, 0.3), rgba(18, 59, 59, 0.3)),
+                        url("{{ asset('images/scroll/MWF-27.jpg') }}");
+            background-color: #e6e6e6;
+            background-size: cover, contain;
+            background-position: center;
+            background-repeat: no-repeat;
             color: white;
             text-align: center;
             padding: 130px 20px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
         }
 
         .banner h1 {
@@ -199,14 +201,14 @@
             margin: 0 auto;
         }
 
-        /* ===== Our story ===== */
+        /* ===== About us ===== */
         .story {
             background-color: white;
         }
 
         .story-row {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             gap: 50px;
         }
 
@@ -227,48 +229,6 @@
         .story-row p {
             color: #4d4f47;
             font-size: 17px;
-        }
-
-        /* ===== Timeline ===== */
-        .timeline {
-            max-width: 750px;
-            margin: 0 auto;
-            border-left: 4px solid #e2a33d;
-            padding-left: 35px;
-        }
-
-        .step {
-            position: relative;
-            margin-bottom: 40px;
-        }
-
-        .step::before {
-            content: "";
-            position: absolute;
-            left: -47px;
-            top: 6px;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background-color: #d9613f;
-            border: 4px solid #faf6ee;
-        }
-
-        .step .when {
-            font-weight: bold;
-            color: #d9613f;
-            font-size: 15px;
-        }
-
-        .step h3 {
-            color: #1f5c5c;
-            font-size: 26px;
-            margin: 5px 0 8px 0;
-        }
-
-        .step p {
-            color: #4d4f47;
-            margin: 0;
         }
 
         /* ===== Photo band ===== */
@@ -344,24 +304,25 @@
         }
 
         .footer-columns {
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 30px;
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
+            text-align: center;
         }
 
         footer h3 {
             color: #e2a33d;
+            margin-top: 0;
+        }
+
+        footer p {
+            margin: 0 0 10px 0;
         }
 
         footer a {
             color: white;
-        }
-
-        .footer-social a {
-            font-size: 24px;
-            margin-right: 15px;
         }
 
         .copyright {
@@ -375,6 +336,8 @@
         /* ===== Footer menu ===== */
         .footer-menu {
             position: relative;
+            width: fit-content;
+            margin: 0 auto;
         }
 
         .footer-hamburger {
@@ -392,7 +355,8 @@
             display: none;
             position: absolute;
             bottom: 100%;
-            left: 0;
+            left: 50%;
+            transform: translateX(-50%);
             width: 220px;
             background-color: #1f5c5c;
             border-radius: 10px;
@@ -424,11 +388,27 @@
             }
         }
 
+        @media (max-width: 800px) {
+            .footer-columns {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-menu {
+                width: 220px;
+            }
+
+            .footer-links {
+                position: static;
+                transform: none;
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
+
         /* ===== Phones ===== */
         @media (max-width: 800px) {
             .banner {
                 padding: 80px 20px;
-                background-attachment: scroll;
             }
 
             .banner h1 {
@@ -457,18 +437,6 @@
             .story-row img {
                 width: 100%;
                 height: 260px;
-            }
-
-            .timeline {
-                padding-left: 25px;
-            }
-
-            .step::before {
-                left: -37px;
-            }
-
-            .step h3 {
-                font-size: 22px;
             }
 
             .photo-band {
@@ -513,10 +481,6 @@
 
     <!-- Header -->
     <div class="main-header">
-        <a href="/">
-            <img src="{{ asset('images/scroll/MWF-27.jpg') }}" alt="Make A Way Foundation logo" class="logo">
-        </a>
-
         <div class="header-right">
             <a href="/donate" class="donate-btn">Donate</a>
 
@@ -543,61 +507,17 @@
         <p>How one family's love for their son grew into a foundation that serves our whole community.</p>
     </div>
 
-    <!-- Our story -->
+    <!-- About us -->
     <div class="section story">
         <div class="container story-row">
             <img src="{{ asset('images/scroll/MWF-2.jpg') }}" alt="A family at a Make A Way Foundation event">
             <div>
-                <h2>Our Story</h2>
-                <p>Make A Way Foundation was started by Kevin and Stacey Givens. Before it was ever a nonprofit, they spent years raising money on their own to help children with autism, including their own son.</p>
-                <p>They saw how much a little support could change a child's day. Other families noticed too, and the community began to get involved.</p>
-                <p>What started as one family helping where they could has grown into a foundation that brings people together through events, programs, and support all year long.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Timeline -->
-    <div class="section">
-        <div class="container">
-            <h2 class="section-title">How We Grew</h2>
-            <p class="section-intro">A few of the milestones along the way.</p>
-
-            <div class="timeline">
-                <div class="step">
-                    <span class="when">The Beginning</span>
-                    <h3>A family steps up</h3>
-                    <p>Kevin and Stacey Givens raise money on their own to support children with autism in Athens.</p>
-                </div>
-
-                <div class="step">
-                    <span class="when">First Steps</span>
-                    <h3>Help at school</h3>
-                    <p>The first calming space opens at Brookhill Elementary, where their son was a student. Other students start using it too.</p>
-                </div>
-
-                <div class="step">
-                    <span class="when">2019</span>
-                    <h3>Make A Way Foundation is founded</h3>
-                    <p>With support from local donors and civic clubs, the foundation becomes an official 501(c)(3) nonprofit.</p>
-                </div>
-
-                <div class="step">
-                    <span class="when">Growing</span>
-                    <h3>Events for the whole community</h3>
-                    <p>The foundation begins hosting sensory-friendly events like fall festivals, Touch-a-Truck, and holiday celebrations, plus free sensory-friendly haircuts.</p>
-                </div>
-
-                <div class="step">
-                    <span class="when">2023</span>
-                    <h3>United Way partner agency</h3>
-                    <p>Make A Way becomes a partner agency of the United Way of Athens-Limestone County.</p>
-                </div>
-
-                <div class="step">
-                    <span class="when">Today</span>
-                    <h3>Serving all of Athens and Limestone County</h3>
-                    <p>Family events, adult socials, sports, STEM, training for families, and calming spaces in all 21 local schools.</p>
-                </div>
+                <h2>About Us</h2>
+                <p>In 2011, Stacey and Kevin Givens learned that their 3 ½ year old son, Brooks, was on the Autism Spectrum. Taking recommendations from doctors, they enrolled Brooks in many therapies. Although he showed benefit from all therapies, Sensory Therapy had immediate results that helped him to better regulate himself throughout the day.</p>
+                <p>Realizing that this would be critical for his school day success, Stacey set on a quest to install a Sensory Room at his targeted elementary school. With support from administration and financial contributions by family members, the first Sensory Room was built in the Athens City Schools. Brooks, along with other students, showed benefit from using the space and resulted in administration from other schools reaching out for assistance to build similar spaces. With the help of local civic organizations and private donors, Sensory Rooms have now been installed in all four of the elementary schools in Athens, the Intermediate School, Middle School, and High School.</p>
+                <p>In 2015, Stacey and Kevin learned that their daughter has a hearing impairment called Enlarged Vestibular Aqueduct Syndrome. Another diagnosis further fueled their desire to bridge gaps for those with special needs.</p>
+                <p>With the hope to extend the Sensory Room project to the Limestone County Schools and provide other services or equipment to special needs children, a 501(c)(3) called Make A Way Foundation was incorporated.</p>
+                <p>Our Board is composed of compassionate individuals who freely give so much of their time to serving others, and who have a particular interest in helping those with special needs. Together, our goal is to Make A Way for these individuals to succeed!</p>
             </div>
         </div>
     </div>
@@ -666,31 +586,25 @@
         <div class="footer-columns">
             <div>
                 <h3>Make A Way Foundation</h3>
-                <p>A 501(c)(3) nonprofit serving individuals with special needs and their families in Athens and Limestone County.</p>
-                <div class="footer-social">
-                    <a href="https://www.facebook.com/FoundationMakeAWay" target="_blank" aria-label="Facebook">
-                        <i class="fa-brands fa-facebook-f"></i>
-                    </a>
-                    <a href="https://www.instagram.com/makeaway.foundation/" target="_blank" aria-label="Instagram">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                </div>
+                <p>A registered 501(c)(3) non-profit</p>
             </div>
 
-            <div class="footer-menu">
-                <h3>Pages</h3>
-                <button class="footer-hamburger" aria-label="Pages menu" onclick="document.getElementById('footer-links').classList.toggle('open')">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
+            <div>
+                <div class="footer-menu">
+                    <h3>Pages</h3>
+                    <button class="footer-hamburger" aria-label="Pages menu" onclick="document.getElementById('footer-links').classList.toggle('open')">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
 
-                <div class="footer-links" id="footer-links">
-                    <a href="/">Home</a>
-                    <a href="/mission">Mission</a>
-                    <a href="/history">History</a>
-                    <a href="/what-we-offer">What We Offer</a>
-                    <a href="/get-involved">Get Involved</a>
-                    <a href="/board">Our Board</a>
-                    <a href="/donate">Donate</a>
+                    <div class="footer-links" id="footer-links">
+                        <a href="/">Home</a>
+                        <a href="/mission">Mission</a>
+                        <a href="/history">History</a>
+                        <a href="/what-we-offer">What We Offer</a>
+                        <a href="/get-involved">Get Involved</a>
+                        <a href="/board">Our Board</a>
+                        <a href="/donate">Donate</a>
+                    </div>
                 </div>
             </div>
 

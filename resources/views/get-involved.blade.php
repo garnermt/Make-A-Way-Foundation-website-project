@@ -68,7 +68,7 @@
         /* ===== Top bar ===== */
         .topbar {
             background-color: #123b3b;
-            text-align: right;
+            text-align: left;
             padding: 8px 20px;
         }
 
@@ -397,24 +397,25 @@
         }
 
         .footer-columns {
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 30px;
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 0 auto;
+            text-align: center;
         }
 
         footer h3 {
             color: #e2a33d;
+            margin-top: 0;
+        }
+
+        footer p {
+            margin: 0 0 10px 0;
         }
 
         footer a {
             color: white;
-        }
-
-        .footer-social a {
-            font-size: 24px;
-            margin-right: 15px;
         }
 
         .copyright {
@@ -428,6 +429,8 @@
         /* ===== Footer menu ===== */
         .footer-menu {
             position: relative;
+            width: fit-content;
+            margin: 0 auto;
         }
 
         .footer-hamburger {
@@ -445,7 +448,8 @@
             display: none;
             position: absolute;
             bottom: 100%;
-            left: 0;
+            left: 50%;
+            transform: translateX(-50%);
             width: 220px;
             background-color: #1f5c5c;
             border-radius: 10px;
@@ -474,6 +478,23 @@
         @media (hover: hover) {
             .footer-menu:hover .footer-links {
                 display: block;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .footer-columns {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-menu {
+                width: 220px;
+            }
+
+            .footer-links {
+                position: static;
+                transform: none;
+                width: 100%;
+                margin-top: 10px;
             }
         }
 
@@ -713,31 +734,25 @@
         <div class="footer-columns">
             <div>
                 <h3>Make A Way Foundation</h3>
-                <p>A 501(c)(3) nonprofit serving individuals with special needs and their families in Athens and Limestone County.</p>
-                <div class="footer-social">
-                    <a href="https://www.facebook.com/FoundationMakeAWay" target="_blank" aria-label="Facebook">
-                        <i class="fa-brands fa-facebook-f"></i>
-                    </a>
-                    <a href="https://www.instagram.com/makeaway.foundation/" target="_blank" aria-label="Instagram">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                </div>
+                <p>A registered 501(c)(3) non-profit</p>
             </div>
 
-            <div class="footer-menu">
-                <h3>Pages</h3>
-                <button class="footer-hamburger" aria-label="Pages menu" onclick="document.getElementById('footer-links').classList.toggle('open')">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
+            <div>
+                <div class="footer-menu">
+                    <h3>Pages</h3>
+                    <button class="footer-hamburger" aria-label="Pages menu" onclick="document.getElementById('footer-links').classList.toggle('open')">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
 
-                <div class="footer-links" id="footer-links">
-                    <a href="/">Home</a>
-                    <a href="/mission">Mission</a>
-                    <a href="/history">History</a>
-                    <a href="/what-we-offer">What We Offer</a>
-                    <a href="/get-involved">Get Involved</a>
-                    <a href="/board">Our Board</a>
-                    <a href="/donate">Donate</a>
+                    <div class="footer-links" id="footer-links">
+                        <a href="/">Home</a>
+                        <a href="/mission">Mission</a>
+                        <a href="/history">History</a>
+                        <a href="/what-we-offer">What We Offer</a>
+                        <a href="/get-involved">Get Involved</a>
+                        <a href="/board">Our Board</a>
+                        <a href="/donate">Donate</a>
+                    </div>
                 </div>
             </div>
 
