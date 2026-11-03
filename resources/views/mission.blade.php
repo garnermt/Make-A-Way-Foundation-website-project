@@ -183,14 +183,14 @@
         /* ===== Page banner ===== */
         .banner {
             background: linear-gradient(rgba(18, 59, 59, 0.55), rgba(18, 59, 59, 0.55)),
-                        url("{{ asset('images/scroll/MWF-28.jpg') }}");
+                        url("{{ asset('images/scroll/MWF-11.jpg') }}");
             background-color: #1f5c5c;
             background-size: cover;
-            background-position: center center;
+            background-position: center 25%;
             background-attachment: fixed;
             color: white;
             text-align: center;
-            padding: 200px 20px;
+            padding: 130px 20px;
         }
 
         .banner h1 {
@@ -481,7 +481,8 @@
 
             .row,
             .row.flip,
-            .points {
+            .points,
+            .footer-columns {
                 flex-direction: column;
             }
 
@@ -513,6 +514,16 @@
                 max-width: 260px;
                 margin: 10px auto;
                 text-align: center;
+            }
+
+            footer {
+                text-align: center;
+            }
+
+            .footer-links {
+                position: static;
+                width: 100%;
+                margin-top: 10px;
             }
         }
     </style>
@@ -565,6 +576,7 @@
     <div class="section mission-statement">
         <div class="container">
             <p class="big-quote">"To provide resources that help groups of two or more individuals with special needs in a learning or recreational environment."</p>
+            <p>Make A Way Foundation is a 501(c)(3) nonprofit founded in 2019 and serving Athens and Limestone County.</p>
             <p>We work with schools, churches, and community partners to create events and experiences where everyone is welcome, just as they are.</p>
         </div>
     </div>
