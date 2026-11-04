@@ -689,10 +689,10 @@
 
     <!-- Hero -->
     <div class="hero">
-        <div class="hero-photo show" style="background-image: url('{{ asset('images/home/impact-families.jpg') }}');"></div>
+        <div class="hero-photo show" style="background-image: url('{{ asset('images/scroll/MWF-30.jpg') }}');"></div>
         <div class="hero-photo" style="background-image: url('{{ asset('images/home/help.jpg') }}');"></div>
         <div class="hero-photo" style="background-image: url('{{ asset('images/home/impact-rooms.jpg') }}');"></div>
-        <div class="hero-photo" style="background-image: url('{{ asset('images/home/hero.jpg') }}'); background-position: center top;"></div>
+        <div class="hero-photo" style="background-image: url('{{ asset('images/scroll/MWF-31.jpg') }}'); background-position: center 35%;"></div>
         <div class="hero-photo" style="background-image: url('{{ asset('images/home/impact-events.jpg') }}');"></div>
         <div class="hero-photo" style="background-image: url('{{ asset('images/home/who-we-are.jpg') }}'); background-position: center top;"></div>
         <div class="hero-overlay"></div>
