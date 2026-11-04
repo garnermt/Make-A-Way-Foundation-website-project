@@ -220,15 +220,11 @@
         }
 
         .hero h1 {
-            font-size: 54px;
-            max-width: 650px;
-            margin-top: 0;
-        }
-
-        .hero p {
-            font-size: 20px;
-            max-width: 550px;
-            margin-bottom: 30px;
+            font-size: 40px;
+            line-height: 1.3;
+            max-width: 820px;
+            margin: 0 0 30px 0;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
         }
 
         /* ===== Who We Are ===== */
@@ -464,6 +460,19 @@
             to { transform: translateX(-50%); }
         }
 
+        /* ===== Where you are ===== */
+        .dropdown a.active,
+        .footer-links a.active {
+            background-color: #123b3b;
+            color: #e2a33d;
+        }
+
+        .dropdown a.active::before,
+        .footer-links a.active::before {
+            content: "● ";
+            font-size: 12px;
+        }
+
         /* ===== Footer ===== */
         footer {
             background-color: #123b3b;
@@ -585,11 +594,7 @@
             }
 
             .hero h1 {
-                font-size: 36px;
-            }
-
-            .hero p {
-                font-size: 18px;
+                font-size: 26px;
             }
 
             .btn {
@@ -606,8 +611,7 @@
             }
 
             .who,
-            .cards,
-            .footer-columns {
+            .cards {
                 flex-direction: column;
             }
 
@@ -635,16 +639,6 @@
 
             .photo-track img {
                 height: 140px;
-            }
-
-            footer {
-                text-align: center;
-            }
-
-            .footer-links {
-                position: static;
-                width: 100%;
-                margin-top: 10px;
             }
         }
     </style>
@@ -676,12 +670,12 @@
                 </button>
 
                 <nav class="dropdown" id="dropdown">
-                    <a href="/">Home</a>
-                    <a href="/mission">Mission</a>
-                    <a href="/history">History</a>
-                    <a href="/what-we-offer">What We Offer</a>
-                    <a href="/get-involved">Get Involved</a>
-                    <a href="/board">Our Board</a>
+                    <a href="/" class="{{ request()->is('/') ? 'active' : '' }}">Home</a>
+                    <a href="/mission" class="{{ request()->is('mission') ? 'active' : '' }}">Mission</a>
+                    <a href="/history" class="{{ request()->is('history') ? 'active' : '' }}">History</a>
+                    <a href="/what-we-offer" class="{{ request()->is('what-we-offer') ? 'active' : '' }}">What We Offer</a>
+                    <a href="/get-involved" class="{{ request()->is('get-involved') ? 'active' : '' }}">Get Involved</a>
+                    <a href="/board" class="{{ request()->is('board') ? 'active' : '' }}">Our Board</a>
                 </nav>
             </div>
         </div>
@@ -698,8 +692,7 @@
         <div class="hero-overlay"></div>
 
         <div class="container">
-            <h1>Opening doors for special needs individuals and their families</h1>
-            <p>Empowering individuals with special needs through inclusion, community programs, sensory resources, and year-round support.</p>
+            <h1>Making A Way for two or more individuals with special needs and their families through school resources, community activities, and events that foster connection and belonging.</h1>
             <a href="#who-we-are" class="btn">Learn More</a>
             <a href="/donate" class="btn btn-outline">Support the Mission</a>
         </div>
@@ -932,13 +925,13 @@
                     </button>
 
                     <div class="footer-links" id="footer-links">
-                        <a href="/">Home</a>
-                        <a href="/mission">Mission</a>
-                        <a href="/history">History</a>
-                        <a href="/what-we-offer">What We Offer</a>
-                        <a href="/get-involved">Get Involved</a>
-                        <a href="/board">Our Board</a>
-                        <a href="/donate">Donate</a>
+                        <a href="/" class="{{ request()->is('/') ? 'active' : '' }}">Home</a>
+                        <a href="/mission" class="{{ request()->is('mission') ? 'active' : '' }}">Mission</a>
+                        <a href="/history" class="{{ request()->is('history') ? 'active' : '' }}">History</a>
+                        <a href="/what-we-offer" class="{{ request()->is('what-we-offer') ? 'active' : '' }}">What We Offer</a>
+                        <a href="/get-involved" class="{{ request()->is('get-involved') ? 'active' : '' }}">Get Involved</a>
+                        <a href="/board" class="{{ request()->is('board') ? 'active' : '' }}">Our Board</a>
+                        <a href="/donate" class="{{ request()->is('donate') ? 'active' : '' }}">Donate</a>
                     </div>
                 </div>
             </div>
