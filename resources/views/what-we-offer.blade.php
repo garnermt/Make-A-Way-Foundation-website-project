@@ -230,6 +230,11 @@
 
         .main.white { background-color: white; }
 
+        #family-events,
+        #haircuts {
+            scroll-margin-top: 110px;
+        }
+
         .main-inner { max-width: 1100px; margin: 0 auto; }
 
         .section-title {
@@ -391,6 +396,40 @@
             margin-left: 0;
         }
 
+        /* ===== Where you are ===== */
+        .dropdown a.active,
+        .footer-links a.active {
+            background-color: #123b3b;
+            color: #e2a33d;
+        }
+
+        .dropdown a.active::before,
+        .footer-links a.active::before {
+            content: "● ";
+            font-size: 12px;
+        }
+
+        .breadcrumb {
+            background-color: #1f5c5c;
+            color: white;
+            padding: 8px 20px;
+            font-size: 15px;
+        }
+
+        .breadcrumb a {
+            color: #e2a33d;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb .divider {
+            margin: 0 8px;
+        }
+
         /* ===== Footer ===== */
         footer {
             position: relative;
@@ -529,16 +568,6 @@
             .flyer-row { flex-direction: column; gap: 25px; }
 
             .flyer-row img { width: 100%; }
-
-            .footer-columns { flex-direction: column; }
-
-            footer { text-align: center; }
-
-            .footer-links {
-                position: static;
-                width: 100%;
-                margin-top: 10px;
-            }
         }
     </style>
 </head>
@@ -571,16 +600,23 @@
                 </button>
 
                 <nav class="dropdown" id="dropdown">
-                    <a href="/">Home</a>
-                    <a href="/mission">Mission</a>
-                    <a href="/history">History</a>
-                    <a href="/what-we-offer" class="active">What We Offer</a>
-                    <a href="/get-involved">Get Involved</a>
-                    <a href="/board">Our Board</a>
+                    <a href="/" class="{{ request()->is('/') ? 'active' : '' }}">Home</a>
+                    <a href="/mission" class="{{ request()->is('mission') ? 'active' : '' }}">Mission</a>
+                    <a href="/history" class="{{ request()->is('history') ? 'active' : '' }}">History</a>
+                    <a href="/what-we-offer" class="{{ request()->is('what-we-offer') ? 'active' : '' }}">What We Offer</a>
+                    <a href="/get-involved" class="{{ request()->is('get-involved') ? 'active' : '' }}">Get Involved</a>
+                    <a href="/board" class="{{ request()->is('board') ? 'active' : '' }}">Our Board</a>
                 </nav>
             </div>
         </div>
     </div>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="divider">›</span>
+        <span aria-current="page">What We Offer</span>
+    </nav>
 
     <main>
 
@@ -595,10 +631,10 @@
             </div>
         </section>
 
-        <!-- Family events -->
+        <!-- Make A Way events -->
         <section class="main" id="family-events">
             <div class="main-inner">
-                <h2 class="section-title">Family Events</h2>
+                <h2 class="section-title">Make A Way Events</h2>
                 <p class="section-intro">Throughout the year, we host events where families can relax, have fun, and be themselves, with activities planned so every child can take part.</p>
 
                 <div class="events">
@@ -617,17 +653,17 @@
                         </div>
                     </div>
                     <div class="event">
-                        <img src="{{ asset('images/scroll/MWF-24.jpg') }}" alt="Families at the carnival">
-                        <div class="event-body">
-                            <h3>Night at the Carnival</h3>
-                            <p>Carnival games, treats, and activities at a pace that works for everyone.</p>
-                        </div>
-                    </div>
-                    <div class="event">
                         <img src="{{ asset('images/scroll/MWF-21.jpg') }}" alt="Child visiting Santa">
                         <div class="event-body">
                             <h3>Santa Spotting</h3>
                             <p>A calm, welcoming visit with Santa, without the long lines and crowds.</p>
+                        </div>
+                    </div>
+                    <div class="event">
+                        <img src="{{ asset('images/scroll/MWF-24.jpg') }}" alt="Families at the carnival">
+                        <div class="event-body">
+                            <h3>Night at the Carnival</h3>
+                            <p>Carnival games, treats, and activities at a pace that works for everyone.</p>
                         </div>
                     </div>
                     <div class="event">
@@ -791,13 +827,13 @@
                     </button>
 
                     <div class="footer-links" id="footer-links">
-                        <a href="/">Home</a>
-                        <a href="/mission">Mission</a>
-                        <a href="/history">History</a>
-                        <a href="/what-we-offer">What We Offer</a>
-                        <a href="/get-involved">Get Involved</a>
-                        <a href="/board">Our Board</a>
-                        <a href="/donate">Donate</a>
+                        <a href="/" class="{{ request()->is('/') ? 'active' : '' }}">Home</a>
+                        <a href="/mission" class="{{ request()->is('mission') ? 'active' : '' }}">Mission</a>
+                        <a href="/history" class="{{ request()->is('history') ? 'active' : '' }}">History</a>
+                        <a href="/what-we-offer" class="{{ request()->is('what-we-offer') ? 'active' : '' }}">What We Offer</a>
+                        <a href="/get-involved" class="{{ request()->is('get-involved') ? 'active' : '' }}">Get Involved</a>
+                        <a href="/board" class="{{ request()->is('board') ? 'active' : '' }}">Our Board</a>
+                        <a href="/donate" class="{{ request()->is('donate') ? 'active' : '' }}">Donate</a>
                     </div>
                 </div>
             </div>
