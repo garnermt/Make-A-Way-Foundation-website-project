@@ -183,14 +183,13 @@
         /* ===== Page banner ===== */
         .banner {
             background: linear-gradient(rgba(18, 59, 59, 0.55), rgba(18, 59, 59, 0.55)),
-                        url("{{ asset('images/scroll/MWF-11.jpg') }}");
+                        url("{{ asset('images/scroll/MWF-28.jpg') }}");
             background-color: #1f5c5c;
             background-size: cover;
-            background-position: center 25%;
-            background-attachment: fixed;
+            background-position: center 80%;
             color: white;
             text-align: center;
-            padding: 130px 20px;
+            padding: 320px 20px;
         }
 
         .banner h1 {
@@ -346,6 +345,40 @@
             background-color: #123b3b;
         }
 
+        /* ===== Where you are ===== */
+        .dropdown a.active,
+        .footer-links a.active {
+            background-color: #123b3b;
+            color: #e2a33d;
+        }
+
+        .dropdown a.active::before,
+        .footer-links a.active::before {
+            content: "● ";
+            font-size: 12px;
+        }
+
+        .breadcrumb {
+            background-color: #1f5c5c;
+            color: white;
+            padding: 8px 20px;
+            font-size: 15px;
+        }
+
+        .breadcrumb a {
+            color: #e2a33d;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb .divider {
+            margin: 0 8px;
+        }
+
         /* ===== Footer ===== */
         footer {
             background-color: #123b3b;
@@ -459,7 +492,6 @@
         @media (max-width: 800px) {
             .banner {
                 padding: 80px 20px;
-                background-attachment: scroll;
             }
 
             .banner h1 {
@@ -481,8 +513,7 @@
 
             .row,
             .row.flip,
-            .points,
-            .footer-columns {
+            .points {
                 flex-direction: column;
             }
 
@@ -515,16 +546,6 @@
                 margin: 10px auto;
                 text-align: center;
             }
-
-            footer {
-                text-align: center;
-            }
-
-            .footer-links {
-                position: static;
-                width: 100%;
-                margin-top: 10px;
-            }
         }
     </style>
 </head>
@@ -555,16 +576,23 @@
                 </button>
 
                 <nav class="dropdown" id="dropdown">
-                    <a href="/">Home</a>
-                    <a href="/mission">Mission</a>
-                    <a href="/history">History</a>
-                    <a href="/what-we-offer">What We Offer</a>
-                    <a href="/get-involved">Get Involved</a>
-                    <a href="/board">Our Board</a>
+                    <a href="/" class="{{ request()->is('/') ? 'active' : '' }}">Home</a>
+                    <a href="/mission" class="{{ request()->is('mission') ? 'active' : '' }}">Mission</a>
+                    <a href="/history" class="{{ request()->is('history') ? 'active' : '' }}">History</a>
+                    <a href="/what-we-offer" class="{{ request()->is('what-we-offer') ? 'active' : '' }}">What We Offer</a>
+                    <a href="/get-involved" class="{{ request()->is('get-involved') ? 'active' : '' }}">Get Involved</a>
+                    <a href="/board" class="{{ request()->is('board') ? 'active' : '' }}">Our Board</a>
                 </nav>
             </div>
         </div>
     </div>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="divider">›</span>
+        <span aria-current="page">Mission</span>
+    </nav>
 
     <!-- Banner -->
     <div class="banner">
@@ -576,7 +604,6 @@
     <div class="section mission-statement">
         <div class="container">
             <p class="big-quote">"To provide resources that help groups of two or more individuals with special needs in a learning or recreational environment."</p>
-            <p>Make A Way Foundation is a 501(c)(3) nonprofit founded in 2019 and serving Athens and Limestone County.</p>
             <p>We work with schools, churches, and community partners to create events and experiences where everyone is welcome, just as they are.</p>
         </div>
     </div>
@@ -689,13 +716,13 @@
                     </button>
 
                     <div class="footer-links" id="footer-links">
-                        <a href="/">Home</a>
-                        <a href="/mission">Mission</a>
-                        <a href="/history">History</a>
-                        <a href="/what-we-offer">What We Offer</a>
-                        <a href="/get-involved">Get Involved</a>
-                        <a href="/board">Our Board</a>
-                        <a href="/donate">Donate</a>
+                        <a href="/" class="{{ request()->is('/') ? 'active' : '' }}">Home</a>
+                        <a href="/mission" class="{{ request()->is('mission') ? 'active' : '' }}">Mission</a>
+                        <a href="/history" class="{{ request()->is('history') ? 'active' : '' }}">History</a>
+                        <a href="/what-we-offer" class="{{ request()->is('what-we-offer') ? 'active' : '' }}">What We Offer</a>
+                        <a href="/get-involved" class="{{ request()->is('get-involved') ? 'active' : '' }}">Get Involved</a>
+                        <a href="/board" class="{{ request()->is('board') ? 'active' : '' }}">Our Board</a>
+                        <a href="/donate" class="{{ request()->is('donate') ? 'active' : '' }}">Donate</a>
                     </div>
                 </div>
             </div>
