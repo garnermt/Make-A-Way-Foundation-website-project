@@ -28,6 +28,10 @@ Route::get('/board', function () {
     return view('board');
 });
 
+Route::get('/partners', function () {
+    return view('partners');
+});
+
 Route::get('/get-involved', [GetInvolvedController::class, 'index']);
 Route::post('/get-involved', [GetInvolvedController::class, 'store'])->middleware('throttle:5,1');
 
