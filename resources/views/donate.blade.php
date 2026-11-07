@@ -560,6 +560,8 @@
         </div>
     </div>
 
+    @include('partials.cta')
+
     <!-- Footer -->
     <footer>
         <div class="footer-columns">

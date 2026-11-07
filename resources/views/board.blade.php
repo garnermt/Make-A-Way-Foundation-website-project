@@ -597,14 +597,7 @@
         </div>
     </div>
 
-    <!-- Join us -->
-    <div class="section join">
-        <div class="container">
-            <h2>Want to Get Involved?</h2>
-            <p>We're always looking for people who share our passion. Reach out to learn about volunteering or serving with us.</p>
-            <a href="mailto:info@foundationmakeaway.org?subject=Board%20and%20Volunteering" class="btn">Contact Us</a>
-        </div>
-    </div>
+    @include('partials.cta')
 
     <!-- Footer -->
     <footer>
