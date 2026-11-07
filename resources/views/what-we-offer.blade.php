@@ -575,7 +575,7 @@
 
     <!-- Top bar -->
     <div class="topbar">
-        <span class="topbar-reach" style="float: right; color: white; font-size: 14px; padding-top: 3px;">Serving Athens and Limestone County</span>
+        <span class="topbar-reach" style="float: right; order: 2; margin-left: auto; color: white; font-size: 14px; padding-top: 3px;">Serving Athens and Limestone County</span>
         <span class="social">
             <a href="https://www.facebook.com/foundationmakeaway" target="_blank" rel="noopener" aria-label="Make A Way Foundation on Facebook">
                 <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
