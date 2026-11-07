@@ -583,6 +583,16 @@
                     <div class="initials teal">AB</div>
                     <h3>Ashley Bell</h3>
                 </div>
+
+                <div class="member">
+                    <div class="initials coral">RC</div>
+                    <h3>Rich Caldwell</h3>
+                </div>
+
+                <div class="member">
+                    <div class="initials gold">KL</div>
+                    <h3>Kurt Leopard</h3>
+                </div>
             </div>
         </div>
     </div>
