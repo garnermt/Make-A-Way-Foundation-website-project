@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What We Offer | Make A Way Foundation</title>
-    <meta name="description" content="Make A Way Foundation hosts family events, adult socials, sensory-friendly programs, sports, STEM opportunities, and more.">
+    <meta name="description" content="Sensory rooms, inclusive events, and free services for people with special needs in Athens and Limestone County.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;0,700;1,600&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
@@ -575,6 +575,7 @@
 
     <!-- Top bar -->
     <div class="topbar">
+        <span class="topbar-reach" style="float: right; color: white; font-size: 14px; padding-top: 3px;">Serving Athens and Limestone County</span>
         <span class="social">
             <a href="https://www.facebook.com/foundationmakeaway" target="_blank" rel="noopener" aria-label="Make A Way Foundation on Facebook">
                 <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
@@ -819,7 +820,7 @@
         <div class="footer-columns">
             <div>
                 <h3>Make A Way Foundation</h3>
-                <p>A registered 501(c)(3) non-profit</p>
+                <p>A registered 501(c)(3) nonprofit serving Athens and Limestone County</p>
             </div>
 
             <div>

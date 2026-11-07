@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The churches, clubs, businesses, and organizations that support Make A Way Foundation in Athens and Limestone County.">
     <title>Partners &amp; Supporters | Make A Way Foundation</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Public+Sans:wght@400;700&display=swap" rel="stylesheet">
@@ -425,6 +426,7 @@
 
     <!-- Top bar -->
     <div class="topbar">
+        <span class="topbar-reach" style="float: right; color: white; font-size: 14px; padding-top: 3px;">Serving Athens and Limestone County</span>
         <a href="https://www.facebook.com/FoundationMakeAWay" target="_blank" aria-label="Facebook">
             <i class="fa-brands fa-facebook-f"></i>
         </a>
@@ -562,7 +564,7 @@
         <div class="footer-columns">
             <div>
                 <h3>Make A Way Foundation</h3>
-                <p>A registered 501(c)(3) non-profit</p>
+                <p>A registered 501(c)(3) nonprofit serving Athens and Limestone County</p>
             </div>
 
             <div>
