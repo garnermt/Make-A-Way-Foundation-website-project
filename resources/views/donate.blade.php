@@ -232,13 +232,21 @@
             color: #4d4f47;
         }
 
+        /* 4 cards across on a computer */
         .ways {
-            display: flex;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
             gap: 25px;
         }
 
+        /* 2 cards across on a tablet */
+        @media (max-width: 1000px) {
+            .ways {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         .way {
-            flex: 1;
             background-color: white;
             border-top: 6px solid #e2a33d;
             border-radius: 15px;
@@ -291,30 +299,6 @@
             max-width: 700px;
             margin: 40px auto 0 auto;
             font-size: 15px;
-        }
-
-        /* ===== Other ways to help ===== */
-        .other {
-            background: linear-gradient(rgba(18, 59, 59, 0.8), rgba(18, 59, 59, 0.8)),
-                        url("{{ asset('images/scroll/MWF-16.jpg') }}");
-            background-color: #123b3b;
-            background-size: cover;
-            background-position: center 25%;
-            background-attachment: fixed;
-            color: white;
-            text-align: center;
-            padding: 110px 20px;
-        }
-
-        .other h2 {
-            font-size: 40px;
-            margin-top: 0;
-        }
-
-        .other p {
-            font-size: 19px;
-            max-width: 650px;
-            margin: 0 auto 25px auto;
         }
 
         /* ===== Footer ===== */
@@ -433,20 +417,18 @@
                 background-attachment: scroll;
             }
 
-            .section-title,
-            .other h2 {
+            .section-title {
                 font-size: 32px;
             }
 
             .cards,
-            .ways,
             .footer-columns {
                 flex-direction: column;
             }
 
-            .other {
-                padding: 70px 20px;
-                background-attachment: scroll;
+            /* 1 card per row on a phone */
+            .ways {
+                grid-template-columns: 1fr;
             }
 
             .btn {
@@ -532,9 +514,16 @@
 
                 <div class="way">
                     <i class="fa-solid fa-handshake"></i>
-                    <h3>Sponsor or Partner</h3>
+                    <h3>Partner or Support</h3>
                     <p>Churches, clubs, and businesses can sponsor an event or partner with us to reach more families.</p>
                     <a href="mailto:info@foundationmakeaway.org?subject=Sponsorship" class="btn">Contact Us</a>
+                </div>
+
+                <div class="way">
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+                    <h3>Volunteer</h3>
+                    <p>Give your time instead. Help at events, set up sensory rooms, or spread the word in Athens and Limestone County.</p>
+                    <a href="/get-involved#volunteer" class="btn">Sign Up</a>
                 </div>
             </div>
 
@@ -568,13 +557,6 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- Other ways to help -->
-    <div class="other">
-        <h2>Other Ways to Help</h2>
-        <p>Not able to give right now? You can still make a difference by volunteering at an event or sharing our work with friends.</p>
-        <a href="/get-involved" class="btn">Volunteer With Us</a>
     </div>
 
     <!-- Footer -->
