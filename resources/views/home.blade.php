@@ -642,6 +642,87 @@
                 height: 140px;
             }
         }
+
+        /* ===== Phones: less scrolling ===== */
+        .swipe-hint {
+            display: none;
+            text-align: center;
+            font-size: 14px;
+            color: #4d4f47;
+            margin: 0 0 15px 0;
+        }
+
+        @media (max-width: 800px) {
+            .section {
+                padding: 45px 0;
+            }
+
+            .section-intro {
+                margin-bottom: 25px;
+            }
+
+            .hero {
+                padding: 70px 20px;
+            }
+
+            .who {
+                gap: 25px;
+            }
+
+            .who img {
+                height: 220px;
+                object-fit: cover;
+            }
+
+            .cards {
+                gap: 15px;
+            }
+
+            .card img {
+                height: 140px;
+            }
+
+            .help {
+                padding: 55px 20px;
+            }
+
+            .photo-band {
+                height: 160px;
+            }
+
+            /* Events: one swipe row instead of 8 stacked cards */
+            .events {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                justify-content: flex-start;
+                scroll-snap-type: x mandatory;
+                margin: 0 -20px 20px -20px;
+                padding: 0 20px 10px 20px;
+            }
+
+            .event {
+                flex: 0 0 85%;
+                width: auto;
+                box-sizing: border-box;
+                scroll-snap-align: center;
+            }
+
+            .swipe-hint {
+                display: block;
+            }
+
+            .photo-strip {
+                padding: 15px 0;
+            }
+
+            .photo-track img {
+                height: 110px;
+            }
+
+            .slide p {
+                font-size: 20px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -858,6 +939,8 @@
                     </div>
                 </div>
             </div>
+
+            <p class="swipe-hint">Swipe to see more events →</p>
 
             <div style="text-align: center;">
                 <a href="/what-we-offer" class="btn">View All Events →</a>
