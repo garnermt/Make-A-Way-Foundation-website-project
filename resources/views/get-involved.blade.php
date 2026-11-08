@@ -673,7 +673,7 @@
     <!-- Volunteer form -->
     <div class="section volunteer" id="volunteer">
         <div class="container">
-            <h2 class="section-title">Volunteer Sign-Up</h2>
+            <h2 class="section-title">Make A Way Event Registration</h2>
             <p class="section-intro">Fill out the form and we'll reach out with details.</p>
 
             <div class="form-box">
@@ -690,7 +690,7 @@
                         <p class="error">{{ $message }}</p>
                     @enderror
 
-                    <label for="email">Email *</label>
+                    <label for="email">Email Address *</label>
                     <input type="email" id="email" name="email" value="{{ old('email') }}" required>
                     @error('email')
                         <p class="error">{{ $message }}</p>
@@ -715,7 +715,61 @@
                         <p class="error">{{ $message }}</p>
                     @enderror
 
-                    <label for="message">Anything else we should know?</label>
+                    <label for="group_size">How many are you in your group? *</label>
+                <input type="number" id="group_size" name="group_size" min="1" max="50" value="{{ old('group_size') }}" required>
+                @error('group_size')
+                    <p class="error">{{ $message }}</p>
+                @enderror
+
+                <fieldset style="border: 0; padding: 0; margin: 15px 0;">
+                    <legend style="font-weight: bold;">Picture Waiver Agreement *</legend>
+                    <p style="margin: 5px 0 10px 0;">By agreeing below, I give permission to Make A Way Foundation to post pictures of my child on social media or other media outlets for the purpose of promoting this event or others sponsored by the named organizations.</p>
+                    <label style="font-weight: normal;"><input type="radio" name="photo_waiver" value="1" style="width: auto; margin-right: 8px;" @checked(old('photo_waiver') === '1') required> Yes</label>
+                    <label style="font-weight: normal;"><input type="radio" name="photo_waiver" value="0" style="width: auto; margin-right: 8px;" @checked(old('photo_waiver') === '0')> No</label>
+                    @error('photo_waiver')
+                        <p class="error">{{ $message }}</p>
+                    @enderror
+                </fieldset>
+
+                <fieldset style="border: 0; padding: 0; margin: 15px 0;">
+                    <legend style="font-weight: bold;">Have you attended a Make A Way event before? *</legend>
+                    <label style="font-weight: normal;"><input type="radio" name="attended_before" value="1" style="width: auto; margin-right: 8px;" @checked(old('attended_before') === '1') required> Yes</label>
+                    <label style="font-weight: normal;"><input type="radio" name="attended_before" value="0" style="width: auto; margin-right: 8px;" @checked(old('attended_before') === '0')> No</label>
+                    @error('attended_before')
+                        <p class="error">{{ $message }}</p>
+                    @enderror
+                </fieldset>
+
+                <label for="residence">Where do you reside? *</label>
+                <select id="residence" name="residence" required>
+                    <option value="">Choose one</option>
+                    @foreach (['Athens', 'Limestone County', 'Madison', 'Huntsville', 'Hartselle', 'Decatur'] as $place)
+                        <option value="{{ $place }}" @selected(old('residence') == $place)>{{ $place }}</option>
+                    @endforeach
+                </select>
+                @error('residence')
+                    <p class="error">{{ $message }}</p>
+                @enderror
+
+                <label for="heard_about">How did you hear about the event? *</label>
+                <select id="heard_about" name="heard_about" required>
+                    <option value="">Choose one</option>
+                    @foreach (['Social Media', 'E-mail', 'Family/Friend', 'School', 'Poster'] as $source)
+                        <option value="{{ $source }}" @selected(old('heard_about') == $source)>{{ $source }}</option>
+                    @endforeach
+                </select>
+                @error('heard_about')
+                    <p class="error">{{ $message }}</p>
+                @enderror
+
+                <label for="dietary_needs">Do you have any dietary restrictions or allergies?</label>
+                <p style="margin: 0 0 8px 0; font-size: 14px;">These are events where we may have food, snacks, or candy. We simply want to be aware of possible restrictions or allergies.</p>
+                <textarea id="dietary_needs" name="dietary_needs" rows="3">{{ old('dietary_needs') }}</textarea>
+                @error('dietary_needs')
+                    <p class="error">{{ $message }}</p>
+                @enderror
+
+                <label for="message">Anything else we should know?</label>
                     <textarea id="message" name="message" rows="4">{{ old('message') }}</textarea>
                     @error('message')
                         <p class="error">{{ $message }}</p>

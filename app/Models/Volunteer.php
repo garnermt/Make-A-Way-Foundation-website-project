@@ -11,7 +11,7 @@ class Volunteer extends Model
         'email',
         'phone',
         'event_id',
-        'message',
+        'message', 'group_size', 'photo_waiver', 'attended_before', 'residence', 'heard_about', 'dietary_needs',
     ];
 
     public function event()

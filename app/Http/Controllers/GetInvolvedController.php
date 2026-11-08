@@ -24,6 +24,12 @@ class GetInvolvedController extends Controller
             'email' => 'required|email|max:150',
             'phone' => 'nullable|max:30',
             'event_id' => 'nullable|exists:events,id',
+            'group_size' => 'required|integer|min:1|max:50',
+            'photo_waiver' => 'required|in:0,1',
+            'attended_before' => 'required|in:0,1',
+            'residence' => 'required|in:Athens,Limestone County,Madison,Huntsville,Hartselle,Decatur',
+            'heard_about' => 'required|in:Social Media,E-mail,Family/Friend,School,Poster',
+            'dietary_needs' => 'nullable|max:500',
             'message' => 'nullable|max:1000',
             'website' => 'nullable|max:0',
         ]);
@@ -31,6 +37,6 @@ class GetInvolvedController extends Controller
         Volunteer::create($data);
 
         return redirect('/get-involved#volunteer')
-            ->with('success', 'Thank you for signing up! We will be in touch soon.');
+            ->with('success', 'Thank you for registering! We will be in touch soon.');
     }
 }
