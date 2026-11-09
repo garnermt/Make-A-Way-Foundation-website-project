@@ -767,7 +767,7 @@
 
     <!-- Hero -->
     <div class="hero">
-        <div class="hero-photo show" style="background-image: url('{{ asset('images/scroll/MWF-30.jpg') }}');"></div>
+        <div class="hero-photo show" style="background-image: url('{{ asset('images/scroll/MWF-33.jpeg') }}');"></div>
         <div class="hero-photo" style="background-image: url('{{ asset('images/home/help.jpg') }}');"></div>
         <div class="hero-photo" style="background-image: url('{{ asset('images/home/impact-rooms.jpg') }}');"></div>
         <div class="hero-photo" style="background-image: url('{{ asset('images/scroll/MWF-31.jpg') }}'); background-position: center 35%;"></div>
