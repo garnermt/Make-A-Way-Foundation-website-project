@@ -24,9 +24,11 @@ Route::get('/donate', function () {
     return view('donate');
 });
 
-Route::get('/board', function () {
-    return view('board');
+Route::get('/who-we-are', function () {
+    return view('who-we-are');
 });
+
+Route::redirect('/board', '/who-we-are');
 
 Route::get('/partners', function () {
     return view('partners');

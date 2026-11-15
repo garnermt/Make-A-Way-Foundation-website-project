@@ -880,7 +880,7 @@
                     <a href="/history" class="{{ request()->is('history') ? 'active' : '' }}">History</a>
                     <a href="/what-we-offer" class="{{ request()->is('what-we-offer') ? 'active' : '' }}">What We Offer</a>
                     <a href="/get-involved" class="{{ request()->is('get-involved') ? 'active' : '' }}">Get Involved</a>
-                    <a href="/board" class="{{ request()->is('board') ? 'active' : '' }}">Our Board</a>
+                    <a href="/who-we-are" class="{{ request()->is('who-we-are') ? 'active' : '' }}">Who We Are</a>
                     <a href="/partners" class="{{ request()->is('partners') ? 'active' : '' }}">Partners &amp; Supporters</a>
                 </nav>
             </div>
@@ -1222,7 +1222,7 @@
                         <a href="/history" class="{{ request()->is('history') ? 'active' : '' }}">History</a>
                         <a href="/what-we-offer" class="{{ request()->is('what-we-offer') ? 'active' : '' }}">What We Offer</a>
                         <a href="/get-involved" class="{{ request()->is('get-involved') ? 'active' : '' }}">Get Involved</a>
-                        <a href="/board" class="{{ request()->is('board') ? 'active' : '' }}">Our Board</a>
+                        <a href="/who-we-are" class="{{ request()->is('who-we-are') ? 'active' : '' }}">Who We Are</a>
                         <a href="/partners" class="{{ request()->is('partners') ? 'active' : '' }}">Partners &amp; Supporters</a>
                         <a href="/donate" class="{{ request()->is('donate') ? 'active' : '' }}">Donate</a>
                     </div>

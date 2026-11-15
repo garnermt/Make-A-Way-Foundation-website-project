@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meet Make A Way Foundation: our story, our founders, and the board that guides our work for individuals with special needs and their families in Athens and Limestone County.">
+    <title>Who We Are | Make A Way Foundation</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Public+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        /* ===== General ===== */
+        body {
+            margin: 0;
+            font-family: "Public Sans", Arial, sans-serif;
+            color: #23241f;
+            background-color: #faf6ee;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: "Fraunces", Georgia, serif;
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 70px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #1f5c5c;
+            font-size: 40px;
+            margin-top: 0;
+        }
+
+        .section-intro {
+            text-align: center;
+            color: #4d4f47;
+            max-width: 650px;
+            margin: 0 auto 50px auto;
+            font-size: 18px;
+        }
+
+        /* ===== Buttons ===== */
+        .btn {
+            display: inline-block;
+            background-color: #d9613f;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            background-color: #e2a33d;
+            color: #23241f;
+        }
+
+        /* ===== Top bar ===== */
+        .topbar {
+            background-color: #123b3b;
+            text-align: left;
+            padding: 8px 20px;
+        }
+
+        .topbar a {
+            color: white;
+            font-size: 20px;
+            margin-left: 15px;
+        }
+
+        /* ===== Header ===== */
+        .main-header {
+            background-color: #123b3b;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .main-header .logo {
+            height: 80px;
+            display: block;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .donate-btn {
+            background-color: #d9613f;
+            color: white;
+            padding: 10px 22px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .donate-btn:hover {
+            background-color: #c4502f;
+        }
+
+        .menu {
+            position: relative;
+        }
+
+        .hamburger {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            font-size: 22px;
+            width: 50px;
+            height: 46px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            width: 230px;
+            background-color: #1f5c5c;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            padding: 10px 0;
+        }
+
+        .dropdown a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 12px 20px;
+            border-bottom: none;
+        }
+
+        .dropdown a:hover {
+            background-color: #123b3b;
+            color: #e2a33d;
+        }
+
+        .dropdown.open {
+            display: block;
+        }
+
+        @media (hover: hover) {
+            .menu:hover .dropdown {
+                display: block;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .main-header .logo {
+                height: 55px;
+            }
+
+            .donate-btn {
+                padding: 8px 16px;
+            }
+        }
+
+        /* ===== Page banner ===== */
+        .banner {
+            background: linear-gradient(rgba(18, 59, 59, 0.55), rgba(18, 59, 59, 0.55)),
+                        url("{{ asset('images/scroll/MWF-20.jpg') }}");
+            background-color: #1f5c5c;
+            background-size: cover;
+            background-position: center 25%;
+            background-attachment: fixed;
+            color: white;
+            text-align: center;
+            padding: 130px 20px;
+        }
+
+        .banner h1 {
+            font-size: 52px;
+            margin: 0 0 15px 0;
+        }
+
+        .banner p {
+            font-size: 20px;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        /* ===== Our story ===== */
+        .story {
+            background-color: #faf6ee;
+        }
+
+        .story-text {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 18px;
+        }
+
+        .story-text p {
+            margin: 0 0 18px 0;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 900px;
+            margin: 40px auto 0 auto;
+        }
+
+        .stat {
+            background-color: white;
+            border-top: 6px solid #e2a33d;
+            border-radius: 15px;
+            padding: 20px 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .stat strong {
+            display: block;
+            font-family: "Fraunces", Georgia, serif;
+            font-size: 40px;
+            color: #c4502f;
+            line-height: 1.1;
+        }
+
+        .stat span {
+            color: #123b3b;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        @media (max-width: 800px) {
+            .stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .story-text {
+                font-size: 17px;
+            }
+        }
+
+        /* ===== Board ===== */
+        .officers {
+            background-color: white;
+        }
+
+        .members {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .member {
+            width: 230px;
+            background-color: #faf6ee;
+            border-radius: 20px;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        .officers .member {
+            background-color: #faf6ee;
+        }
+
+        .board .member {
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .initials {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            margin: 0 auto 15px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Fraunces", Georgia, serif;
+            font-size: 32px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .initials.teal {
+            background-color: #1f5c5c;
+        }
+
+        .initials.coral {
+            background-color: #c4502f;
+        }
+
+        .initials.gold {
+            background-color: #e2a33d;
+            color: #23241f;
+        }
+
+        .member h3 {
+            color: #1f5c5c;
+            font-size: 22px;
+            margin: 0 0 5px 0;
+        }
+
+        .member p {
+            color: #d9613f;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background-color: #123b3b;
+            color: white;
+            padding: 50px 20px 20px 20px;
+        }
+
+        .footer-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        footer h3 {
+            color: #e2a33d;
+            margin-top: 0;
+        }
+
+        footer p {
+            margin: 0 0 10px 0;
+        }
+
+        footer a {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #2f5555;
+            margin-top: 30px;
+            padding-top: 15px;
+            font-size: 14px;
+        }
+
+        /* ===== Footer menu ===== */
+        .footer-menu {
+            position: relative;
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        .footer-hamburger {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            font-size: 22px;
+            width: 50px;
+            height: 46px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .footer-links {
+            display: none;
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 220px;
+            background-color: #1f5c5c;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            padding: 10px 0;
+            z-index: 50;
+        }
+
+        .footer-links a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+        }
+
+        .footer-links a:hover {
+            background-color: #123b3b;
+            color: #e2a33d;
+        }
+
+        .footer-links.open {
+            display: block;
+        }
+
+        @media (hover: hover) {
+            .footer-menu:hover .footer-links {
+                display: block;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .footer-columns {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-menu {
+                width: 220px;
+            }
+
+            .footer-links {
+                position: static;
+                transform: none;
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
+
+        /* ===== Phones ===== */
+        @media (max-width: 800px) {
+            .banner {
+                padding: 80px 20px;
+                background-attachment: scroll;
+            }
+
+            .banner h1 {
+                font-size: 36px;
+            }
+
+            .banner p {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+
+            .footer-columns {
+                flex-direction: column;
+            }
+
+            .member {
+                width: 100%;
+            }
+
+            .btn {
+                display: block;
+                max-width: 260px;
+                margin: 10px auto;
+                text-align: center;
+            }
+
+            footer {
+                text-align: center;
+            }
+
+            .footer-links {
+                position: static;
+                width: 100%;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top bar -->
+    <div class="topbar">
+        <span class="topbar-reach" style="float: right; color: white; font-size: 14px; padding-top: 3px;">Serving Athens and Limestone County</span>
+        <a href="https://www.facebook.com/FoundationMakeAWay" target="_blank" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="https://www.instagram.com/makeaway.foundation/" target="_blank" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+    </div>
+
+    <!-- Header -->
+    <div class="main-header">
+        <a href="/">
+            <img src="{{ asset('images/scroll/MWF-27.jpg') }}" alt="Make A Way Foundation logo" class="logo">
+        </a>
+
+        <div class="header-right">
+            <a href="/donate" class="donate-btn">Donate</a>
+
+            <div class="menu">
+                <button class="hamburger" aria-label="Menu" onclick="document.getElementById('dropdown').classList.toggle('open')">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+                <nav class="dropdown" id="dropdown">
+                    <a href="/">Home</a>
+                    <a href="/mission">Mission</a>
+                    <a href="/history">History</a>
+                    <a href="/what-we-offer">What We Offer</a>
+                    <a href="/get-involved">Get Involved</a>
+                    <a href="/who-we-are">Who We Are</a>
+                    <a href="/partners">Partners &amp; Supporters</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Banner -->
+    <div class="banner">
+        <h1>Who We Are</h1>
+        <p>A team dedicated to creating sensory spaces, expanding recreational opportunities, and building connections for individuals with special needs and their families.</p>
+    </div>
+
+    <!-- Our story -->
+    <div class="section story">
+        <div class="container">
+            <h2 class="section-title">Our Story</h2>
+            <div class="story-text">
+                <p>We are Make A Way Foundation, a team dedicated to creating sensory spaces, expanding recreational opportunities, and building connections for individuals with special needs and their families.</p>
+                <p>Our story began with co-founder Stacey Givens and her son Brooks, who was diagnosed with autism at age 3½. Seeing how sensory spaces helped Brooks focus and stay regulated, Stacey partnered with his school and received financial support from family and friends to help create Limestone County’s first sensory room. As other schools saw the benefits, requests grew.</p>
+                <p>In 2019, Stacey and Jim Moffatt founded Make A Way with a six-person team and a goal: bring sensory rooms to every Athens City and Limestone County school. We have since surpassed that goal, providing 33 rooms, including multiple spaces in some schools and replacement rooms following school rebuilds.</p>
+                <p>With 15 board members and seven advisory board members, we also offer recreational opportunities for individuals with special needs and their families, along with educational opportunities for families, educators, and law enforcement. We work to make existing activities more inclusive and create dedicated opportunities for the special needs community to connect through shared experiences.</p>
+            </div>
+
+            <div class="stats">
+                <div class="stat"><strong>2019</strong><span>Founded</span></div>
+                <div class="stat"><strong>33</strong><span>Sensory Rooms</span></div>
+                <div class="stat"><strong>15</strong><span>Board Members</span></div>
+                <div class="stat"><strong>7</strong><span>Advisory Board Members</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Officers -->
+    <div class="section officers">
+        <div class="container">
+            <h2 class="section-title">Our Board Officers</h2>
+            <p class="section-intro">Our board is made up of volunteers from Athens and Limestone County who guide the work of Make A Way Foundation.</p>
+
+            <div class="members">
+                <div class="member">
+                    <div class="initials teal">SG</div>
+                    <h3>Stacey Givens</h3>
+                    <p>President and Co-Founder</p>
+                </div>
+
+                <div class="member">
+                    <div class="initials coral">JM</div>
+                    <h3>James Moffatt</h3>
+                    <p>Vice President / Legal</p>
+                </div>
+
+                <div class="member">
+                    <div class="initials gold">JP</div>
+                    <h3>Joy Patterson</h3>
+                    <p>Treasurer</p>
+                </div>
+
+                <div class="member">
+                    <div class="initials teal">SC</div>
+                    <h3>Sharon Connealy</h3>
+                    <p>Secretary</p>
+                </div>
+
+                <div class="member">
+                    <div class="initials coral">HC</div>
+                    <h3>Helen Carter</h3>
+                    <p>Historian</p>
+                </div>
+
+                <div class="member">
+                    <div class="initials gold">LB</div>
+                    <h3>Lori Baker</h3>
+                    <p>Public Relations</p>
+                </div>
+
+                <div class="member">
+                    <div class="initials teal">MW</div>
+                    <h3>Michelle Whitt</h3>
+                    <p>Volunteer Coordinator</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Board members -->
+    <div class="section board">
+        <div class="container">
+            <h2 class="section-title">Board Members</h2>
+            <p class="section-intro">Thank you to every board member who gives their time to make a way for families in our community.</p>
+
+            <div class="members">
+                <div class="member">
+                    <div class="initials coral">KG</div>
+                    <h3>Kevin Givens</h3>
+                </div>
+
+                <div class="member">
+                    <div class="initials gold">LR</div>
+                    <h3>Leigh Roberts</h3>
+                </div>
+
+                <div class="member">
+                    <div class="initials teal">WJ</div>
+                    <h3>Wanda Johnson</h3>
+                </div>
+
+                <div class="member">
+                    <div class="initials coral">MR</div>
+                    <h3>Michelle Ramsden</h3>
+                </div>
+
+                <div class="member">
+                    <div class="initials gold">HS</div>
+                    <h3>Heidi Stinnett</h3>
+                </div>
+
+                <div class="member">
+                    <div class="initials teal">AB</div>
+                    <h3>Ashley Bell</h3>
+                </div>
+
+                <div class="member">
+                    <div class="initials coral">RC</div>
+                    <h3>Rich Caldwell</h3>
+                </div>
+
+                <div class="member">
+                    <div class="initials gold">KL</div>
+                    <h3>Kurt Leopard</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @include('partials.cta')
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-columns">
+            <div>
+                <h3>Make A Way Foundation</h3>
+                <p>A registered 501(c)(3) nonprofit serving Athens and Limestone County</p>
+            </div>
+
+            <div>
+                <div class="footer-menu">
+                    <h3>Pages</h3>
+                    <button class="footer-hamburger" aria-label="Pages menu" onclick="document.getElementById('footer-links').classList.toggle('open')">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+
+                    <div class="footer-links" id="footer-links">
+                        <a href="/">Home</a>
+                        <a href="/mission">Mission</a>
+                        <a href="/history">History</a>
+                        <a href="/what-we-offer">What We Offer</a>
+                        <a href="/get-involved">Get Involved</a>
+                        <a href="/who-we-are">Who We Are</a>
+                        <a href="/partners">Partners &amp; Supporters</a>
+                        <a href="/donate">Donate</a>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3>Contact Us</h3>
+                <p><a href="mailto:info@foundationmakeaway.org">info@foundationmakeaway.org</a></p>
+                <p>PO Box 1768<br>Athens, AL 35612</p>
+            </div>
+        </div>
+
+        <p class="copyright">© {{ date('Y') }} Make A Way Foundation. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

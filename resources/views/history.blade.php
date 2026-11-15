@@ -497,7 +497,7 @@
                     <a href="/history">History</a>
                     <a href="/what-we-offer">What We Offer</a>
                     <a href="/get-involved">Get Involved</a>
-                    <a href="/board">Our Board</a>
+                    <a href="/who-we-are">Who We Are</a>
                     <a href="/partners">Partners &amp; Supporters</a>
                 </nav>
             </div>
@@ -607,7 +607,7 @@
                         <a href="/history">History</a>
                         <a href="/what-we-offer">What We Offer</a>
                         <a href="/get-involved">Get Involved</a>
-                        <a href="/board">Our Board</a>
+                        <a href="/who-we-are">Who We Are</a>
                         <a href="/partners">Partners &amp; Supporters</a>
                         <a href="/donate">Donate</a>
                     </div>
