@@ -709,7 +709,7 @@
 
         <!-- Adult socials -->
         <section class="parallax band">
-            <div class="parallax-bg" style="background-image: url('{{ asset('images/scroll/MWF-8.jpg') }}');"></div>
+            <div class="parallax-bg" style="background-image: url('{{ asset('images/scroll/MWF-47.jpg') }}');"></div>
             <div class="parallax-content">
                 <h2>Adult Socials</h2>
                 <p>Our adult socials are a place to have fun, meet new people, and build meaningful friendships.</p>

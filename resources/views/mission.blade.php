@@ -628,7 +628,7 @@
             </div>
 
             <div class="row flip">
-                <img src="{{ asset('images/scroll/MWF-4.jpg') }}" alt="A child enjoying a sensory-friendly activity">
+                <img src="{{ asset('images/scroll/MWF-46.jpg') }}" alt="A child enjoying a sensory-friendly activity">
                 <div>
                     <span class="tag">Sensory-Friendly</span>
                     <h3>Everyday experiences, made calmer</h3>

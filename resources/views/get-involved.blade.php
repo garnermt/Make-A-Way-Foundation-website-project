@@ -179,10 +179,10 @@
         /* ===== Page banner ===== */
         .banner {
             background: linear-gradient(rgba(18, 59, 59, 0.55), rgba(18, 59, 59, 0.55)),
-                        url("{{ asset('images/scroll/MWF-18.jpg') }}");
+                        url("{{ asset('images/scroll/MWF-45.jpg') }}");
             background-color: #1f5c5c;
             background-size: cover;
-            background-position: center 25%;
+            background-position: center calc(25% + 96px);
             background-attachment: fixed;
             color: white;
             text-align: center;
@@ -305,6 +305,52 @@
             max-width: 650px;
             margin: 0 auto;
             color: #4d4f47;
+        }
+
+        /* ===== Join us intro ===== */
+        .join-intro .intro-text {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 18px;
+            color: #4d4f47;
+        }
+
+        .join-intro .intro-text p {
+            margin: 0 0 20px 0;
+        }
+
+        .join-intro .intro-text a {
+            color: #d9613f;
+            font-weight: bold;
+        }
+
+        .link-row {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .link-row h3 {
+            color: #1f5c5c;
+            font-size: 24px;
+            margin: 0 0 10px 0;
+        }
+
+        .btn-venmo {
+            background-color: #3d95ce;
+        }
+
+        .btn-social {
+            background-color: #1f5c5c;
+        }
+
+        .event-btn {
+            margin: 15px 0 0 0;
+            padding: 10px 22px;
+        }
+
+        #events,
+        #volunteer {
+            scroll-margin-top: 110px;
         }
 
         /* ===== Volunteer form ===== */
@@ -599,11 +645,35 @@
         <a href="#volunteer" class="btn">Volunteer With Us</a>
     </div>
 
+    <!-- Join us intro -->
+    <div class="section join-intro">
+        <div class="container">
+            <h2 class="section-title">Join Us</h2>
+
+            <div class="intro-text">
+                <p>There&rsquo;s a place for you at Make A Way. Whether you volunteer at an event, donate needed items, or make a financial gift of any amount, your generosity helps create opportunities for individuals with special needs and their families to learn, connect, and enjoy community life. Giving your time is a wonderful way to be part of our mission. <a href="#events">Explore our events</a> and find an opportunity to get involved. Follow us on social media, too, to hear about upcoming events and discover more ways to join in the fun. We&rsquo;d love to see you there!</p>
+                <p>Every contribution matters, and no financial gift is too small. All donations are tax-deductible as allowed by law and help us continue our mission. Every dollar goes back into the community, and our board members serve without payment. When you give, you help make these opportunities possible. We would love for you to join us. Together, we can continue making a way.</p>
+            </div>
+
+            <div class="link-row">
+                <h3>Give Online</h3>
+                <a href="https://paypal.me/foundationmakeaway" target="_blank" rel="noopener" class="btn"><i class="fa-brands fa-paypal"></i> PayPal</a>
+                <a href="https://venmo.com/foundationmakeaway" target="_blank" rel="noopener" class="btn btn-venmo"><i class="fa-solid fa-v"></i> Venmo</a>
+            </div>
+
+            <div class="link-row">
+                <h3>Follow Us</h3>
+                <a href="https://www.facebook.com/FoundationMakeAWay" target="_blank" rel="noopener" class="btn btn-social"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+                <a href="https://www.instagram.com/makeaway.foundation/" target="_blank" rel="noopener" class="btn btn-social"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            </div>
+        </div>
+    </div>
+
     <!-- Ways to help -->
     <div class="section ways-help">
         <div class="container">
             <h2 class="section-title">Ways to Help</h2>
-            <p class="section-intro">There's a place for everyone at Make A Way.</p>
+            <p class="section-intro">Choose the way that works best for you.</p>
 
             <div class="help-cards">
                 <div class="help-card">
@@ -633,7 +703,7 @@
     <!-- Upcoming events -->
     <div class="section">
         <div class="container">
-            <h2 class="section-title">Upcoming Events</h2>
+            <h2 class="section-title" id="events">Upcoming Events</h2>
             <p class="section-intro">Come join us! Everyone is welcome.</p>
 
             @if ($events->count() > 0)
@@ -658,6 +728,7 @@
                                 @if ($event->description)
                                     <p>{{ $event->description }}</p>
                                 @endif
+                                <a href="/get-involved?event={{ $event->id }}#volunteer" class="btn event-btn"><i class="fa-solid fa-hand-holding-heart"></i> Volunteer / Register</a>
                             </div>
                         </div>
                     @endforeach
@@ -706,7 +777,7 @@
                     <select id="event_id" name="event_id">
                         <option value="">Any event</option>
                         @foreach ($events as $event)
-                            <option value="{{ $event->id }}" @selected(old('event_id') == $event->id)>
+                            <option value="{{ $event->id }}" @selected(old('event_id', request('event')) == $event->id)>
                                 {{ $event->title }} ({{ $event->event_date->format('M j') }})
                             </option>
                         @endforeach
