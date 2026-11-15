@@ -723,6 +723,128 @@
                 font-size: 20px;
             }
         }
+        /* ===== Three Pillars ===== */
+        .pillars {
+            background-color: white;
+        }
+
+        .pillars-intro {
+            text-align: center;
+            color: #4d4f47;
+            max-width: 760px;
+            margin: 0 auto 60px auto;
+            font-size: 19px;
+        }
+
+        .pillar {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 70px;
+        }
+
+        .pillar:last-child {
+            margin-bottom: 0;
+        }
+
+        .pillar.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .pillar-text,
+        .pillar-photos {
+            flex: 1;
+        }
+
+        .pillar-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background-color: #1f5c5c;
+            color: white;
+            font-size: 24px;
+        }
+
+        .pillar h3 {
+            color: #1f5c5c;
+            font-size: 34px;
+            margin: 15px 0 10px 0;
+        }
+
+        .pillar-text p {
+            color: #4d4f47;
+        }
+
+        .pillar-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .pillar-tags span {
+            background-color: #faf6ee;
+            border: 2px solid #e2a33d;
+            color: #123b3b;
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .pillar-photos {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 10px;
+            height: 380px;
+        }
+
+        .pillar-photos img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 25%;
+            border-radius: 15px;
+        }
+
+        .pillar-photos img:first-child {
+            grid-row: 1 / 3;
+        }
+
+        @media (max-width: 800px) {
+            .pillars-intro {
+                font-size: 17px;
+                margin-bottom: 35px;
+            }
+
+            .pillar,
+            .pillar.reverse {
+                flex-direction: column;
+                gap: 15px;
+                margin-bottom: 45px;
+            }
+
+            .pillar-photos {
+                order: -1;
+                width: 100%;
+                height: auto;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-template-rows: 120px;
+            }
+
+            .pillar-photos img:first-child {
+                grid-row: auto;
+            }
+
+            .pillar h3 {
+                font-size: 28px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -801,6 +923,88 @@
     </div>
 
     <div class="photo-band" role="img" aria-label="Make A Way event photo" style="background-image: url('{{ asset('images/scroll/MWF-12.jpg') }}');"></div>
+
+    <!-- Three Pillars -->
+    @php
+        // Photos for each pillar. To change a photo, change its file name here.
+        // Each photo should show different people, with happy faces clearly visible.
+        $pillarPhotos = [
+            'education'  => ['scroll/MWF-34.jpg', 'scroll/MWF-28.jpg', 'scroll/MWF-35.jpg'],
+            'recreation' => ['scroll/MWF-24.jpg', 'scroll/MWF-23.jpg', 'scroll/MWF-22.jpg'],
+            'resources'  => ['scroll/MWF-9.jpg', 'scroll/MWF-32.jpg', 'home/impact-families.jpg'],
+        ];
+    @endphp
+
+    <div class="section pillars" id="pillars">
+        <div class="container">
+            <h2 class="section-title">Our Three Pillars</h2>
+            <p class="pillars-intro">Make A Way Foundation is built on three pillars: Education, Recreation, and Resources. Together, they guide our efforts to support learning, create opportunities for connection, and provide practical support for individuals with special needs and their families.</p>
+
+            <!-- Education -->
+            <div class="pillar">
+                <div class="pillar-text">
+                    <span class="pillar-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                    <h3>Education</h3>
+                    <p>We make learning more accessible and engaging through supportive spaces, practical tools, and experiences that meet different needs. Our sensory rooms and additional school equipment support learning in the classroom, while training and camps offer further opportunities for education.</p>
+                    <p>By bringing these efforts together, we support schools and extend learning beyond the classroom. This pillar reflects our commitment to helping individuals with special needs, their families, and educators access opportunities to learn and grow.</p>
+                    <div class="pillar-tags">
+                        <span>Sensory Rooms</span>
+                        <span>STEM Camp</span>
+                        <span>School Equipment</span>
+                        <span>Training</span>
+                    </div>
+                </div>
+                <div class="pillar-photos">
+                    @foreach ($pillarPhotos['education'] as $photo)
+                        <img src="{{ asset('images/' . $photo) }}" alt="Make A Way Education program">
+                    @endforeach
+                </div>
+            </div>
+
+            <!-- Recreation -->
+            <div class="pillar reverse">
+                <div class="pillar-text">
+                    <span class="pillar-icon"><i class="fa-solid fa-people-group"></i></span>
+                    <h3>Recreation</h3>
+                    <p>We make room for individuals with special needs and their families to play, socialize, and enjoy community life. Through adaptive play, community holiday events, adult socials, swim days, movies, and more, we create opportunities to participate and connect with others.</p>
+                    <p>These experiences bring people together to build friendships and have fun, with inclusion at the heart of each activity. This pillar reflects our commitment to making existing activities more inclusive while offering dedicated opportunities for shared experiences.</p>
+                    <div class="pillar-tags">
+                        <span>Adaptive Play</span>
+                        <span>Holiday Events</span>
+                        <span>Adult Socials</span>
+                        <span>Swim Days</span>
+                        <span>Movies</span>
+                    </div>
+                </div>
+                <div class="pillar-photos">
+                    @foreach ($pillarPhotos['recreation'] as $photo)
+                        <img src="{{ asset('images/' . $photo) }}" alt="Make A Way Recreation activity">
+                    @endforeach
+                </div>
+            </div>
+
+            <!-- Resources -->
+            <div class="pillar">
+                <div class="pillar-text">
+                    <span class="pillar-icon"><i class="fa-solid fa-hand-holding-heart"></i></span>
+                    <h3>Resources</h3>
+                    <p>We provide practical support for everyday needs, from sensory-friendly haircuts to books for families navigating a new diagnosis. We stock the library with titles about different disabilities and supply educators with reading materials to support understanding in the classroom.</p>
+                    <p>Our mobile sensory unit brings a traveling sensory space to community events, offering a place to step away and reset so individuals can participate knowing a break is available. This pillar extends support into homes, schools, and the wider community.</p>
+                    <div class="pillar-tags">
+                        <span>Sensory-Friendly Haircuts</span>
+                        <span>Books for Families</span>
+                        <span>Library Titles</span>
+                        <span>Mobile Sensory Unit</span>
+                    </div>
+                </div>
+                <div class="pillar-photos">
+                    @foreach ($pillarPhotos['resources'] as $photo)
+                        <img src="{{ asset('images/' . $photo) }}" alt="Make A Way Resources program">
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Our Impact -->
     <div class="section impact">
