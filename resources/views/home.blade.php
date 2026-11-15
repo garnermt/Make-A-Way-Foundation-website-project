@@ -931,7 +931,7 @@
         $pillarPhotos = [
             'education'  => ['scroll/MWF-34.jpg', 'scroll/MWF-28.jpg', 'scroll/MWF-35.jpg'],
             'recreation' => ['scroll/MWF-38.jpg', 'scroll/MWF-23.jpg', 'scroll/MWF-37.jpg'],
-            'resources'  => ['scroll/MWF-9.jpg', 'scroll/MWF-32.jpg', 'home/impact-families.jpg'],
+            'resources'  => ['scroll/MWF-39.jpg', 'scroll/MWF-40.jpg', 'scroll/MWF-41.jpg'],
         ];
     @endphp
 
@@ -1014,21 +1014,21 @@
 
             <div class="cards">
                 <div class="card">
-                    <img src="{{ asset('images/home/impact-rooms.jpg') }}" alt="A school sensory room">
+                    <img src="{{ asset('images/scroll/MWF-42.jpg') }}" alt="A school sensory room">
                     <div class="icon"><i class="fa-solid fa-school"></i></div>
                     <h3>31 Sensory Rooms</h3>
                     <p>Supporting K–12 students with calming and regulation tools.</p>
                 </div>
 
                 <div class="card">
-                    <img src="{{ asset('images/home/impact-events.jpg') }}" alt="Families at an inclusive community event">
+                    <img src="{{ asset('images/scroll/MWF-44.jpg') }}" alt="Families at an inclusive community event">
                     <div class="icon"><i class="fa-solid fa-calendar-check"></i></div>
                     <h3>Dozens of Inclusive Events</h3>
                     <p>Pool nights, Easter events, carnivals, fall festivals, and more.</p>
                 </div>
 
                 <div class="card">
-                    <img src="{{ asset('images/home/impact-families.jpg') }}" alt="Parents and children together">
+                    <img src="{{ asset('images/scroll/MWF-43.jpg') }}" alt="Parents and children together" style="object-position: center top;">
                     <div class="icon"><i class="fa-solid fa-people-roof"></i></div>
                     <h3>Support for Families</h3>
                     <p>Parent fellowship, resources, training, and sensory-friendly services.</p>
