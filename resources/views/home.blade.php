@@ -930,7 +930,7 @@
         // Each photo should show different people, with happy faces clearly visible.
         $pillarPhotos = [
             'education'  => ['scroll/MWF-34.jpg', 'scroll/MWF-28.jpg', 'scroll/MWF-35.jpg'],
-            'recreation' => ['scroll/MWF-24.jpg', 'scroll/MWF-23.jpg', 'scroll/MWF-22.jpg'],
+            'recreation' => ['scroll/MWF-38.jpg', 'scroll/MWF-23.jpg', 'scroll/MWF-37.jpg'],
             'resources'  => ['scroll/MWF-9.jpg', 'scroll/MWF-32.jpg', 'home/impact-families.jpg'],
         ];
     @endphp
