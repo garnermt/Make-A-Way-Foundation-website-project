@@ -25,7 +25,7 @@ max-width: 1100px;
 margin: 0 auto;
 padding: 30px 20px;
 }
-/* ===== Admin bar ===== */
+/* ====== Admin bar ====== */
 .admin-bar {
 background-color: #123b3b;
 color: white;
